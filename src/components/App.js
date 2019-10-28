@@ -1,10 +1,11 @@
 import React from "react";
+import MapContainer from "./Map";
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Boilerplate</h1>
+        <MapContainer />
       </div>
     );
   }
