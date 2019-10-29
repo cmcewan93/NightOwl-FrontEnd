@@ -1,12 +1,12 @@
 import React from "react";
-import MapContainer from "./Map";
+// import MapContainer from "./Map";
+import Login from "./Login";
 
 class App extends React.Component {
-  
   render() {
     return (
       <div>
-        <MapContainer />
+        <Login />
       </div>
     );
   }
