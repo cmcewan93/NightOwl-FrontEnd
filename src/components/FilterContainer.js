@@ -1,4 +1,5 @@
 import React from "react";
+import FilterListItem from "./FilterListItem";
 
 const formStyle = {
   backgroundColor: "grey",
@@ -8,7 +9,11 @@ const formStyle = {
 
 class FilterContainer extends React.Component {
   render() {
-    return <form style={formStyle}>Test</form>;
+    return (
+      <form style={formStyle}>
+        <FilterListItem />
+      </form>
+    );
   }
 }
 
