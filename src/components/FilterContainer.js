@@ -1,5 +1,13 @@
 import React from "react";
-import FilterListItem from "./FilterListItem";
+
+import Trending from "./TrendingFilter";
+import MostMales from "./MostMalesFilter";
+import MostFemales from "./MostFemalesFilter";
+import ShortestDistance from "./ShortestDistanceFilter";
+import LineSize from "./LineSizeFilter";
+import MusicType from "./MusicTypeFilter";
+import CheapestPrice from "./CheapestPriceFilter";
+import ExpensivePrice from "./ExpensivePriceFilter";
 
 const formStyle = {
   backgroundColor: "grey",
@@ -11,7 +19,14 @@ class FilterContainer extends React.Component {
   render() {
     return (
       <form style={formStyle}>
-        <FilterListItem />
+        <Trending />
+        <MostMales />
+        <MostFemales />
+        <ShortestDistance />
+        <LineSize />
+        <MusicType />
+        <CheapestPrice />
+        <ExpensivePrice />
       </form>
     );
   }
