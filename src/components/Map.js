@@ -1,5 +1,8 @@
 import React from "react";
+import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+
+Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
 const mapStyles = {
   width: "100%",
@@ -12,11 +15,20 @@ export class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     lat: 43.644175,
-    lng: -79.4043927,
-    errorMessage: ""
+    lng: -79.402204,
+    errorMessage: "",
+    // Added bars temporarily, will render this data in the future and set lat, long based on address using Geocode
+    bars: [
+      {
+        address: "Petty Cash",
+        lat: null,
+        long: null
+      }
+    ]
   };
 
   componentDidMount() {
+    // Asks the user to allow sharing location, once shared, this will setState
     window.navigator.geolocation.getCurrentPosition(
       position =>
         this.setState({
@@ -24,6 +36,20 @@ export class MapContainer extends React.Component {
           lng: position.coords.longitude
         }),
       err => this.setState({ errorMessage: err.message })
+    );
+
+    // Geocoding to get latitude and longitude from address
+    Geocode.fromAddress("Lighthouse Labs, Toronto, ON").then(
+      response => {
+        const { lat, lng } = response.results[0].geometry.location;
+        this.setState({
+          lat: lat,
+          lng: lng
+        });
+      },
+      error => {
+        console.error(error);
+      }
     );
   }
 
@@ -53,6 +79,7 @@ export class MapContainer extends React.Component {
           lat: this.state.lat,
           lng: this.state.lng
         }}
+        zoom={14}
       >
         <Marker
           onClick={this.onMarkerClick}
