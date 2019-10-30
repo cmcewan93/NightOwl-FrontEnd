@@ -97,6 +97,7 @@ export class MapContainer extends React.Component {
           lng: this.state.defaultLng
         }}
         zoom={14}
+        disableDefaultUI={true}
       >
         <Marker
           onClick={this.onMarkerClick}
