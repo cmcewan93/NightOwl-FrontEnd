@@ -1,6 +1,7 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import Axios from "axios";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
@@ -8,6 +9,10 @@ const mapStyles = {
   width: "100%",
   height: "100%"
 };
+
+componentDidMount() {
+  
+}
 
 export class MapContainer extends React.Component {
   state = {
