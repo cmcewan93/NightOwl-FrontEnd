@@ -27,31 +27,31 @@ export class MapContainer extends React.Component {
     ]
   };
 
-  componentDidMount() {
-    // Asks the user to allow sharing location, once shared, this will setState
-    window.navigator.geolocation.getCurrentPosition(
-      position =>
-        this.setState({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        }),
-      err => this.setState({ errorMessage: err.message })
-    );
+  // componentDidMount() {
+  // Asks the user to allow sharing location, once shared, this will setState
+  // window.navigator.geolocation.getCurrentPosition(
+  //   position =>
+  //     this.setState({
+  //       lat: position.coords.latitude,
+  //       lng: position.coords.longitude
+  //     }),
+  //   err => this.setState({ errorMessage: err.message })
+  // );
 
-    // Geocoding to get latitude and longitude from address
-    Geocode.fromAddress("Lighthouse Labs, Toronto, ON").then(
-      response => {
-        const { lat, lng } = response.results[0].geometry.location;
-        this.setState({
-          lat: lat,
-          lng: lng
-        });
-      },
-      error => {
-        console.error(error);
-      }
-    );
-  }
+  // Geocoding to get latitude and longitude from address
+  //   Geocode.fromAddress("Lighthouse Labs, Toronto, ON").then(
+  //     response => {
+  //       const { lat, lng } = response.results[0].geometry.location;
+  //       this.setState({
+  //         lat: lat,
+  //         lng: lng
+  //       });
+  //     },
+  //     error => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -88,6 +88,10 @@ export class MapContainer extends React.Component {
             lat: this.state.lat,
             lng: this.state.lng
           }}
+          icon={{
+            url: "/owl.svg",
+            scaledSize: new window.google.maps.Size(25, 25)
+          }}
         />
 
         <Marker
@@ -97,6 +101,10 @@ export class MapContainer extends React.Component {
             lat: 43.6448919,
             lng: -79.4006397
           }}
+          icon={{
+            url: "/pint.svg",
+            scaledSize: new window.google.maps.Size(30, 30)
+          }}
         />
 
         <Marker
@@ -105,6 +113,10 @@ export class MapContainer extends React.Component {
           position={{
             lat: 43.6455072,
             lng: -79.4029564
+          }}
+          icon={{
+            url: "/pint.svg",
+            scaledSize: new window.google.maps.Size(30, 30)
           }}
         />
 
