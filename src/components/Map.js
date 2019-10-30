@@ -1,6 +1,7 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import Axios from "axios";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
@@ -10,21 +11,19 @@ const mapStyles = {
 };
 
 export class MapContainer extends React.Component {
+  async componentDidMount() {
+    const { data } = await Axios.get(`/api/venues`);
+    this.setState({ markers: data });
+  }
+
   state = {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
-    lat: 43.644175,
-    lng: -79.402204,
+    defaultLat: 43.644175,
+    defaultLng: -79.402204,
     errorMessage: "",
-    // Added bars temporarily, will render this data in the future and set lat, long based on address using Geocode
-    bars: [
-      {
-        address: "Petty Cash",
-        lat: null,
-        long: null
-      }
-    ]
+    markers: []
   };
 
   // componentDidMount() {
@@ -69,6 +68,24 @@ export class MapContainer extends React.Component {
     }
   };
 
+  // Renders all of the markers
+  renderMarkers() {
+    return this.state.markers.map(marker => {
+      return (
+        <Marker
+          key={marker.id}
+          onClick={this.onMarkerClick}
+          position={{ lat: marker.latitude, lng: marker.longitude }}
+          name={marker.name}
+          icon={{
+            url: "/pint.svg",
+            scaledSize: new window.google.maps.Size(30, 30)
+          }}
+        />
+      );
+    });
+  }
+
   render() {
     return (
       <Map
@@ -76,8 +93,8 @@ export class MapContainer extends React.Component {
         onClick={this.onMapClicked}
         style={mapStyles}
         initialCenter={{
-          lat: this.state.lat,
-          lng: this.state.lng
+          lat: this.state.defaultLat,
+          lng: this.state.defaultLng
         }}
         zoom={14}
       >
@@ -85,40 +102,16 @@ export class MapContainer extends React.Component {
           onClick={this.onMarkerClick}
           name={"Current Location"}
           position={{
-            lat: this.state.lat,
-            lng: this.state.lng
+            lat: this.state.defaultLat,
+            lng: this.state.defaultLng
           }}
           icon={{
             url: "/owl.svg",
             scaledSize: new window.google.maps.Size(25, 25)
           }}
         />
-
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"Belfast Love"}
-          position={{
-            lat: 43.6448919,
-            lng: -79.4006397
-          }}
-          icon={{
-            url: "/pint.svg",
-            scaledSize: new window.google.maps.Size(30, 30)
-          }}
-        />
-
-        <Marker
-          onClick={this.onMarkerClick}
-          name={"Petty Cash"}
-          position={{
-            lat: 43.6455072,
-            lng: -79.4029564
-          }}
-          icon={{
-            url: "/pint.svg",
-            scaledSize: new window.google.maps.Size(30, 30)
-          }}
-        />
+        {/* Rendering all the Markers */}
+        {this.renderMarkers()}
 
         <InfoWindow
           marker={this.state.activeMarker}
