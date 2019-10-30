@@ -1,0 +1,13 @@
+.logo {
+  margin-bottom: 3em;
+}
+
+.logobox {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.copyright {
+  position: fixed;
+  bottom: 0;
+}

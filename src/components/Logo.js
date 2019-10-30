@@ -1,5 +1,10 @@
 import React from "react";
-import logo from "";
+const logo = require("/Users/mengting/lighthouse/final-front-end/src/logo.png");
+
 export default function Logo() {
-  return <h1>Hi</h1>;
+  return (
+    <>
+      <img src={logo} />
+    </>
+  );
 }
