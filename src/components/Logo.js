@@ -1,5 +1,5 @@
 import React from "react";
-const logo = require("/Users/mengting/lighthouse/final-front-end/src/logo.png");
+import logo from "../logo1.jpg";
 
 export default function Logo() {
   return (

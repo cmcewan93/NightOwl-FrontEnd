@@ -1,5 +1,5 @@
 import React from "react";
-import "/Users/mengting/lighthouse/final-front-end/src/components/login.css";
+import login from "../styles/login.css";
 // import Avatar from "@material-ui/core/Avatar";
 import Logo from "./Logo";
 import Button from "@material-ui/core/Button";
