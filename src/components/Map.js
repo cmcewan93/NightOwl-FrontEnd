@@ -10,28 +10,31 @@ const mapStyles = {
   height: "100%"
 };
 
-componentDidMount() {
-  Axios.get('/api/venues').then(res => {
-    this.setState({ bars.lat: res.data.l})
-  })
-}
+// const setMarker = (posts) => {
+//   for(let i = 0; i < posts.length; i++) {
+//     <Marker position={{
+//       lat: posts[i].latitude,
+//       lng: posts[i].longitude
+//     }}
+//     name={posts[i].name}
+//   }
+// }
 
 export class MapContainer extends React.Component {
+  async componentDidMount() {
+    const { data } = await Axios.get(`/api/venues`);
+    this.setState({ posts: data });
+    // console.log("this is a test", this.state.posts);
+  }
+
   state = {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
-    lat: 43.644175,
-    lng: -79.402204,
+    defaultLat: 43.644175,
+    defaultLng: -79.402204,
     errorMessage: "",
-    // Added bars temporarily, will render this data in the future and set lat, long based on address using Geocode
-    bars: [
-      {
-        address: "Petty Cash",
-        lat: null,
-        long: null
-      }
-    ]
+    posts: []
   };
 
   // componentDidMount() {
@@ -77,31 +80,40 @@ export class MapContainer extends React.Component {
   };
 
   render() {
+    const { posts } = this.state;
+    console.log("this is a test", posts);
+    // console.log(this.state.posts);
     return (
       <Map
         google={this.props.google}
         onClick={this.onMapClicked}
         style={mapStyles}
         initialCenter={{
-          lat: this.state.lat,
-          lng: this.state.lng
+          lat: this.state.defaultLat,
+          lng: this.state.defaultLng
         }}
         zoom={14}
       >
+        {/* posts.map(post => {
+  <Marker position={{
+    lat: post.latitude,
+    lng: post.longitude
+  }}
+}) */}
+
         <Marker
           onClick={this.onMarkerClick}
           name={"Current Location"}
           position={{
-            lat: this.state.lat,
-            lng: this.state.lng
+            lat: this.state.defaultLat,
+            lng: this.state.defaultLng
           }}
           icon={{
             url: "/owl.svg",
             scaledSize: new window.google.maps.Size(25, 25)
           }}
         />
-
-        <Marker
+        {/* <Marker
           onClick={this.onMarkerClick}
           name={"Belfast Love"}
           position={{
@@ -112,21 +124,19 @@ export class MapContainer extends React.Component {
             url: "/pint.svg",
             scaledSize: new window.google.maps.Size(30, 30)
           }}
-        />
-
-        <Marker
+        /> */}
+        {/* <Marker
           onClick={this.onMarkerClick}
           name={"Petty Cash"}
           position={{
-            lat: 43.6455072,
-            lng: -79.4029564
+            lat: this.state.lat,
+            lng: this.state.lng
           }}
           icon={{
             url: "/pint.svg",
             scaledSize: new window.google.maps.Size(30, 30)
           }}
-        />
-
+        /> */}
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
