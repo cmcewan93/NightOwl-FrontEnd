@@ -11,7 +11,9 @@ const mapStyles = {
 };
 
 componentDidMount() {
-  
+  Axios.get('/api/venues').then(res => {
+    this.setState({ bars.lat: res.data.l})
+  })
 }
 
 export class MapContainer extends React.Component {
