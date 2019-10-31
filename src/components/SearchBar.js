@@ -1,5 +1,16 @@
 import React from "react";
 
+const formStyle = {
+  top: 0,
+  left: 0,
+  right: 0
+};
+
+const inputStyle = {
+  width: "90%",
+  padding: "10px 15px"
+};
+
 class SearchBar extends React.Component {
   state = { term: "" };
 
@@ -9,15 +20,14 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
-            <input
-              type="text"
-              value={this.state.term}
-              onChange={e => this.setState({ term: e.target.value })}
-            />
-          </div>
+      <div style={formStyle} className="searchBarContainer">
+        <form onSubmit={this.onFormSubmit}>
+          <input
+            style={inputStyle}
+            type="text"
+            value={this.state.term}
+            onChange={e => this.setState({ term: e.target.value })}
+          />
         </form>
       </div>
     );
