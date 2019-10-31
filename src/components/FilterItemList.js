@@ -6,12 +6,13 @@ const componentStyle = {
   display: "grid",
   gridTemplateColumns: "auto auto auto auto",
   width: "100%",
-  height: "18.5%"
+  height: "18.7%",
+  alignItems: "center"
 };
 
 const gridItem = {
   fontSize: "30px",
-  alignItems: "center"
+  justifySelf: "center"
 };
 
 class FilterItemList extends React.Component {
