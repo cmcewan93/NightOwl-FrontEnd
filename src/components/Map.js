@@ -6,8 +6,7 @@ import Axios from "axios";
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
 const mapStyle = {
-  height: "60%",
-  margin: "5% 0% 0% 0%"
+  height: "75%"
 };
 
 export class MapContainer extends React.Component {
