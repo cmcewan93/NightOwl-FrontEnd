@@ -1,15 +1,12 @@
 import React from "react";
-import MapContainer from "./Map";
-import Login from "./Login";
-import FilterContainer from "./FilterContainer";
-import SearchBar from "./SearchBar";
-// import FilterListItem from "./FilterListItem";
+// import Login from "./Login";
+import MapView from "./MapView";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <Login />
+        <MapView />
       </>
     );
   }

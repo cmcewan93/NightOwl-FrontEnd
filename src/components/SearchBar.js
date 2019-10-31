@@ -1,4 +1,9 @@
 import React from "react";
+import "./MapView.css";
+
+const formStyle = {
+  height: "25%"
+};
 
 class SearchBar extends React.Component {
   state = { term: "" };
@@ -9,9 +14,9 @@ class SearchBar extends React.Component {
 
   render() {
     return (
-      <div className="ui segment">
-        <form onSubmit={this.onFormSubmit} className="ui form">
-          <div className="field">
+      <div>
+        <form onSubmit={this.onFormSubmit} style={formStyle}>
+          <div>
             <input
               type="text"
               value={this.state.term}

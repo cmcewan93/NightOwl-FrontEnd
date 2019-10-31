@@ -5,9 +5,9 @@ import Axios from "axios";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
-const mapStyles = {
-  width: "100%",
-  height: "100%"
+const mapStyle = {
+  height: "60%",
+  margin: "5% 0% 0% 0%"
 };
 
 export class MapContainer extends React.Component {
@@ -91,13 +91,13 @@ export class MapContainer extends React.Component {
       <Map
         google={this.props.google}
         onClick={this.onMapClicked}
-        style={mapStyles}
         initialCenter={{
           lat: this.state.defaultLat,
           lng: this.state.defaultLng
         }}
         zoom={14}
         disableDefaultUI={true}
+        style={mapStyle}
       >
         <Marker
           onClick={this.onMarkerClick}
