@@ -1,10 +1,17 @@
 import React from "react";
-import logo from "../logo1.jpg";
+import logo from "../public/NightOwlLogo.png";
+
+const style = {
+  width: '50%',
+  display: 'flex',
+  
+
+}
 
 export default function Logo() {
   return (
     <>
-      <img src={logo} />
+      <img style={style} src={logo} />
     </>
   );
 }
