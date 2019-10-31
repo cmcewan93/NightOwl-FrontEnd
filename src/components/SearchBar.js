@@ -7,7 +7,7 @@ const formStyle = {
 };
 
 const inputStyle = {
-  width: "90%",
+  width: "89%",
   padding: "10px 15px"
 };
 
