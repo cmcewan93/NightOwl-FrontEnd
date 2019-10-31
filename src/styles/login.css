@@ -6,7 +6,7 @@
   box-sizing: border-box;
   outline: none;
 }
-body {
+.login-body {
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;

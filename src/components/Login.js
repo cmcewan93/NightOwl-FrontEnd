@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles/login.css";
-import {logo} from "../public/NightOwlLogo.png"
+
 
 const LoginPage = () => {
   return (
     <section className="container">
       <section className="login-form">
         <form method="post" action="" role="login">
-          <img src={logo} className="img-responsive" alt="" />
+          <img src={'public/NightOwlLogo.png'} className="img-responsive" alt="" />
           <input
             type="email"
             name="email"
