@@ -97,6 +97,7 @@ export class MapContainer extends React.Component {
         zoom={14}
         disableDefaultUI={true}
         style={mapStyle}
+        gestureHandling={"greedy"}
       >
         <Marker
           onClick={this.onMarkerClick}
