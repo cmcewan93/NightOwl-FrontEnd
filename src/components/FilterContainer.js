@@ -4,9 +4,11 @@ import FilterItemList from "./FilterItemList";
 import "./burger.css";
 import Burger from "./Burger";
 
-// const containerStyle = {
-//   width: "100%"
-// };
+const containerStyle = {
+  position: "fixed",
+  top: 0,
+  right: 0
+};
 
 class FilterContainer extends React.Component {
   render() {
@@ -14,7 +16,11 @@ class FilterContainer extends React.Component {
       <>
         <FilterItemList />
         <div id="App">
-          <Burger pageWrapId={"page-wrap"} outerContainerId={"App"} />
+          <Burger
+            pageWrapId={"page-wrap"}
+            outerContainerId={"App"}
+            style={containerStyle}
+          />
 
           <div id="page-wrap"></div>
         </div>
