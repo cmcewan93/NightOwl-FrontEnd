@@ -1,13 +1,17 @@
 import React from "react";
 import "../styles/login.css";
 
-
 const LoginPage = () => {
   return (
-    <section className="container">
-      <section className="login-form">
-        <form method="post" action="" role="login">
-          <img src={'public/NightOwlLogo.png'} className="img-responsive" alt="" />
+    <section className="login-body">
+      <section className="login-form-container">
+        <form className="login-form" method="post" action="" role="login">
+          <img
+            src={require("../images/login-logo.png")}
+            className="login-logo"
+            alt=""
+          />
+          <h1 className="login-title">Night Owl</h1>
           <input
             type="email"
             name="email"
@@ -30,12 +34,9 @@ const LoginPage = () => {
             Sign in
           </button>
           <div>
-            <a href="#">Create account</a> or <a href="#">reset password</a>
+            <a href="#">Dont have an account? Register here</a>
           </div>
         </form>
-        <div className="form-links">
-          <a href="#">www.website.com</a>
-        </div>
       </section>
     </section>
   );
