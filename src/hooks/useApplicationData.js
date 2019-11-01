@@ -10,15 +10,12 @@ export default function useApplicationData() {
   const [state, dispatch] = useReducer(reducer, {
     venues: []
   });
-
-  console.log("THIS IS THE STATE", state);
-
+  
   /**
    * Retrieves state data from api
    * Every time component changes does another axios call
    * */
   useEffect(() => {
-    //console.log("in here");
     Promise.all([
       axios.get("/api/venues"),
       axios.get("/api/users"),
