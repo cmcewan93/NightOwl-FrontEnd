@@ -51,22 +51,35 @@ class FilterItemList extends React.Component {
   render() {
     return (
       <div className="filterItemList" style={componentStyle}>
-        <i
-          className="hotjar icon"
-          style={gridItemRed}
-          onClick={this.props.changeMarkers}
-        ></i>
-        <i className="clock outline icon" style={gridItemGreen}></i>
-        <i className="female icon" style={gridItemPink}></i>
-        <i className="male icon" style={gridItemBlue}></i>
-        <i
-          className="users icon"
-          style={gridItemBlack}
-          onClick={this.props.allMarkers}
-        ></i>
-        <i className="music icon" style={gridItemBlack}></i>
-        <i className="dollar sign icon" style={gridItemGreen}></i>
-        <i className="euro sign icon" style={gridItemYellow}></i>
+        <button onClick={() => this.props.updateMarkers("trending")}>
+          <i className="hotjar icon" style={gridItemRed}></i>
+        </button>
+        <button onClick={() => this.props.updateMarkers("trending")}>
+          <i className="clock outline icon" style={gridItemGreen}></i>
+        </button>
+        <button onClick={() => this.props.updateMarkers("morefemales")}>
+          <i className="female icon" style={gridItemPink}></i>
+        </button>
+
+        <button onClick={() => this.props.updateMarkers("moremales")}>
+          <i className="male icon" style={gridItemBlue}></i>
+        </button>
+
+        <button onClick={this.props.allMarkers}>
+          <i className="users icon" style={gridItemBlack}></i>
+        </button>
+
+        <button>
+          <i className="music icon" style={gridItemBlack}></i>
+        </button>
+
+        <button>
+          <i className="dollar sign icon" style={gridItemGreen}></i>
+        </button>
+
+        <button>
+          <i className="euro sign icon" style={gridItemYellow}></i>
+        </button>
       </div>
     );
   }

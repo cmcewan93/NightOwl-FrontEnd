@@ -1,21 +1,28 @@
 import React from "react";
-import MapContainer from "./Map";
-import HeaderContainer from "./HeaderContainer";
-import FilterContainer from "./FilterContainer";
 import Axios from "axios";
 
+import Map from "./Map";
+import HeaderContainer from "./HeaderContainer";
+import FilterContainer from "./FilterContainer";
+
 class MapView extends React.Component {
-  state = { markers: [] };
+  state = {
+    markers: []
+  };
 
   async componentDidMount() {
     const { data } = await Axios.get(`/api/venues`);
     this.setState({ markers: data });
   }
 
-  _changeMarkers = () => {
-    Axios.get(`/api/filters/trending`).then(response => {
-      this.setState({ markers: response.data });
-    });
+  updateMarkers = async type => {
+    const { data } = await Axios.get(`/api/filters/${type}`);
+    const filteredIds = data.map(item => item.venue_id);
+    const filterData = this.state.markers.filter(venue =>
+      filteredIds.includes(venue.id)
+    );
+
+    this.setState({ markers: filterData });
   };
 
   _allMarkers = () => {
@@ -25,13 +32,13 @@ class MapView extends React.Component {
   };
 
   render() {
-    console.log("Hello", this.state.markers);
+    console.log(this.state.markers);
     return (
       <>
         <HeaderContainer />
-        <MapContainer markers={this.state.markers} />
+        <Map markers={this.state.markers} />
         <FilterContainer
-          changeMarkers={this._changeMarkers}
+          updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}
         />
       </>
