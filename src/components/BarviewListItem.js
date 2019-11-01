@@ -28,10 +28,10 @@ export default function BarviewListItem() {
     <Gallery
       style={{
         background: "black",
-        height: "100",
+
         width: "100vw",
         position: "fixed",
-        top: "0"
+        top: "40px"
       }}
       index={index}
       onRequestChange={i => {
@@ -39,7 +39,12 @@ export default function BarviewListItem() {
       }}
     >
       {images.map(image => (
-        <GalleryImage objectFit="contain" key={image} src={image} />
+        <GalleryImage
+          objectFit="contain"
+          key={image}
+          style={{ height: "300px" }}
+          src={image}
+        />
       ))}
     </Gallery>
   );

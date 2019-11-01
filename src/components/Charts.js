@@ -14,7 +14,7 @@ export default function FemaleMaleRatio() {
         fontFamily: "sans-serif",
         fontSize: "5px"
       }}
-      ratio={1.4}
+      ratio={1.08}
       style={{ position: "fixed", bottom: "0" }}
       data={[
         { title: "Females", value: 10, color: "#F012BE" },
