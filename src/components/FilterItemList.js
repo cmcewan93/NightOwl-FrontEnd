@@ -54,13 +54,32 @@ class FilterItemList extends React.Component {
         <button onClick={() => this.props.updateMarkers("trending")}>
           <i className="hotjar icon" style={gridItemRed}></i>
         </button>
-        <i className="users icon" style={gridItemGreen}></i>
-        <i className="female icon" style={gridItemPink}></i>
-        <i className="male icon" style={gridItemBlue}></i>
-        <i className="road icon" style={gridItemBlack}></i>
-        <i className="music icon" style={gridItemBlack}></i>
-        <i className="dollar sign icon" style={gridItemGreen}></i>
-        <i className="euro sign icon" style={gridItemYellow}></i>
+        <button onClick={() => this.props.updateMarkers("morefemales")}>
+          <i className="users icon" style={gridItemGreen}></i>
+        </button>
+        <button onClick={() => this.props.updateMarkers("morefemales")}>
+          <i className="female icon" style={gridItemPink}></i>
+        </button>
+
+        <button onClick={() => this.props.updateMarkers("moremales")}>
+          <i className="male icon" style={gridItemBlue}></i>
+        </button>
+
+        <button onClick={() => this.props.updateMarkers("distance")}>
+          <i className="road icon" style={gridItemBlack}></i>
+        </button>
+
+        <button>
+          <i className="music icon" style={gridItemBlack}></i>
+        </button>
+
+        <button>
+          <i className="dollar sign icon" style={gridItemGreen}></i>
+        </button>
+
+        <button>
+          <i className="euro sign icon" style={gridItemYellow}></i>
+        </button>
       </div>
     );
   }

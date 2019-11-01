@@ -17,8 +17,12 @@ class MapView extends React.Component {
 
   updateMarkers = async type => {
     const { data } = await Axios.get(`/api/${type}`);
+    const filteredIds = data.map(item => item.venue_id);
+    const filterData = this.state.markers.filter(venue =>
+      filteredIds.includes(venue.id)
+    );
 
-    this.setState({ markers: data });
+    this.setState({ markers: filterData });
   };
 
   render() {
