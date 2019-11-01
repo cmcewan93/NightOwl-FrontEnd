@@ -1,4 +1,5 @@
 import React from "react";
+import Axios from "axios";
 
 const componentStyle = {
   position: "absolute",
@@ -51,7 +52,11 @@ class FilterItemList extends React.Component {
   render() {
     return (
       <div className="filterItemList" style={componentStyle}>
-        <i className="hotjar icon" style={gridItemRed}></i>
+        <i
+          className="hotjar icon"
+          style={gridItemRed}
+          onClick={this.props.changeMarkers}
+        ></i>
         <i className="users icon" style={gridItemGreen}></i>
         <i className="female icon" style={gridItemPink}></i>
         <i className="male icon" style={gridItemBlue}></i>
@@ -63,4 +68,5 @@ class FilterItemList extends React.Component {
     );
   }
 }
+
 export default FilterItemList;

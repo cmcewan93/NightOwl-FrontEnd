@@ -8,7 +8,7 @@ class FilterContainer extends React.Component {
   render() {
     return (
       <>
-        <FilterItemList />
+        <FilterItemList changeMarkers={ this.props.changeMarkers} />
         
       </>
     );

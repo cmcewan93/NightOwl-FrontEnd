@@ -10,11 +10,6 @@ const mapStyle = {
 };
 
 export class MapContainer extends React.Component {
-  async componentDidMount() {
-    const { data } = await Axios.get(`/api/venues`);
-    this.setState({ markers: data });
-  }
-
   state = {
     showingInfoWindow: false,
     activeMarker: {},
@@ -24,6 +19,10 @@ export class MapContainer extends React.Component {
     errorMessage: "",
     markers: []
   };
+  async componentDidMount() {
+    const { data } = await Axios.get(`/api/venues`);
+    this.setState({ markers: data });
+  }
 
   // componentDidMount() {
   // Asks the user to allow sharing location, once shared, this will setState
