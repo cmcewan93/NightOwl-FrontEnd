@@ -54,8 +54,8 @@ class FilterItemList extends React.Component {
         <button onClick={() => this.props.updateMarkers("trending")}>
           <i className="hotjar icon" style={gridItemRed}></i>
         </button>
-        <button onClick={() => this.props.updateMarkers("morefemales")}>
-          <i className="users icon" style={gridItemGreen}></i>
+        <button onClick={() => this.props.updateMarkers("trending")}>
+          <i className="clock outline icon" style={gridItemGreen}></i>
         </button>
         <button onClick={() => this.props.updateMarkers("morefemales")}>
           <i className="female icon" style={gridItemPink}></i>
@@ -65,8 +65,8 @@ class FilterItemList extends React.Component {
           <i className="male icon" style={gridItemBlue}></i>
         </button>
 
-        <button onClick={() => this.props.updateMarkers("distance")}>
-          <i className="road icon" style={gridItemBlack}></i>
+        <button onClick={this.props.allMarkers}>
+          <i className="users icon" style={gridItemBlack}></i>
         </button>
 
         <button>
@@ -84,4 +84,5 @@ class FilterItemList extends React.Component {
     );
   }
 }
+
 export default FilterItemList;

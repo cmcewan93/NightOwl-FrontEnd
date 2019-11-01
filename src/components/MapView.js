@@ -25,13 +25,22 @@ class MapView extends React.Component {
     this.setState({ markers: filterData });
   };
 
+  _allMarkers = () => {
+    Axios.get(`/api/venues`).then(response => {
+      this.setState({ markers: response.data });
+    });
+  };
+
   render() {
     console.log(this.state.markers);
     return (
       <>
         <HeaderContainer />
         <Map markers={this.state.markers} />
-        <FilterContainer updateMarkers={this.updateMarkers} />
+        <FilterContainer
+          updateMarkers={this.updateMarkers}
+          allMarkers={this._allMarkers}
+        />
       </>
     );
   }

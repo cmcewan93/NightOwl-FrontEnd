@@ -14,8 +14,7 @@ export class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     defaultLat: 43.644175,
-    defaultLng: -79.402204,
-    errorMessage: ""
+    defaultLng: -79.402204
   };
 
   // componentDidMount() {
@@ -60,6 +59,15 @@ export class MapContainer extends React.Component {
     }
   };
 
+  onFilterClicked = props => {
+    if (this.props.markers) {
+      console.log("TEST");
+      this.setState({
+        markers: this.props.markers
+      });
+    }
+  };
+
   // Renders all of the markers
   renderMarkers() {
     return this.props.markers.map(marker => {
@@ -67,7 +75,10 @@ export class MapContainer extends React.Component {
         <Marker
           key={marker.id}
           onClick={this.onMarkerClick}
-          position={{ lat: marker.latitude, lng: marker.longitude }}
+          position={{
+            lat: marker.latitude,
+            lng: marker.longitude
+          }}
           name={marker.name}
           icon={{
             url: "/pint.svg",
@@ -79,6 +90,7 @@ export class MapContainer extends React.Component {
   }
 
   render() {
+    console.log("I AM FROM MAPVIEW", this.props.markers);
     return (
       <Map
         google={this.props.google}
@@ -112,7 +124,7 @@ export class MapContainer extends React.Component {
           visible={this.state.showingInfoWindow}
         >
           <div>
-            <h1>{this.state.selectedPlace.name}</h1>
+            <h2>{this.state.selectedPlace.name}</h2>
           </div>
         </InfoWindow>
       </Map>
