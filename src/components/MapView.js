@@ -6,21 +6,34 @@ import Axios from "axios";
 
 class MapView extends React.Component {
   state = { markers: [] };
+
   async componentDidMount() {
-    const { data } = Axios.get("/api/venues");
+    const { data } = await Axios.get(`/api/venues`);
     this.setState({ markers: data });
-    console.log(this.state.markers);
   }
+
   _changeMarkers = () => {
-    console.log(this.state.markers);
+    Axios.get(`/api/filters/trending`).then(response => {
+      this.setState({ markers: response.data });
+    });
+  };
+
+  _allMarkers = () => {
+    Axios.get(`/api/venues`).then(response => {
+      this.setState({ markers: response.data });
+    });
   };
 
   render() {
+    console.log("Hello", this.state.markers);
     return (
       <>
         <HeaderContainer />
-        <MapContainer />
-        <FilterContainer changeMarkers={this._changeMarkers} />
+        <MapContainer markers={this.state.markers} />
+        <FilterContainer
+          changeMarkers={this._changeMarkers}
+          allMarkers={this._allMarkers}
+        />
       </>
     );
   }

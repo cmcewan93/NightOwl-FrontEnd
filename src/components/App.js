@@ -5,7 +5,6 @@ import MapView from "./MapView";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
 import "./App.css";
-import Burger from "./Burger";
 
 export default function App(props) {
   const { state } = useApplicationData();
