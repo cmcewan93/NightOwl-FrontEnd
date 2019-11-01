@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Gallery, GalleryImage } from "react-gesture-gallery";
 
@@ -12,7 +13,7 @@ const venues = [
 // axios for bar images
 
 export default function BarviewListItem() {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = useState(0);
   useEffect(() => {
     const timer = setInterval(() => {
       if (index === 3) {

@@ -5,14 +5,15 @@ import MapView from "./MapView";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
 import "./App.css";
+import BarviewList from "./BarviewList";
 
 export default function App(props) {
   const { state } = useApplicationData();
-  console.log(state);
+  console.log("application state", state);
 
   return (
     <>
-      <Login />
+      <MapView />
     </>
   );
 }
