@@ -1,7 +1,6 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import Axios from "axios";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
@@ -10,19 +9,13 @@ const mapStyle = {
 };
 
 export class MapContainer extends React.Component {
-  async componentDidMount() {
-    const { data } = await Axios.get(`/api/venues`);
-    this.setState({ markers: data });
-  }
-
   state = {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
     defaultLat: 43.644175,
     defaultLng: -79.402204,
-    errorMessage: "",
-    markers: []
+    errorMessage: ""
   };
 
   // componentDidMount() {
@@ -69,7 +62,7 @@ export class MapContainer extends React.Component {
 
   // Renders all of the markers
   renderMarkers() {
-    return this.state.markers.map(marker => {
+    return this.props.markers.map(marker => {
       return (
         <Marker
           key={marker.id}
