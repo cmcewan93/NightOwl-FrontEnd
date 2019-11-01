@@ -59,14 +59,6 @@ export class MapContainer extends React.Component {
     }
   };
 
-  onFilterClicked = props => {
-    if (this.props.markers) {
-      console.log("TEST");
-      this.setState({
-        markers: this.props.markers
-      });
-    }
-  };
 
   // Renders all of the markers
   renderMarkers() {
