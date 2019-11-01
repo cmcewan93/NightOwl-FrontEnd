@@ -1,5 +1,4 @@
 import React from "react";
-import Axios from "axios";
 
 const componentStyle = {
   position: "absolute",
@@ -57,10 +56,14 @@ class FilterItemList extends React.Component {
           style={gridItemRed}
           onClick={this.props.changeMarkers}
         ></i>
-        <i className="users icon" style={gridItemGreen}></i>
+        <i className="clock outline icon" style={gridItemGreen}></i>
         <i className="female icon" style={gridItemPink}></i>
         <i className="male icon" style={gridItemBlue}></i>
-        <i className="road icon" style={gridItemBlack}></i>
+        <i
+          className="users icon"
+          style={gridItemBlack}
+          onClick={this.props.allMarkers}
+        ></i>
         <i className="music icon" style={gridItemBlack}></i>
         <i className="dollar sign icon" style={gridItemGreen}></i>
         <i className="euro sign icon" style={gridItemYellow}></i>

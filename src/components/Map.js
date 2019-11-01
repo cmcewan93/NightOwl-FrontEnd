@@ -1,7 +1,6 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import Axios from "axios";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
@@ -15,14 +14,8 @@ export class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     defaultLat: 43.644175,
-    defaultLng: -79.402204,
-    errorMessage: "",
-    markers: []
+    defaultLng: -79.402204
   };
-  async componentDidMount() {
-    const { data } = await Axios.get(`/api/venues`);
-    this.setState({ markers: data });
-  }
 
   // componentDidMount() {
   // Asks the user to allow sharing location, once shared, this will setState
@@ -66,14 +59,26 @@ export class MapContainer extends React.Component {
     }
   };
 
+  onFilterClicked = props => {
+    if (this.props.markers) {
+      console.log("TEST");
+      this.setState({
+        markers: this.props.markers
+      });
+    }
+  };
+
   // Renders all of the markers
   renderMarkers() {
-    return this.state.markers.map(marker => {
+    return this.props.markers.map(marker => {
       return (
         <Marker
           key={marker.id}
           onClick={this.onMarkerClick}
-          position={{ lat: marker.latitude, lng: marker.longitude }}
+          position={{
+            lat: marker.latitude,
+            lng: marker.longitude
+          }}
           name={marker.name}
           icon={{
             url: "/pint.svg",
@@ -85,6 +90,7 @@ export class MapContainer extends React.Component {
   }
 
   render() {
+    console.log("I AM FROM MAPVIEW", this.props.markers);
     return (
       <Map
         google={this.props.google}
@@ -118,7 +124,7 @@ export class MapContainer extends React.Component {
           visible={this.state.showingInfoWindow}
         >
           <div>
-            <h1>{this.state.selectedPlace.name}</h1>
+            <h2>{this.state.selectedPlace.name}</h2>
           </div>
         </InfoWindow>
       </Map>
