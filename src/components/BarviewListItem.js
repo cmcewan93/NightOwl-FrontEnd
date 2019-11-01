@@ -13,7 +13,7 @@ const venues = [
 
 export default function BarviewListItem() {
   const [index, setIndex] = React.useState(0);
-  React.useEffect(() => {
+  useEffect(() => {
     const timer = setInterval(() => {
       if (index === 3) {
         setIndex(0);
