@@ -51,7 +51,7 @@ class FilterItemList extends React.Component {
   render() {
     return (
       <div className="filterItemList" style={componentStyle}>
-        <button onClick={() => this.props.updateMarkers()}>
+        <button onClick={() => this.props.updateMarkers("trending")}>
           <i className="hotjar icon" style={gridItemRed}></i>
         </button>
         <i className="users icon" style={gridItemGreen}></i>
