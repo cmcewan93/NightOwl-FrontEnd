@@ -4,12 +4,13 @@ import MapView from "./MapView";
 // import Burger from "./Burger";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
+import BarviewList from "./BarviewList";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <MapView />
+        <BarviewList />
       </>
     );
   }
