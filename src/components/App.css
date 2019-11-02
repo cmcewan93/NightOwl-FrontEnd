@@ -1,3 +1,17 @@
-html, body {
+html,
+body {
   overflow: hidden;
+}
+
+/* style for third view */
+.barname {
+  position: fixed;
+  left: 120px;
+  top: 8px;
+}
+
+.chevron {
+  position: fixed;
+  top: 10px;
+  left: 20px;
 }

@@ -39,6 +39,7 @@ class MapView extends Component {
         <HeaderContainer
           name={this.state.markers}
           setAuth={this.state.setAuth}
+          search={this.setSearch}
         />
         <Map markers={this.state.filteredMarkers} />
         <FilterContainer
