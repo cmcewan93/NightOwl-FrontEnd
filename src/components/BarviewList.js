@@ -5,6 +5,23 @@ import Burger from "./Burger";
 import "./App.css";
 import Axios from "axios";
 
+const AgeIcon = () => {
+  return (
+    <>
+      <i className="smile outline icon"></i>
+      <p className="age">Average age: 20</p>
+      <i className="users icon"></i>
+      <p className="linesize">Line size: 20</p>
+      <i className="dollar sign icon"></i>
+      <p className="price">Average price: 20</p>
+      <i className="music icon"></i>
+      <p className="music-type">Average price: 20</p>
+      <i className="user secret icon"></i>
+      <p className="dress-code">Average price: 20</p>
+    </>
+  );
+};
+
 const Barname = () => {
   return <h3 className="barname">Barname</h3>;
 };
@@ -33,6 +50,7 @@ class BarviewList extends React.Component {
         <Burger />
         <BarviewListItem />
         <FemaleMaleRatio />
+        <AgeIcon />
       </>
     );
   }
