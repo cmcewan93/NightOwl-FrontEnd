@@ -26,9 +26,8 @@ export default function App() {
       type: SET_USER_AUTH,
       auth: isAuthenticated
     });
-    //console.log("dfgdfsgsd");
   };
-  //console.log("@#$@#$", state);
+
   return (
     <Router>
       <Switch>
