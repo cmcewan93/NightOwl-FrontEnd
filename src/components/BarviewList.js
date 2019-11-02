@@ -10,11 +10,11 @@ const AgeIcon = () => {
     <>
       <i className="smile outline icon"></i>
       <p className="age">Average age: 20</p>
-      <i className="usersa icon"></i>
+      <i className="users usersa icon"></i>
       <p className="linesize">Line size: 20</p>
-      <i className="dollara sign icon"></i>
+      <i className="dollar dollara sign icon"></i>
       <p className="price">Average price: 20</p>
-      <i className="musica icon"></i>
+      <i className="music musica icon"></i>
       <p className="music-type">Average price: 20</p>
       <i className="user secret icon"></i>
       <p className="dress-code">Average price: 20</p>
