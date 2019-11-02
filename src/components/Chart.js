@@ -6,8 +6,10 @@ export default function FemaleMaleRatio() {
   return (
     <PieChart
       radius={20}
-      label
-      labelPosition={20}
+      label={({ data, dataIndex }) =>
+        Math.round(data[dataIndex].percentage) + "%"
+      }
+      labelPosition={40}
       labelStyle={{
         fill: "#f3f3f3",
         fontFamily: "sans-serif",
@@ -17,7 +19,8 @@ export default function FemaleMaleRatio() {
       style={{ position: "fixed", bottom: "0" }}
       data={[
         { title: "Females", value: 10, color: "#F012BE" },
-        { title: "Males", value: 15, color: "#001f3f" }
+        { title: "Males", value: 15, color: "#0074D9" },
+        { title: "Unisex", value: 20, color: "#111" }
       ]}
     />
   );
