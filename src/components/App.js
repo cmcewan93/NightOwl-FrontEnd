@@ -25,7 +25,8 @@ export default function App() {
       type: SET_USER_AUTH,
       auth: isAuthenticated
     });
-  };
+  }
+
 
   return (
     <Router>
@@ -45,11 +46,12 @@ export default function App() {
           )}
         </Route>
         <Route exact path="/bar">
-          {!state.userAuth ? (
+          {/* {!state.userAuth ? (
             <Redirect to="/" />
           ) : (
             <BarviewList setAuth={setAuth} />
-          )}
+          )} */}
+          <BarviewList />
         </Route>
       </Switch>
     </Router>

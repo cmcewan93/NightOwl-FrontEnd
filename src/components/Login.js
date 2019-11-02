@@ -17,6 +17,7 @@ const LoginPage = props => {
         password: password
       })
       .then(body => {
+        console.log('sdfdsa', body)
         // set the state of the react app to store user as logged in
         if (body.data.code === 201) {
           props.setAuth(true);

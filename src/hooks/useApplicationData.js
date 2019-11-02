@@ -8,7 +8,6 @@ export default function useApplicationData() {
    */
 
   const [state, dispatch] = useReducer(reducer, {
-    venues: []
   });
 
   /**
