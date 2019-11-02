@@ -1,18 +1,19 @@
-import React from "react";
+import React, { Component } from "react";
 import Axios from "axios";
 
 import Map from "./Map";
 import HeaderContainer from "./HeaderContainer";
 import FilterContainer from "./FilterContainer";
 
-class MapView extends React.Component {
+class MapView extends Component {
   state = {
-    markers: []
+    markers: [],
+    filteredMarkers: []
   };
 
   async componentDidMount() {
     const { data } = await Axios.get(`/api/venues`);
-    this.setState({ markers: data });
+    this.setState({ markers: data, filteredMarkers: data });
   }
 
   updateMarkers = async type => {
@@ -21,22 +22,24 @@ class MapView extends React.Component {
     const filterData = this.state.markers.filter(venue =>
       filteredIds.includes(venue.id)
     );
-
-    this.setState({ markers: filterData });
+    this.setState({ filteredMarkers: filterData });
   };
 
   _allMarkers = () => {
     Axios.get(`/api/venues`).then(response => {
-      this.setState({ markers: response.data });
+      this.setState({ filteredMarkers: response.data, markers: response.data });
     });
   };
 
+  setSearch = () => {
+    
+  };
+
   render() {
-    //console.log(this.state.markers);
     return (
       <>
-        <HeaderContainer />
-        <Map markers={this.state.markers} />
+        <HeaderContainer name={this.state.markers} />
+        <Map markers={this.state.filteredMarkers} />
         <FilterContainer
           updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}
