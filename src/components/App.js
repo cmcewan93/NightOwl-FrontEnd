@@ -39,7 +39,11 @@ export default function App() {
           )}
         </Route>
         <Route exact path="/map">
-          {!state.userAuth ? <Redirect to="/" /> : <MapView />}
+          {!state.userAuth ? (
+            <Redirect to="/" />
+          ) : (
+            <MapView setAuth={setAuth} />
+          )}
         </Route>
         <Route exact path="/bar">
           <BarviewList />
