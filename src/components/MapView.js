@@ -32,7 +32,7 @@ class MapView extends React.Component {
   };
 
   render() {
-    console.log(this.state.markers);
+    //console.log(this.state.markers);
     return (
       <>
         <HeaderContainer />

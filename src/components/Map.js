@@ -61,7 +61,7 @@ export class MapContainer extends React.Component {
 
   onFilterClicked = props => {
     if (this.props.markers) {
-      console.log("TEST");
+      //console.log("TEST");
       this.setState({
         markers: this.props.markers
       });
@@ -90,7 +90,7 @@ export class MapContainer extends React.Component {
   }
 
   render() {
-    console.log("I AM FROM MAPVIEW", this.props.markers);
+    //console.log("I AM FROM MAPVIEW", this.props.markers);
     return (
       <Map
         google={this.props.google}

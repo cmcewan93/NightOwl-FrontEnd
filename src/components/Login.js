@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/login.css";
 import "./App.css";
+import axios from "axios";
 
-const LoginPage = () => {
+const LoginPage = props => {
+  const [state, setState] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleLogin = (email, password) => {
+    axios
+      .post("/login", {
+        email: email,
+        password: password
+      })
+      .then(data => {
+        props.setAuth(true);
+        // set the state of the react app to store user as logged in
+        console.log("it worked!", data);
+      })
+      .catch(error => {
+        console.log(error);
+        // show erorr on page saying login failed
+      });
+  };
+
   return (
     <section className="login-body">
       <section className="login-form-container">
-        <form className="login-form" method="post" action="" role="login">
+        <form
+          className="login-form"
+          method="post"
+          action="/MapView"
+          role="login"
+          onSubmit={event => {
+            event.preventDefault();
+            handleLogin(state.email, state.password);
+          }}
+        >
           <img
             src={require("../images/login-logo.png")}
             className="login-logo"
@@ -18,6 +50,10 @@ const LoginPage = () => {
             name="email"
             placeholder="Email"
             required
+            value={state.email}
+            onChange={event => {
+              setState({ ...state, email: event.target.value });
+            }}
             className="form-control input-lg"
           />
           <input
@@ -25,6 +61,10 @@ const LoginPage = () => {
             name="password"
             placeholder="Password"
             required
+            value={state.password}
+            onChange={event => {
+              setState({ ...state, password: event.target.value });
+            }}
             className="form-control input-lg"
           />
           <button
