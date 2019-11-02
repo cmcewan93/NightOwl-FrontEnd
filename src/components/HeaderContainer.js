@@ -5,6 +5,7 @@ import Burger from "./Burger";
 
 class HeaderContainer extends React.Component {
   render() {
+    // console.log("HELLO", this.props.search);
     return (
       <>
         <SearchBar search={this.props.search} />
