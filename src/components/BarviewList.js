@@ -2,7 +2,7 @@ import React from "react";
 import BarviewListItem from "./BarviewListItem";
 import FemaleMaleRatio from "./Chart";
 import Burger from "./Burger";
-import "./App.css";
+import "./BarviewList.css";
 import Axios from "axios";
 
 const AgeIcon = () => {
