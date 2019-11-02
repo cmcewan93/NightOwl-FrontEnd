@@ -1,6 +1,6 @@
 import React from "react";
 import BarviewListItem from "./BarviewListItem";
-import FemaleMaleRatio from "./Charts";
+import FemaleMaleRatio from "./Chart";
 import Burger from "./Burger";
 import "./App.css";
 import Axios from "axios";
