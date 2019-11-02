@@ -81,6 +81,7 @@ export class MapContainer extends React.Component {
   }
 
   render() {
+    console.log("@@@@@", this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}
@@ -103,7 +104,7 @@ export class MapContainer extends React.Component {
           }}
           icon={{
             url: "/owl.svg",
-            scaledSize: new window.google.maps.Size(25, 25)
+            scaledSize: new window.google.maps.Size(30, 30)
           }}
         />
         {/* Rendering all the Markers */}
@@ -114,7 +115,7 @@ export class MapContainer extends React.Component {
           visible={this.state.showingInfoWindow}
         >
           <div>
-            <h2>{this.state.selectedPlace.name}</h2>
+            <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
       </Map>
