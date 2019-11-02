@@ -1,5 +1,4 @@
 import React from "react";
-import Axios from "axios";
 
 const formStyle = {
   top: 0,
@@ -28,6 +27,7 @@ class SearchBar extends React.Component {
             type="text"
             value={this.state.term}
             onChange={e => this.setState({ term: e.target.value })}
+            onSubmit={this.props.search}
           />
         </form>
       </div>
