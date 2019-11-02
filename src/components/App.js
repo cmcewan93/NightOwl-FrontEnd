@@ -25,9 +25,8 @@ export default function App() {
       type: SET_USER_AUTH,
       auth: isAuthenticated
     });
-    //console.log("dfgdfsgsd");
   };
-  console.log("user authed?", state.userAuth);
+
   return (
     <Router>
       <Switch>
@@ -46,7 +45,11 @@ export default function App() {
           )}
         </Route>
         <Route exact path="/bar">
-          <BarviewList />
+          {!state.userAuth ? (
+            <Redirect to="/" />
+          ) : (
+            <BarviewList setAuth={setAuth} />
+          )}
         </Route>
       </Switch>
     </Router>

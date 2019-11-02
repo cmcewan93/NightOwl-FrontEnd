@@ -36,7 +36,10 @@ class MapView extends Component {
     console.log("TEST");
     return (
       <>
-        <HeaderContainer name={this.state.markers} />
+        <HeaderContainer
+          name={this.state.markers}
+          setAuth={this.state.setAuth}
+        />
         <Map markers={this.state.filteredMarkers} />
         <FilterContainer
           updateMarkers={this.updateMarkers}

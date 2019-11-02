@@ -10,7 +10,7 @@ const LoginPage = props => {
   });
 
   const handleLogin = (email, password) => {
-    console.log("checking login", email, password);
+    //console.log("checking login", email, password);
     axios
       .post("/login", {
         email: email,
