@@ -10,67 +10,91 @@
   left: 20px;
 }
 
-.smile {
-  position: fixed;
-  bottom: 300px;
-  left: 50px;
-  color: blue;
-}
-
-.age {
-  position: fixed;
-  bottom: 260px;
-  left: 10px;
-}
-
 .usersa {
   position: fixed;
-  bottom: 300px;
+  bottom: 310px;
   right: 35px;
   color: blue;
 }
 
 .linesize {
   position: fixed;
-  bottom: 260px;
+  bottom: 270px;
   right: 10px;
 }
 
 .dollara {
   position: fixed;
-  bottom: 230px;
-  left: 50px;
+  bottom: 50px;
+  right: 35px;
   color: blue;
 }
 
 .price {
   position: fixed;
-  bottom: 180px;
-  left: 10px;
-}
-
-.musica {
-  position: fixed;
-  bottom: 240px;
-  right: 35px;
-  color: blue;
-}
-
-.music-type {
-  position: fixed;
-  bottom: 200px;
+  bottom: 0px;
   right: 10px;
 }
 
 .secret {
   position: fixed;
-  bottom: 150px;
+  bottom: 190px;
   right: 35px;
   color: blue;
 }
 
 .dress-code {
   position: fixed;
-  bottom: 130px;
+  bottom: 160px;
   right: 10px;
+}
+
+.smile {
+  position: fixed;
+  bottom: 120px;
+  right: 35px;
+  color: blue;
+}
+
+.age {
+  position: fixed;
+  bottom: 80px;
+  right: 10px;
+}
+
+.musica {
+  position: fixed;
+  bottom: 250px;
+  right: 35px;
+  color: blue;
+}
+
+.music-type {
+  position: fixed;
+  bottom: 210px;
+  right: 10px;
+}
+
+.phone {
+  position: fixed;
+  left: 50px;
+  bottom: 300px;
+}
+
+.phone-number {
+  position: fixed;
+  left: 10px;
+  bottom: 260px;
+}
+
+.exchange {
+  position: fixed;
+  left: 50px;
+  bottom: 230px;
+}
+
+.address {
+  position: fixed;
+  left: 10px;
+  bottom: 190px;
 }
