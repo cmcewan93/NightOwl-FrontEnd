@@ -41,6 +41,9 @@ export default function App() {
         <Route exact path="/map">
           {!state.userAuth ? <Redirect to="/" /> : <MapView />}
         </Route>
+        <Route exact path="/bar">
+          <BarviewList />
+        </Route>
       </Switch>
     </Router>
   );
