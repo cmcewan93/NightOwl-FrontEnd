@@ -28,16 +28,16 @@ export default function App() {
     });
     //console.log("dfgdfsgsd");
   };
-  console.log("User auth: ", state.userAuth);
+  console.log("User", state.userAuth);
   return (
     <Router>
       <Switch>
         {state.userAuth && (
-          <Route exact path="/MapView">
+          <Route path="/MapView">
             <MapView />
           </Route>
         )}
-        <Route exact path="/">
+        <Route path="/">
           <Login setAuth={setAuth} />
         </Route>
       </Switch>
