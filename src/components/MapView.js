@@ -32,16 +32,13 @@ class MapView extends Component {
 
   setSearch = name => {
     Axios.get(`/api/filters/search/${name}`).then(response => {
-      // console.log("@#)*!()*()#@!*)(@!)", response.data);
       this.setState({
-        filteredMarkers: response.data,
-        markers: response.data
+        filteredMarkers: response.data
       });
     });
   };
 
   render() {
-   // console.log("TEST");
     return (
       <>
         <HeaderContainer
