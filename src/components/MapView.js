@@ -10,7 +10,6 @@ class MapView extends Component {
     markers: [],
     filteredMarkers: []
   };
-
   async componentDidMount() {
     const { data } = await Axios.get(`/api/venues`);
     this.setState({ markers: data, filteredMarkers: data });
@@ -31,11 +30,10 @@ class MapView extends Component {
     });
   };
 
-  setSearch = () => {
-    
-  };
+  setSearch = () => {};
 
   render() {
+    console.log("TEST");
     return (
       <>
         <HeaderContainer name={this.state.markers} />

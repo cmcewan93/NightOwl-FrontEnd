@@ -14,7 +14,6 @@ import {
 import useApplicationData from "../hooks/useApplicationData";
 import "./App.css";
 import { SET_USER_AUTH } from "../reducers/application";
-//import PrivateRoute from "./PrivateRoute";
 import BarviewList from "./BarviewList";
 
 export default function App() {
@@ -28,17 +27,19 @@ export default function App() {
     });
     //console.log("dfgdfsgsd");
   };
-  console.log("User", state.userAuth);
+  console.log("user authed?", state.userAuth);
   return (
     <Router>
       <Switch>
-        {state.userAuth && (
-          <Route path="/MapView">
-            <MapView />
-          </Route>
-        )}
-        <Route path="/">
-          <Login setAuth={setAuth} />
+        <Route exact path="/">
+          {state.userAuth ? (
+            <Redirect to="/map" />
+          ) : (
+            <Login setAuth={setAuth} />
+          )}
+        </Route>
+        <Route exact path="/map">
+          {!state.userAuth ? <Redirect to="/" /> : <MapView />}
         </Route>
       </Switch>
     </Router>
