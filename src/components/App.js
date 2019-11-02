@@ -18,7 +18,7 @@ import BarviewList from "./BarviewList";
 
 export default function App() {
   const { state, dispatch } = useApplicationData();
-  console.log("application state", state);
+  //console.log("application state", state);
 
   const setAuth = isAuthenticated => {
     dispatch({
@@ -27,28 +27,6 @@ export default function App() {
     });
     //console.log("dfgdfsgsd");
   };
-  console.log("user authed?", state.userAuth);
-  return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          {state.userAuth ? (
-            <Redirect to="/map" />
-          ) : (
-            <Login setAuth={setAuth} />
-          )}
-        </Route>
-        <Route exact path="/map">
-          {!state.userAuth ? (
-            <Redirect to="/" />
-          ) : (
-            <MapView setAuth={setAuth} />
-          )}
-        </Route>
-        <Route exact path="/bar">
-          <BarviewList />
-        </Route>
-      </Switch>
-    </Router>
-  );
+  // console.log("user authed?", state.userAuth);
+  return <MapView />;
 }
