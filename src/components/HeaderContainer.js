@@ -5,9 +5,12 @@ import Burger from "./Burger";
 
 class HeaderContainer extends React.Component {
   render() {
+    console.log("AJNSJAN", this.props.name);
+    let testProp = this.props.name;
+    console.log("Test Prop", testProp);
     return (
       <>
-        <SearchBar />
+        <SearchBar name={testProp} />
         <div id="Burger_Wrap">
           <Burger pageWrapId={"page-wrap"} outerContainerId={"App"} />
         </div>

@@ -18,12 +18,10 @@ class MapView extends Component {
 
   updateMarkers = async type => {
     const { data } = await Axios.get(`/api/filters/${type}`);
-    console.log("@@@@", data);
     const filteredIds = data.map(item => item.venue_id);
     const filterData = this.state.markers.filter(venue =>
       filteredIds.includes(venue.id)
     );
-    console.log("FILTERDATA", filterData);
     this.setState({ filteredMarkers: filterData });
   };
 
@@ -33,11 +31,14 @@ class MapView extends Component {
     });
   };
 
+  setSearch = () => {
+    
+  };
+
   render() {
-    console.log(this.state.markers);
     return (
       <>
-        <HeaderContainer />
+        <HeaderContainer name={this.state.markers} />
         <Map markers={this.state.filteredMarkers} />
         <FilterContainer
           updateMarkers={this.updateMarkers}

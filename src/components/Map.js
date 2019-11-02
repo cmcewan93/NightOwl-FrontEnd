@@ -59,7 +59,6 @@ export class MapContainer extends React.Component {
     }
   };
 
-
   // Renders all of the markers
   renderMarkers() {
     return this.props.markers.map(marker => {
@@ -82,7 +81,6 @@ export class MapContainer extends React.Component {
   }
 
   render() {
-    console.log("I AM FROM MAPVIEW", this.props.markers);
     return (
       <Map
         google={this.props.google}
