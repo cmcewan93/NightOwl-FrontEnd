@@ -10,15 +10,19 @@ const LoginPage = props => {
   });
 
   const handleLogin = (email, password) => {
+    console.log("checking login", email, password);
     axios
       .post("/login", {
         email: email,
         password: password
       })
-      .then(data => {
-        props.setAuth(true);
+      .then(body => {
         // set the state of the react app to store user as logged in
-        console.log("it worked!", data);
+        if (body.data.code === 201) {
+          props.setAuth(true);
+        } else {
+          props.setAuth(false);
+        }
       })
       .catch(error => {
         console.log(error);

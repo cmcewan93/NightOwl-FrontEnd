@@ -26,17 +26,18 @@ export default function App() {
       type: SET_USER_AUTH,
       auth: isAuthenticated
     });
+    //console.log("dfgdfsgsd");
   };
-
+  console.log("User auth: ", state.userAuth);
   return (
     <Router>
       <Switch>
         {state.userAuth && (
-          <Route path="/MapView">
+          <Route exact path="/MapView">
             <MapView />
           </Route>
         )}
-        <Route path="/">
+        <Route exact path="/">
           <Login setAuth={setAuth} />
         </Route>
       </Switch>
