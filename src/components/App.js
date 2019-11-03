@@ -1,32 +1,33 @@
 import React from "react";
 import Login from "./Login";
 import MapView from "./MapView";
+import BarviewList from "./BarviewList";
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  Redirect,
-  useHistory,
-  useLocation
+  Redirect
 } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
+import Cookies from "js-cookie";
 import "./App.css";
 import { SET_USER_AUTH } from "../reducers/application";
-import BarviewList from "./BarviewList";
+import { isModuleSpecifier } from "@babel/types";
 
 export default function App() {
   const { state, dispatch } = useApplicationData();
   console.log("application state", state);
-
+  let auth = localStorage.getItem("authenticated");
+  //console.log(auth);
+  console.log(state.userAuth);
   const setAuth = isAuthenticated => {
     dispatch({
       type: SET_USER_AUTH,
       auth: isAuthenticated
     });
-  }
-
+  };
 
   return (
     <Router>
@@ -39,19 +40,10 @@ export default function App() {
           )}
         </Route>
         <Route exact path="/map">
-          {!state.userAuth ? (
-            <Redirect to="/" />
-          ) : (
-            <MapView setAuth={setAuth} />
-          )}
+          {!auth ? <Redirect to="/" /> : <MapView setAuth={setAuth} />}
         </Route>
         <Route exact path="/bar">
-          {/* {!state.userAuth ? (
-            <Redirect to="/" />
-          ) : (
-            <BarviewList setAuth={setAuth} />
-          )} */}
-          <BarviewList />
+          {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
         </Route>
       </Switch>
     </Router>
