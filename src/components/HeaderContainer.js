@@ -10,7 +10,11 @@ class HeaderContainer extends React.Component {
       <>
         <SearchBar search={this.props.search} />
         <div id="Burger_Wrap">
-          <Burger pageWrapId={"page-wrap"} outerContainerId={"App"} />
+          <Burger
+            pageWrapId={"page-wrap"}
+            outerContainerId={"App"}
+            setAuth={this.props.setAuth}
+          />
         </div>
       </>
     );

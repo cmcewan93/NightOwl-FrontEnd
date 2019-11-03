@@ -7,7 +7,7 @@ const formStyle = {
 };
 
 const inputStyle = {
-  width: "89%",
+  width: "100%",
   padding: "10px 15px"
 };
 
@@ -29,6 +29,7 @@ class SearchBar extends React.Component {
             type="text"
             value={this.state.term}
             onChange={e => this.setState({ term: e.target.value })}
+            placeholder="What are you looking for?"
           />
         </form>
       </div>

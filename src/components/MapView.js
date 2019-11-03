@@ -5,6 +5,27 @@ import Map from "./Map";
 import HeaderContainer from "./HeaderContainer";
 import FilterContainer from "./FilterContainer";
 
+const mainContainer = {
+  height: "100vh",
+  width: "100vh",
+  backgroundColor: "#373a47"
+};
+
+const headerContainer = {
+  height: "10vh",
+  width: "100vh"
+};
+
+const mapStyle = {
+  height: "70vh",
+  width: "100vh"
+};
+
+const footerContainer = {
+  height: "20vh",
+  width: "100vh"
+};
+
 class MapView extends Component {
   state = {
     markers: [],
@@ -40,14 +61,20 @@ class MapView extends Component {
 
   render() {
     return (
-      <>
-        <HeaderContainer name={this.state.markers} search={this.setSearch} />
-        <Map markers={this.state.filteredMarkers} />
+      <div style={mainContainer}>
+        <HeaderContainer
+          name={this.state.markers}
+          search={this.setSearch}
+          style={headerContainer}
+          setAuth={this.state.setAuth}
+        />
+        <Map markers={this.state.filteredMarkers} style={mapStyle} />
         <FilterContainer
           updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}
+          style={footerContainer}
         />
-      </>
+      </div>
     );
   }
 }

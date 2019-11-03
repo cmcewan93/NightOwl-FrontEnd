@@ -20,7 +20,7 @@ class BarviewList extends React.Component {
   };
 
   render() {
-    // console.log(this.state.ratio);
+    //console.log(this.state.ratio);
     return (
       <>
         <BackButton />
