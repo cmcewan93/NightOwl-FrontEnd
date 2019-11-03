@@ -23,7 +23,22 @@ const imageSize = {
 };
 
 const alignment = {
-  position: "center"
+  paddingLeft: "10px",
+  color: "#b8b7ad"
+};
+
+const textAlign = {
+  paddingLeft: "16px",
+  color: "#b8b7ad"
+};
+
+const textAlign2 = {
+  paddingLeft: "25px",
+  color: "#b8b7ad"
+};
+
+const colorGrey = {
+  color: "#b8b7ad"
 };
 
 class FilterItemList extends React.Component {
@@ -35,44 +50,44 @@ class FilterItemList extends React.Component {
             style={imageSize}
             onClick={() => this.props.updateMarkers("trending")}
           />
-          Trending
+          <span style={alignment}>Trending</span>
         </div>
         <div>
           <Clock
             style={imageSize}
             onClick={() => this.props.updateMarkers("trending")}
           />
-          Shortest Wait
+          <span style={colorGrey}>Shortest Wait</span>
         </div>
         <div>
           <Girl
             style={imageSize}
             onClick={() => this.props.updateMarkers("morefemales")}
           />
-          More Women
+          <span style={colorGrey}>More Women</span>
         </div>
         <div>
           <Boy
             style={imageSize}
             onClick={() => this.props.updateMarkers("moremales")}
           />
-          More Men
+          <span style={alignment}>More Men</span>
         </div>
         <div>
           <Bar style={imageSize} onClick={this.props.allMarkers} />
-          All Bars
+          <span style={textAlign}>All Bars</span>
         </div>
         <div>
           <Music style={imageSize} />
-          Music
+          <span style={textAlign2}>Music</span>
         </div>
         <div>
           <Coin style={imageSize} />
-          Cheapest
+          <span style={alignment}>Cheapest</span>
         </div>
         <div>
           <Coins style={imageSize} />
-          Priciest
+          <span style={textAlign}>Priciest</span>
         </div>
       </div>
     );

@@ -7,7 +7,8 @@ import FilterContainer from "./FilterContainer";
 
 const mainContainer = {
   height: "100vh",
-  width: "100vh"
+  width: "100vh",
+  backgroundColor: "#373a47"
 };
 
 const headerContainer = {
