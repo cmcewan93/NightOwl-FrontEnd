@@ -1,4 +1,12 @@
 import React from "react";
+import { ReactComponent as Fire } from "../images/fire.svg";
+import { ReactComponent as Boy } from "../images/boy.svg";
+import { ReactComponent as Girl } from "../images/girl.svg";
+import { ReactComponent as Clock } from "../images/clock.svg";
+import { ReactComponent as Bar } from "../images/bar.svg";
+import { ReactComponent as Music } from "../images/music.svg";
+import { ReactComponent as Coin } from "../images/coin.svg";
+import { ReactComponent as Coins } from "../images/coins.svg";
 
 const componentStyle = {
   position: "absolute",
@@ -11,40 +19,9 @@ const componentStyle = {
   marginBottom: "1px"
 };
 
-const gridItemBlack = {
-  fontSize: "30px",
-  justifySelf: "center",
-  color: "black"
-};
-
-const gridItemRed = {
-  fontSize: "30px",
-  justifySelf: "center",
-  color: "red"
-};
-
-const gridItemPink = {
-  fontSize: "30px",
-  justifySelf: "center",
-  color: "pink"
-};
-
-const gridItemBlue = {
-  fontSize: "30px",
-  justifySelf: "center",
-  color: "blue"
-};
-
-const gridItemGreen = {
-  fontSize: "30px",
-  justifySelf: "center",
-  color: "green"
-};
-
-const gridItemYellow = {
-  fontSize: "30px",
-  justifySelf: "center",
-  color: "gold"
+const imageSize = {
+  height: "50",
+  width: "50"
 };
 
 class FilterItemList extends React.Component {
@@ -52,33 +29,33 @@ class FilterItemList extends React.Component {
     return (
       <div className="filterItemList" style={componentStyle}>
         <button onClick={() => this.props.updateMarkers("trending")}>
-          <i className="hotjar icon" style={gridItemRed}></i>
+          <Fire style={imageSize} />
         </button>
         <button onClick={() => this.props.updateMarkers("trending")}>
-          <i className="clock outline icon" style={gridItemGreen}></i>
+          <Clock style={imageSize} />
         </button>
         <button onClick={() => this.props.updateMarkers("morefemales")}>
-          <i className="female icon" style={gridItemPink}></i>
+          <Girl style={imageSize} />
         </button>
 
         <button onClick={() => this.props.updateMarkers("moremales")}>
-          <i className="male icon" style={gridItemBlue}></i>
+          <Boy style={imageSize} />
         </button>
 
         <button onClick={this.props.allMarkers}>
-          <i className="users icon" style={gridItemBlack}></i>
+          <Bar style={imageSize} />
         </button>
 
         <button>
-          <i className="music icon" style={gridItemBlack}></i>
+          <Music style={imageSize} />
         </button>
 
         <button>
-          <i className="dollar sign icon" style={gridItemGreen}></i>
+          <Coin style={imageSize} />
         </button>
 
         <button>
-          <i className="euro sign icon" style={gridItemYellow}></i>
+          <Coins style={imageSize} />
         </button>
       </div>
     );
