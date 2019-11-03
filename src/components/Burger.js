@@ -9,11 +9,15 @@ export default props => {
         Home
       </a>
 
-      <a className="menu-item" href="/profile">
-        My Profile
+      <a className="menu-item" href="/bar">
+        Bar test
       </a>
 
-      <a className="menu-item" href="/">
+      <a
+        className="menu-item"
+        href="/"
+        onClick={() => localStorage.setItem("authenticated", false)}
+      >
         Logout
       </a>
     </Menu>

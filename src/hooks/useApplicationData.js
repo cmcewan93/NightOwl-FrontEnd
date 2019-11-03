@@ -1,6 +1,7 @@
 import { useReducer, useEffect } from "react";
 import axios from "axios";
 import { reducer, SET_APPLICATION_DATA } from "../reducers/application";
+import {setAuth} from "../components/App"
 
 export default function useApplicationData() {
   /**
