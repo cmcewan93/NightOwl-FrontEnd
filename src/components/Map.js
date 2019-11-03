@@ -8,7 +8,8 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
-
+import ReactDOM from "react-dom";
+import BarviewList from "./BarviewList";
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
 const mapStyle = {
@@ -49,7 +50,31 @@ export class MapContainer extends React.Component {
   //     }
   //   );
   // }
+  // onInfoWindowOpen(props, e) {
+  //   // const button = (
+  //     // <button
+  //     //   onClick={e => {
+  //     //     this.InfoWindow.close();
+  //     //   }}
+  //     // >
+  //     //   Check in
+  //     // </button>
+  //     // <a href="/bar">Test</a>
+  //   // );
+  //   // const test = (
+  //   //   <Router>
+  //   //     <Route path="/bar">
+  //   //       <BarviewList></BarviewList>
+  //   //     </Route>
+  //   //     <Link to="/bar">test</Link>
+  //   //   </Router>
+  //   // );
 
+  //   ReactDOM.render(
+  //     React.Children.only(test),
+  //     document.getElementById("iwc")
+  //   );
+  // }
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -121,14 +146,11 @@ export class MapContainer extends React.Component {
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
-          onClick={() => {
-            return (
-              <Router>
-                <Redirect to="/bar">CLICK</Redirect>
-              </Router>
-            );
-          }}
         >
+          {/* <div>
+            <h3>{this.state.selectedPlace.name}</h3>
+            <button type="button" onClick={this.send}>Click Me</button>
+          </div> */}
           <div>
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
