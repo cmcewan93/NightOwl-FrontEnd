@@ -29,6 +29,9 @@ export default function App() {
     });
   };
 
+  /**
+   * TODO: pass down redirect component as nested so you can redirect from burger and infobox in mapview
+   */
   return (
     <Router>
       <Switch>

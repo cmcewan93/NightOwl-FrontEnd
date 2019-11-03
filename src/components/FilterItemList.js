@@ -13,50 +13,67 @@ const componentStyle = {
   bottom: "0px",
   display: "grid",
   gridTemplateColumns: "auto auto auto auto",
-  width: "100%",
-  height: "17.5%",
   alignItems: "center",
   marginBottom: "1px"
 };
 
 const imageSize = {
-  height: "50",
-  width: "50"
+  height: "34px",
+  width: "85px"
+};
+
+const alignment = {
+  position: "center"
 };
 
 class FilterItemList extends React.Component {
   render() {
     return (
       <div className="filterItemList" style={componentStyle}>
-        <button onClick={() => this.props.updateMarkers("trending")}>
-          <Fire style={imageSize} />
-        </button>
-        <button onClick={() => this.props.updateMarkers("trending")}>
-          <Clock style={imageSize} />
-        </button>
-        <button onClick={() => this.props.updateMarkers("morefemales")}>
-          <Girl style={imageSize} />
-        </button>
-
-        <button onClick={() => this.props.updateMarkers("moremales")}>
-          <Boy style={imageSize} />
-        </button>
-
-        <button onClick={this.props.allMarkers}>
-          <Bar style={imageSize} />
-        </button>
-
-        <button>
+        <div>
+          <Fire
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("trending")}
+          />
+          Trending
+        </div>
+        <div>
+          <Clock
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("trending")}
+          />
+          Shortest Wait
+        </div>
+        <div>
+          <Girl
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("morefemales")}
+          />
+          More Women
+        </div>
+        <div>
+          <Boy
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("moremales")}
+          />
+          More Men
+        </div>
+        <div>
+          <Bar style={imageSize} onClick={this.props.allMarkers} />
+          All Bars
+        </div>
+        <div>
           <Music style={imageSize} />
-        </button>
-
-        <button>
+          Music
+        </div>
+        <div>
           <Coin style={imageSize} />
-        </button>
-
-        <button>
+          Cheapest
+        </div>
+        <div>
           <Coins style={imageSize} />
-        </button>
+          Priciest
+        </div>
       </div>
     );
   }

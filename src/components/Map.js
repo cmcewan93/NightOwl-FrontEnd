@@ -1,6 +1,13 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
@@ -115,6 +122,19 @@ export class MapContainer extends React.Component {
           visible={this.state.showingInfoWindow}
         >
           <div>
+            <button
+              type="button"
+              onClick={() => {
+                console.log("im being called");
+                // return (
+                //   <Router>
+                //     <Redirect to="/bar"></Redirect>
+                //   </Router>
+                // );
+              }}
+            >
+              CLICK
+            </button>
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
