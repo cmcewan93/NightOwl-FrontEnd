@@ -50,13 +50,14 @@ export class MapContainer extends React.Component {
   //   );
   // }
 
-  onMarkerClick = (props, marker, e) =>
+  onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
+      selectedId: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
-
+  };
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -88,7 +89,7 @@ export class MapContainer extends React.Component {
   }
 
   render() {
-    console.log("@@@@@", this.state.selectedPlace);
+    console.log("@@@@@", this.state);
     return (
       <Map
         google={this.props.google}
@@ -120,21 +121,15 @@ export class MapContainer extends React.Component {
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
+          onClick={() => {
+            return (
+              <Router>
+                <Redirect to="/bar">CLICK</Redirect>
+              </Router>
+            );
+          }}
         >
           <div>
-            <button
-              type="button"
-              onClick={() => {
-                console.log("im being called");
-                // return (
-                //   <Router>
-                //     <Redirect to="/bar"></Redirect>
-                //   </Router>
-                // );
-              }}
-            >
-              CLICK
-            </button>
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
