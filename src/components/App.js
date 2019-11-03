@@ -1,7 +1,8 @@
 import React from "react";
 import Login from "./Login";
 import MapView from "./MapView";
-import BarviewList from "./BarviewList";
+import UserForm from "./UserForm";
+import BarviewList from "./BarviewList"
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
@@ -47,6 +48,9 @@ export default function App() {
         </Route>
         <Route exact path="/bar">
           {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
+        </Route>
+        <Route exact path="/user-form">
+          <UserForm />
         </Route>
       </Switch>
     </Router>

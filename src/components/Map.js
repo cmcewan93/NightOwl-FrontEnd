@@ -8,8 +8,10 @@ import {
   Link,
   Redirect
 } from "react-router-dom";
+import BarFooter from "./BarFooter";
 import ReactDOM from "react-dom";
 import BarviewList from "./BarviewList";
+import $ from "jquery";
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
 const mapStyle = {
@@ -50,32 +52,31 @@ export class MapContainer extends React.Component {
   //     }
   //   );
   // }
-  // onInfoWindowOpen(props, e) {
-  //   // const button = (
-  //     // <button
-  //     //   onClick={e => {
-  //     //     this.InfoWindow.close();
-  //     //   }}
-  //     // >
-  //     //   Check in
-  //     // </button>
-  //     // <a href="/bar">Test</a>
-  //   // );
-  //   // const test = (
-  //   //   <Router>
-  //   //     <Route path="/bar">
-  //   //       <BarviewList></BarviewList>
-  //   //     </Route>
-  //   //     <Link to="/bar">test</Link>
-  //   //   </Router>
-  //   // );
-
-  //   ReactDOM.render(
-  //     React.Children.only(test),
-  //     document.getElementById("iwc")
-  //   );
-  // }
+  onInfoWindowOpen(props, e) {
+    // const button = (
+    //   <button onClick={(e) => {
+    //   }}
+    //   >
+    //     Check in
+    //   </button>
+    // );
+    //   // const test = (
+    //   //   <Router>
+    //   //     <Route path="/bar">
+    //   //       <BarviewList></BarviewList>
+    //   //     </Route>
+    //   //     <Link to="/bar">test</Link>
+    //   //   </Router>
+    //   // );
+    // ReactDOM.render(
+    //   React.Children.only(button),
+    //   document.getElementById("iwc")
+    // );
+  }
   onMarkerClick = (props, marker, e) => {
+    const barFoot = document.getElementById("b-foot");
+    const filtFoot = document.getElementById("f-foot");
+
     this.setState({
       selectedPlace: props,
       selectedId: props,
@@ -112,8 +113,14 @@ export class MapContainer extends React.Component {
       );
     });
   }
-
+  // displayBarFooter() {
+  //   console.log('dsfdsa', this.state.activeMarker);
+  //   if(this.state.openInfoW) {
+  //     return(<BarFooter></BarFooter>)
+  //   }
+  // }
   render() {
+    const barFoot = document.getElementById("b-foot");
     console.log("@@@@@", this.state);
     return (
       <Map
@@ -146,15 +153,26 @@ export class MapContainer extends React.Component {
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
+          // onOpen={() => {
+          //   console.log(barFoot);
+          //   $(barFoot).slideToggle();
+          //   $("#f-foot").slideToggle();
+          // }}
+          // onClose={() => {
+          //   $(barFoot).slideToggle();
+          //   $("#f-foot").slideToggle();
+          // }}
+          // onChange={() => {
+          //   $(barFoot).slideToggle();
+          //   $("#f-foot").slideToggle();
+          // }}
+          
         >
-          {/* <div>
-            <h3>{this.state.selectedPlace.name}</h3>
-            <button type="button" onClick={this.send}>Click Me</button>
-          </div> */}
           <div>
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
+        <BarFooter></BarFooter>
       </Map>
     );
   }
