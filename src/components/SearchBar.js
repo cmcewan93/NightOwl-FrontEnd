@@ -14,18 +14,12 @@ const inputStyle = {
 class SearchBar extends React.Component {
   state = { term: "" };
 
-  // onFormSubmit = event => {
-  //   event.preventDefault();
-  // };
-
   render() {
-    //console.log("@@!@!", this.props.search);
     return (
       <div style={formStyle} className="searchBarContainer">
         <form
           onSubmit={event => {
             event.preventDefault();
-            console.log("form value", this.state.term);
             this.props.search(this.state.term);
           }}
           method="POST"

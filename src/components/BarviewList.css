@@ -98,3 +98,8 @@
   left: 10px;
   bottom: 190px;
 }
+.chart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
