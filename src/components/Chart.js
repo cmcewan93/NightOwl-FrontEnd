@@ -12,7 +12,7 @@ class FemaleMaleRatio extends React.Component {
     return (
       <div className="chart" style={pieStyle}>
         <PieChart
-          radius={30}
+          radius={25}
           label={({ data, dataIndex }) =>
             Math.round(data[dataIndex].percentage) +
             "%   " +
