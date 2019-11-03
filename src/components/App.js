@@ -1,6 +1,8 @@
 import React from "react";
 import Login from "./Login";
 import MapView from "./MapView";
+import UserForm from "./UserForm";
+
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
@@ -47,6 +49,9 @@ export default function App() {
         </Route>
         <Route exact path="/bar">
           <BarviewList />
+        </Route>
+        <Route exact path="/user-form">
+          <UserForm />
         </Route>
       </Switch>
     </Router>
