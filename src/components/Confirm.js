@@ -24,6 +24,7 @@ export class Confirm extends Component {
     return (
       <MuiThemeProvider>
         <>
+          <AppBar title="Confirm your choices" />
           <div style={{ marginLeft: "60px" }}>
             <List>
               <ListItem

@@ -16,6 +16,7 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
+          <AppBar title="Your Choices" />
           <div style={{ marginLeft: "60px" }}>
             <TextField
               hintText="Music Type"
