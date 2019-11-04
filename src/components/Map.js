@@ -28,40 +28,16 @@ export class MapContainer extends React.Component {
     currentBar: null
   };
 
-  // componentDidMount() {
-  // Asks the user to allow sharing location, once shared, this will setState
-  // window.navigator.geolocation.getCurrentPosition(
-  //   position =>
-  //     this.setState({
-  //       lat: position.coords.latitude,
-  //       lng: position.coords.longitude
-  //     }),
-  //   err => this.setState({ errorMessage: err.message })
-  // );
-
-  // Geocoding to get latitude and longitude from address
-  //   Geocode.fromAddress("Lighthouse Labs, Toronto, ON").then(
-  //     response => {
-  //       const { lat, lng } = response.results[0].geometry.location;
-  //       this.setState({
-  //         lat: lat,
-  //         lng: lng
-  //       });
-  //     },
-  //     error => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
-  
   onMarkerClick = (props, marker, e) => {
-    console.log('hereree', props)
+    //TODO Set state of current bar
     this.setState({
       selectedPlace: props,
       selectedId: props,
       activeMarker: marker,
       showingInfoWindow: true
     });
+
+    this.props.setBarId(props.id)
   };
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
@@ -74,10 +50,12 @@ export class MapContainer extends React.Component {
 
   // Renders all of the markers
   renderMarkers() {
-    return this.props.markers.map((marker, index) => {
+    return this.props.markers.map((marker) => {
+      // console.log('ID', marker.id);
       return (
         <Marker
-          key={index}
+          key={marker.id}
+          id={marker.id}
           onClick={this.onMarkerClick}
           position={{
             lat: marker.latitude,
@@ -94,18 +72,18 @@ export class MapContainer extends React.Component {
   }
   displayBarFooter() {
     if (this.state.showingInfoWindow) {
-      console.log("ya im showing");
-      $('#f-foot').css("display", "none")
-      $('#b-foot').css("display", "block")
+      //console.log("ya im showing");
+      $("#f-foot").css("display", "none");
+      $("#b-foot").css("display", "block");
     } else {
-      $('#b-foot').css("display", "none")
-      $('#f-foot').css("display", "block")
-      console.log("im not showing");
+      $("#b-foot").css("display", "none");
+      $("#f-foot").css("display", "block");
+      //console.log("im not showing");
     }
   }
   render() {
-    console.log('fsfsdf', this.props)
-    console.log("@@@@@", this.state.selectedPlace);
+    console.log("Map props", this.props);
+    //console.log("@@@@@", this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}

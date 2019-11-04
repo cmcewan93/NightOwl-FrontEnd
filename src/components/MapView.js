@@ -41,7 +41,8 @@ const footerContainer = {
 class MapView extends Component {
   state = {
     markers: [],
-    filteredMarkers: []
+    filteredMarkers: [],
+    currentBarId: []
   };
   async componentDidMount() {
     const { data } = await Axios.get(`/api/venues`);
@@ -81,7 +82,7 @@ class MapView extends Component {
           style={headerContainer}
           setAuth={this.state.setAuth}
         />
-        <Map markers={this.state.filteredMarkers} style={mapStyle} barId={this.props.barId}/>
+        <Map markers={this.state.filteredMarkers} style={mapStyle} barId={this.props.barId} setBarId={this.props.setBarId}/>
         <FilterContainer
           updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}

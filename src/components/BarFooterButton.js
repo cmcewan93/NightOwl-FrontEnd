@@ -8,8 +8,8 @@ import {
 } from "react-router-dom";
 
 export default function BarFooterButton(props) {
-  console.log(props);
-  console.log(props.path);
+  //console.log(props);
+  //console.log('This is the path', props.path);
   return (
     <div>
       <Link to={`${props.path}`}>{props.name}</Link>
