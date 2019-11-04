@@ -10,7 +10,7 @@ const totalSize = {
   backgroundColor: "#373a47"
 };
 
-class BarviewContainer extends React.Component {
+class BarviewFooter extends React.Component {
   render() {
     return (
       <div style={totalSize}>
@@ -20,4 +20,4 @@ class BarviewContainer extends React.Component {
     );
   }
 }
-export default BarviewContainer;
+export default BarviewFooter;

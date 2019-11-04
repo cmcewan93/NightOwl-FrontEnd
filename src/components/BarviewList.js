@@ -3,7 +3,7 @@ import BarviewListItem from "./BarviewListItem";
 import BarviewHeader from "./BarviewHeader";
 import Arrow from "./BackButton";
 
-import BarviewContainer from "./BarviewFooter";
+import BarviewFooter from "./BarviewFooter";
 
 class BarviewList extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class BarviewList extends React.Component {
         <BarviewHeader />
         <Arrow />
         <BarviewListItem />
-        <BarviewContainer />
+        <BarviewFooter />
       </div>
     );
   }
