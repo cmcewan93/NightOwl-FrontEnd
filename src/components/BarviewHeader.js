@@ -4,7 +4,8 @@ import Burger from "./Burger";
 
 const headerStyle = {
   display: "flex",
-  justifyContent: "center"
+  justifyContent: "center",
+  overflow: "hidden"
 };
 
 class BarviewHeader extends React.Component {

@@ -5,7 +5,7 @@ import Chart from "./Chart";
 const totalSize = {
   position: "fixed",
   bottom: 0,
-  height: "50%",
+  height: "54%",
   width: "100%",
   backgroundColor: "#373a47"
 };

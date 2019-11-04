@@ -6,16 +6,16 @@ import { ReactComponent as DressCode } from "../images/dress-code.svg";
 
 const containerStyle = {
   position: "fixed",
-  bottom: "190px",
-  left: "0px",
+  bottom: "155px",
+  left: "8px",
   display: "grid",
-  gridTemplateColumns: "auto auto",
+  gridTemplateColumns: "auto",
   marginBottom: "1px"
 };
 
 const IconStyle = {
   width: "8%",
-  height: "1%",
+  height: "5%",
   marginRight: "10px"
 };
 
