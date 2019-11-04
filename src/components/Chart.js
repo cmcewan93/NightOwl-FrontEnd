@@ -4,8 +4,8 @@ import PieChart from "react-minimal-pie-chart";
 
 const pieStyle = {
   position: "fixed",
-  left: "-80px",
-  bottom: "-45px",
+  right: "-80px",
+  bottom: "150px",
   width: "375px"
 };
 
@@ -15,7 +15,7 @@ class Chart extends React.Component {
       <div className="chart">
         <PieChart
           style={pieStyle}
-          radius={20}
+          radius={15}
           label={({ data, dataIndex }) =>
             Math.round(data[dataIndex].percentage) +
             "%   " +
