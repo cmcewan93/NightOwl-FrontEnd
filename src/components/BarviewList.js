@@ -6,11 +6,6 @@ import Axios from "axios";
 
 import BarviewContainer from "./BarviewFooter";
 
-const wholePage = {
-  width: "375px",
-  height: "667px"
-};
-
 class BarviewList extends React.Component {
   state = {
     ratio: []
@@ -24,7 +19,7 @@ class BarviewList extends React.Component {
 
   render() {
     return (
-      <div style={wholePage}>
+      <div>
         <BarviewHeader />
         <Arrow />
         <BarviewListItem />
