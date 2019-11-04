@@ -25,9 +25,9 @@ class BarviewList extends React.Component {
   }
 
   render() {
-    console.log("bar id", this.props.bar.id);
-    console.log("bar name", this.props.bar);
-    console.log("current visits", this.state.currentVisits);
+    // console.log("bar id", this.props.bar.id);
+    // console.log("bar name", this.props.bar);
+    // console.log("current visits", this.state.currentVisits);
     return (
       <div>
         <BarviewHeader />

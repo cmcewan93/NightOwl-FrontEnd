@@ -37,7 +37,6 @@ export default props => {
         <Home style={imageSize} />
         Home
       </Link>
-      <Link to={"/bar"}>Test Bar View</Link>
       <Owl style={owlAlignment} />
     </Menu>
   );
