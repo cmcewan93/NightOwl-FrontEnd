@@ -106,6 +106,7 @@ export class MapContainer extends React.Component {
   render() {
     console.log('fsfsdf', this.props)
     console.log("@@@@@", this.state.selectedPlace);
+    console.dir(this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}
