@@ -3,10 +3,7 @@ import Camera from "react-html5-camera-photo";
 import "react-html5-camera-photo/build/css/index.css";
 
 class CameraComponent extends Component {
-  onTakePhoto(dataUri) {
-    // Do stuff with the dataUri photo...
-    //console.log("takePhoto");
-  }
+  onTakePhoto(dataUri) {}
 
   render() {
     return (

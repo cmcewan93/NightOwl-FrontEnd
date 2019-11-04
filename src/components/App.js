@@ -20,10 +20,8 @@ import { isModuleSpecifier } from "@babel/types";
 
 export default function App() {
   const { state, dispatch } = useApplicationData();
-  console.log("application state", state);
   let auth = localStorage.getItem("authenticated");
-  //console.log(auth);
-  //console.log(state.userAuth);
+
   const setAuth = isAuthenticated => {
     dispatch({
       type: SET_USER_AUTH,

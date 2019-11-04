@@ -20,7 +20,7 @@ export default function BarviewListItem() {
       } else {
         setIndex(prev => prev + 1);
       }
-    }, 3000);
+    }, 10000);
     return () => clearInterval(timer);
   }, [index]);
 
