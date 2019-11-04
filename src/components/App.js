@@ -15,7 +15,7 @@ import {
 import useApplicationData from "../hooks/useApplicationData";
 import Cookies from "js-cookie";
 import "./App.css";
-import { SET_USER_AUTH } from "../reducers/application";
+import { SET_USER_AUTH, SET_BAR_ID } from "../reducers/application";
 import { isModuleSpecifier } from "@babel/types";
 
 export default function App() {
@@ -28,7 +28,16 @@ export default function App() {
       auth: isAuthenticated
     });
   };
-  let barId = 1;
+  // let barId = 1;
+
+  const setBarId = id => {
+    // Set state barId to id
+    console.log("set barId is working!");
+    dispatch({
+      type: SET_BAR_ID,
+      auth: id
+    })
+  };
   /**
    * TODO: pass down redirect component as nested so you can redirect from burger and infobox in mapview
    */
@@ -46,13 +55,13 @@ export default function App() {
           {!auth ? (
             <Redirect to="/" />
           ) : (
-            <MapView setAuth={setAuth} barId={barId} />
+            <MapView setAuth={setAuth} barId={state.barId} setBarId={setBarId} />
           )}
         </Route>
-        <Route exact path={`/bar/:id`}>
+        <Route exact path={`/bar/:${state.barId}`}>
           {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
         </Route>
-        <Route exact path={`/bar/checkin/:id`}>
+        <Route exact path={`/bar/checkin/:${state.barId}`}>
           <UserForm />
         </Route>
       </Switch>

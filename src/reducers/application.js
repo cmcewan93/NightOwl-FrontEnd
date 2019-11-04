@@ -1,7 +1,9 @@
 const SET_APPLICATION_DATA = "SET_APPLICATION_DATA";
 const SET_USER_AUTH = "SET_USER_AUTH";
+const SET_BAR_ID = "SET_BAR_ID"
 
 function reducer(state, action) {
+  console.log("This is the action", action);
   switch (action.type) {
     case SET_APPLICATION_DATA:
       return {
@@ -15,10 +17,15 @@ function reducer(state, action) {
         ...state,
         userAuth: action.auth
       };
+    case SET_BAR_ID:
+      return {
+        ...state,
+        barId: action.auth
+      };
     default:
       throw new Error(
         `Tried to reduce with unsupported action type: ${action.type}`
       );
   }
 }
-export { reducer, SET_APPLICATION_DATA, SET_USER_AUTH };
+export { reducer, SET_APPLICATION_DATA, SET_USER_AUTH, SET_BAR_ID };
