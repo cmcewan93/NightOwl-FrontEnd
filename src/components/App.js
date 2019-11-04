@@ -36,8 +36,17 @@ export default function App() {
     dispatch({
       type: SET_BAR_ID,
       auth: id
-    })
+    });
   };
+  console.log("venues", state.venues);
+  const currentBar = (id, venues) => {
+    return venues.find(venue => venue.id === id);
+  };
+  let currentBarObj = {};
+  if (state.venues !== undefined) {
+    currentBarObj = currentBar(state.barId, state.venues);
+  }
+
   /**
    * TODO: pass down redirect component as nested so you can redirect from burger and infobox in mapview
    */
@@ -55,14 +64,22 @@ export default function App() {
           {!auth ? (
             <Redirect to="/" />
           ) : (
-            <MapView setAuth={setAuth} barId={state.barId} setBarId={setBarId} />
+            <MapView
+              setAuth={setAuth}
+              barId={state.barId}
+              setBarId={setBarId}
+            />
           )}
         </Route>
         <Route exact path={`/bar/:${state.barId}`}>
-          {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
+          {!auth ? (
+            <Redirect to="/" />
+          ) : (
+            <BarviewList setAuth={setAuth} bar={currentBarObj} />
+          )}
         </Route>
         <Route exact path={`/bar/checkin/:${state.barId}`}>
-          <UserForm />
+          <UserForm barId={state.barId} />
         </Route>
       </Switch>
     </Router>
