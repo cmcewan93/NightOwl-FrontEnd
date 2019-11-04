@@ -5,8 +5,10 @@ import UserForm from "./UserForm";
 export default function FourthView() {
   return (
     <>
-      <Camera />
-      <UserForm />
+      <div tyle={{ backgroundColor: "#373a47" }}>
+        <Camera />
+        <UserForm style={{ backgroundColor: "#373a47" }} />
+      </div>
     </>
   );
 }

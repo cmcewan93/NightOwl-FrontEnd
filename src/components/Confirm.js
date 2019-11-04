@@ -24,7 +24,7 @@ export class Confirm extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <div style={{ marginLeft: "20px" }}>
+          <div style={{ marginLeft: "60px" }}>
             <List>
               <ListItem
                 primaryText="Music Type"

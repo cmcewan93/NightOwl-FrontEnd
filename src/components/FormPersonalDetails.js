@@ -21,7 +21,7 @@ export class FormPersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <div style={{ marginLeft: "20px" }}>
+          <div style={{ marginLeft: "60px" }}>
             <TextField
               hintText="Age Range"
               floatingLabelText="Choose the Age Range of the bar"
