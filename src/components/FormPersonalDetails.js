@@ -21,7 +21,6 @@ export class FormPersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <AppBar title="Continue Your Choices" />
           <div style={{ marginLeft: "20px" }}>
             <TextField
               hintText="Age Range"

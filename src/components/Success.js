@@ -18,7 +18,6 @@ export class Success extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <AppBar title="Success" />
           <div style={{ textAlign: "center", marginTop: "50px" }}>
             <h3>Thank you for your patience!</h3>
             <p>You will have a 10% discount in this bar.</p>

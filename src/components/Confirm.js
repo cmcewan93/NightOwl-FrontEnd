@@ -24,7 +24,6 @@ export class Confirm extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <AppBar title="Confirm your choices" />
           <div style={{ marginLeft: "20px" }}>
             <List>
               <ListItem
@@ -75,7 +74,7 @@ export class Confirm extends Component {
 const styles = {
   button: {
     padding: "15",
-    marginTop: "50px"
+    marginTop: "20px"
   },
   rightarea: {
     marginRight: "50px"

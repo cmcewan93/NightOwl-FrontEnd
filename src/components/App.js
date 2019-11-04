@@ -1,7 +1,7 @@
 import React from "react";
 import Login from "./Login";
 import MapView from "./MapView";
-import UserForm from "./UserForm";
+import FourthView from "./ForthView";
 
 // import Burger from "./Burger";
 import {
@@ -51,7 +51,7 @@ export default function App() {
           <BarviewList />
         </Route>
         <Route exact path="/user-form">
-          <UserForm />
+          <FourthView />
         </Route>
       </Switch>
     </Router>

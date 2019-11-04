@@ -10,7 +10,7 @@ class CameraComponent extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <Camera
           onTakePhoto={dataUri => {
             this.onTakePhoto(dataUri);

@@ -16,7 +16,6 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Your Choices" />
           <div style={{ marginLeft: "20px" }}>
             <TextField
               hintText="Music Type"
@@ -48,7 +47,7 @@ export class FormUserDetails extends Component {
               defaultValue={values.dressCode}
             />
             <br />
-            <div style={{ marginTop: "50px" }}>
+            <div style={{ marginTop: "20px" }}>
               <RaisedButton
                 label="Continue"
                 primary={true}
