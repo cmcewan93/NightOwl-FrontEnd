@@ -74,9 +74,8 @@ export class MapContainer extends React.Component {
     // );
   }
   onMarkerClick = (props, marker, e) => {
-    const barFoot = document.getElementById("b-foot");
-    const filtFoot = document.getElementById("f-foot");
-
+    // const barFoot = document.getElementById("b-foot");
+    // const filtFoot = document.getElementById("f-foot");
     this.setState({
       selectedPlace: props,
       selectedId: props,
@@ -113,15 +112,20 @@ export class MapContainer extends React.Component {
       );
     });
   }
-  // displayBarFooter() {
-  //   console.log('dsfdsa', this.state.activeMarker);
-  //   if(this.state.openInfoW) {
-  //     return(<BarFooter></BarFooter>)
-  //   }
-  // }
+  displayBarFooter() {
+    if (this.state.showingInfoWindow) {
+      console.log("ya im showing bitch");
+      $('#f-foot').css("display", "none")
+      $('#b-foot').css("display", "block")
+    } else {
+      $('#b-foot').css("display", "none")
+      $('#f-foot').css("display", "block")
+      console.log("im not showing hoe");
+    }
+  }
   render() {
     const barFoot = document.getElementById("b-foot");
-    console.log("@@@@@", this.state);
+    console.log("@@@@@", this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}
@@ -166,13 +170,13 @@ export class MapContainer extends React.Component {
           //   $(barFoot).slideToggle();
           //   $("#f-foot").slideToggle();
           // }}
-          
         >
           <div>
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
         <BarFooter></BarFooter>
+        {this.displayBarFooter()}
       </Map>
     );
   }

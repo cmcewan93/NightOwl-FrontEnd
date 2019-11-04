@@ -22,7 +22,7 @@ export default function App() {
   console.log("application state", state);
   let auth = localStorage.getItem("authenticated");
   //console.log(auth);
-  console.log(state.userAuth);
+  //console.log(state.userAuth);
   const setAuth = isAuthenticated => {
     dispatch({
       type: SET_USER_AUTH,
