@@ -18,8 +18,8 @@ const componentStyle = {
 };
 
 const imageSize = {
-  height: "34px",
-  width: "85px"
+  height: "30px",
+  width: "80px"
 };
 
 const alignment = {

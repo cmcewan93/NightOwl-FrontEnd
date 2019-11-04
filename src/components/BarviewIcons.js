@@ -1,10 +1,7 @@
 import React from "react";
 import { ReactComponent as Smartphone } from "../images/smartphone.svg";
-import { ReactComponent as Address } from "../images/bar.svg";
+import { ReactComponent as Google } from "../images/google.svg";
 import { ReactComponent as Age } from "../images/-18.svg";
-import { ReactComponent as LineSize } from "../images/clock.svg";
-import { ReactComponent as Price } from "../images/money-bag.svg";
-import { ReactComponent as Music } from "../images/quaver.svg";
 import { ReactComponent as DressCode } from "../images/dress-code.svg";
 
 const containerStyle = {
@@ -31,12 +28,12 @@ export default function BarviewIcons() {
     <div style={containerStyle}>
       <i className="phone">
         <Smartphone style={IconStyle} />
-        <span style={textDesign}>Phone: 416-317-3158</span>
+        <span style={textDesign}>Contact</span>
       </i>
 
       <i className="address">
-        <Address style={IconStyle} />
-        <span style={textDesign}>Address: 123 Toronto St W</span>
+        <Google style={IconStyle} />
+        <span style={textDesign}>Directions</span>
       </i>
 
       <i className="age">
@@ -45,17 +42,17 @@ export default function BarviewIcons() {
       </i>
 
       <i className="linesize">
-        <LineSize style={IconStyle} />
+        <Smartphone style={IconStyle} />
         <span style={textDesign}>Average Line Size: 20</span>
       </i>
 
       <i className="price">
-        <Price style={IconStyle} />
+        <Smartphone style={IconStyle} />
         <span style={textDesign}>Approximate Cost: $20</span>
       </i>
 
       <i className="music">
-        <Music style={IconStyle} />
+        <Smartphone style={IconStyle} />
         <span style={textDesign}>Music Type: Rock</span>
       </i>
 

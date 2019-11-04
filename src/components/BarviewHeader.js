@@ -1,7 +1,6 @@
 import React from "react";
 import Barname from "./Barname";
 import Burger from "./Burger";
-import Arrow from "./BackButton";
 
 const headerStyle = {
   display: "flex",

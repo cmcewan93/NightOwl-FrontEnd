@@ -4,7 +4,7 @@ import PieChart from "react-minimal-pie-chart";
 
 const pieStyle = {
   position: "fixed",
-  right: "-95px",
+  right: "0px",
   bottom: "-20px",
   width: "375px"
 };
