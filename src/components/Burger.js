@@ -21,7 +21,8 @@ const owlAlignment = {
 
 const imageSize = {
   height: "40px",
-  width: "40px"
+  width: "40px",
+  marginRight: "10px"
 };
 
 export default props => {

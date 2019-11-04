@@ -3,16 +3,19 @@ import React from "react";
 import PieChart from "react-minimal-pie-chart";
 
 const pieStyle = {
-  left: 0,
-  position: "fixed"
+  position: "fixed",
+  right: "-95px",
+  bottom: "-20px",
+  width: "375px"
 };
 
-class FemaleMaleRatio extends React.Component {
+class Chart extends React.Component {
   render() {
     return (
-      <div className="chart" style={pieStyle}>
+      <div className="chart">
         <PieChart
-          radius={25}
+          style={pieStyle}
+          radius={20}
           label={({ data, dataIndex }) =>
             Math.round(data[dataIndex].percentage) +
             "%   " +
@@ -22,17 +25,16 @@ class FemaleMaleRatio extends React.Component {
           labelStyle={{
             fill: "#f3f3f3",
             fontFamily: "sans-serif",
-            fontSize: "3.45px"
+            fontSize: "2.5px"
           }}
           ratio={1.2}
           data={[
-            { title: "Females", value: 10, color: "#F012BE" },
-            { title: "Males", value: 15, color: "#0074D9" },
-            { title: "Unspecified", value: 20, color: "grey" }
+            { title: "Females", value: 10, color: "#F17CB0" },
+            { title: "Males", value: 15, color: "#5DA5DA" }
           ]}
         />
       </div>
     );
   }
 }
-export default FemaleMaleRatio;
+export default Chart;

@@ -1,11 +1,15 @@
 import React from "react";
 import BarviewListItem from "./BarviewListItem";
-import FemaleMaleRatio from "./Chart";
-import Burger from "./Burger";
-import "./BarviewList.css";
+import BarviewHeader from "./BarviewHeader";
+import Arrow from "./BackButton";
 import Axios from "axios";
-import BarviewIcons from "./BarviewIcons";
-import Barname from "./Barname";
+
+import BarviewContainer from "./BarviewFooter";
+
+const wholePage = {
+  width: "375px",
+  height: "667px"
+};
 
 class BarviewList extends React.Component {
   state = {
@@ -19,15 +23,13 @@ class BarviewList extends React.Component {
   };
 
   render() {
-    //console.log(this.state.ratio);
     return (
-      <>
-        <Barname />
-        <Burger />
+      <div style={wholePage}>
+        <BarviewHeader />
+        <Arrow />
         <BarviewListItem />
-        <FemaleMaleRatio />
-        <BarviewIcons />
-      </>
+        <BarviewContainer />
+      </div>
     );
   }
 }

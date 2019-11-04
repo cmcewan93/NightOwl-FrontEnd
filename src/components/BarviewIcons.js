@@ -1,11 +1,20 @@
 import React from "react";
 import { ReactComponent as Smartphone } from "../images/smartphone.svg";
-import { ReactComponent as Address } from "../images/address.svg";
+import { ReactComponent as Address } from "../images/bar.svg";
 import { ReactComponent as Age } from "../images/-18.svg";
-import { ReactComponent as LineSize } from "../images/alarm-clock.svg";
+import { ReactComponent as LineSize } from "../images/clock.svg";
 import { ReactComponent as Price } from "../images/money-bag.svg";
 import { ReactComponent as Music } from "../images/quaver.svg";
 import { ReactComponent as DressCode } from "../images/dress-code.svg";
+
+const containerStyle = {
+  position: "fixed",
+  bottom: "190px",
+  left: "0px",
+  display: "grid",
+  gridTemplateColumns: "auto auto",
+  marginBottom: "1px"
+};
 
 const IconStyle = {
   width: "8%",
@@ -13,42 +22,47 @@ const IconStyle = {
   marginRight: "10px"
 };
 
+const textDesign = {
+  color: "#b8b7ad"
+};
+
 export default function BarviewIcons() {
   return (
-    <>
+    <div style={containerStyle}>
       <i className="phone">
         <Smartphone style={IconStyle} />
-        123456-789
+        <span style={textDesign}>Phone: 416-317-3158</span>
       </i>
 
       <i className="address">
         <Address style={IconStyle} />
-        123 Toronto st W
+        <span style={textDesign}>Address: 123 Toronto St W</span>
       </i>
 
       <i className="age">
         <Age style={IconStyle} />
-        Average Age: 20
+        <span style={textDesign}>Average Age: 20</span>
       </i>
 
       <i className="linesize">
         <LineSize style={IconStyle} />
-        20
+        <span style={textDesign}>Average Line Size: 20</span>
       </i>
 
       <i className="price">
-        <Price style={IconStyle} />$ 20
+        <Price style={IconStyle} />
+        <span style={textDesign}>Approximate Cost: $20</span>
       </i>
 
       <i className="music">
         <Music style={IconStyle} />
-        Rock
+        <span style={textDesign}>Music Type: Rock</span>
       </i>
 
       <i className="dresscode">
         <DressCode style={IconStyle} />
-        Casual
+        <span style={textDesign}>Dress Code: Casual</span>
       </i>
-    </>
+    </div>
   );
 }

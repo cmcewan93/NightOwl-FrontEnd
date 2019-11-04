@@ -7,13 +7,14 @@ import FilterContainer from "./FilterContainer";
 
 const mainContainer = {
   height: "100vh",
-  width: "100vh",
+  width: "100%",
   backgroundColor: "#373a47"
+
 };
 
 const headerContainer = {
   height: "10vh",
-  width: "100vh"
+  width: "100%"
 };
 
 const mapStyle = {
@@ -23,7 +24,7 @@ const mapStyle = {
 
 const footerContainer = {
   height: "20vh",
-  width: "100vh"
+  width: "100%"
 };
 
 class MapView extends Component {
