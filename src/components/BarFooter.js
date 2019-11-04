@@ -9,13 +9,16 @@ const footerStyle = {
 };
 
 export default function BarFooter(props) {
-  console.log('dfasf', props)
   return (
     <div id="b-foot" style={footerStyle}>
-      <BarFooterButton name={"View Bar"} path={`/bar/:${props.barId}`}>  
-      </BarFooterButton>
-      <BarFooterButton name={"Check in"} path={`/bar/checkin/:${props.barId}`}> 
-      </BarFooterButton>
+      <BarFooterButton
+        name={"View Bar"}
+        path={`/bar/:${props.barId}`}
+      ></BarFooterButton>
+      <BarFooterButton
+        name={"Check in"}
+        path={`/bar/checkin/:${props.barId}`}
+      ></BarFooterButton>
     </div>
   );
 }

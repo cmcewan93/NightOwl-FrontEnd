@@ -53,9 +53,8 @@ export class MapContainer extends React.Component {
   //     }
   //   );
   // }
-  
+
   onMarkerClick = (props, marker, e) => {
-    console.log('hereree', props)
     this.setState({
       selectedPlace: props,
       selectedId: props,
@@ -77,7 +76,7 @@ export class MapContainer extends React.Component {
     return this.props.markers.map((marker, index) => {
       return (
         <Marker
-          key={index}
+          key={marker.id}
           onClick={this.onMarkerClick}
           position={{
             lat: marker.latitude,
@@ -94,19 +93,14 @@ export class MapContainer extends React.Component {
   }
   displayBarFooter() {
     if (this.state.showingInfoWindow) {
-      console.log("ya im showing");
-      $('#f-foot').css("display", "none")
-      $('#b-foot').css("display", "block")
+      $("#f-foot").css("display", "none");
+      $("#b-foot").css("display", "block");
     } else {
-      $('#b-foot').css("display", "none")
-      $('#f-foot').css("display", "block")
-      console.log("im not showing");
+      $("#b-foot").css("display", "none");
+      $("#f-foot").css("display", "block");
     }
   }
   render() {
-    console.log('fsfsdf', this.props)
-    console.log("@@@@@", this.state.selectedPlace);
-    console.dir(this.state.selectedPlace);
     return (
       <Map
         google={this.props.google}

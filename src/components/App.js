@@ -2,7 +2,7 @@ import React from "react";
 import Login from "./Login";
 import MapView from "./MapView";
 import UserForm from "./UserForm";
-import BarviewList from "./BarviewList"
+import BarviewList from "./BarviewList";
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
@@ -20,17 +20,15 @@ import { isModuleSpecifier } from "@babel/types";
 
 export default function App() {
   const { state, dispatch } = useApplicationData();
-  console.log("application state", state);
   let auth = localStorage.getItem("authenticated");
-  //console.log(auth);
-  //console.log(state.userAuth);
+
   const setAuth = isAuthenticated => {
     dispatch({
       type: SET_USER_AUTH,
       auth: isAuthenticated
     });
   };
-  let barId =1;
+  let barId = 1;
   /**
    * TODO: pass down redirect component as nested so you can redirect from burger and infobox in mapview
    */
@@ -45,9 +43,13 @@ export default function App() {
           )}
         </Route>
         <Route exact path="/map">
-          {!auth ? <Redirect to="/" /> : <MapView setAuth={setAuth} barId={barId} />}
+          {!auth ? (
+            <Redirect to="/" />
+          ) : (
+            <MapView setAuth={setAuth} barId={barId} />
+          )}
         </Route>
-        <Route  exact path={`/bar/:id`}>
+        <Route exact path={`/bar/:id`}>
           {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
         </Route>
         <Route exact path={`/bar/checkin/:id`}>

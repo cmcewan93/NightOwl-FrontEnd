@@ -18,6 +18,8 @@ import {
 //let { path, url } = useRouteMatch();
 
 const mainContainer = {
+  position: "fixed",
+  overflow: "hidden",
   height: "100vh",
   width: "100vw",
   backgroundColor: "#373a47"
@@ -72,7 +74,6 @@ class MapView extends Component {
   };
 
   render() {
-    console.log('Mapview', this.props.barId)
     return (
       <div style={mainContainer}>
         <HeaderContainer
@@ -81,7 +82,11 @@ class MapView extends Component {
           style={headerContainer}
           setAuth={this.state.setAuth}
         />
-        <Map markers={this.state.filteredMarkers} style={mapStyle} barId={this.props.barId}/>
+        <Map
+          markers={this.state.filteredMarkers}
+          style={mapStyle}
+          barId={this.props.barId}
+        />
         <FilterContainer
           updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}
