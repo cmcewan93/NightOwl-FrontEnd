@@ -24,7 +24,8 @@ export class MapContainer extends React.Component {
     activeMarker: {},
     selectedPlace: {},
     defaultLat: 43.644175,
-    defaultLng: -79.402204
+    defaultLng: -79.402204,
+    currentBar: null
   };
 
   // componentDidMount() {
@@ -52,30 +53,9 @@ export class MapContainer extends React.Component {
   //     }
   //   );
   // }
-  onInfoWindowOpen(props, e) {
-    // const button = (
-    //   <button onClick={(e) => {
-    //   }}
-    //   >
-    //     Check in
-    //   </button>
-    // );
-    //   // const test = (
-    //   //   <Router>
-    //   //     <Route path="/bar">
-    //   //       <BarviewList></BarviewList>
-    //   //     </Route>
-    //   //     <Link to="/bar">test</Link>
-    //   //   </Router>
-    //   // );
-    // ReactDOM.render(
-    //   React.Children.only(button),
-    //   document.getElementById("iwc")
-    // );
-  }
+  
   onMarkerClick = (props, marker, e) => {
-    // const barFoot = document.getElementById("b-foot");
-    // const filtFoot = document.getElementById("f-foot");
+    console.log('hereree', props)
     this.setState({
       selectedPlace: props,
       selectedId: props,
@@ -114,17 +94,17 @@ export class MapContainer extends React.Component {
   }
   displayBarFooter() {
     if (this.state.showingInfoWindow) {
-      console.log("ya im showing bitch");
+      console.log("ya im showing");
       $('#f-foot').css("display", "none")
       $('#b-foot').css("display", "block")
     } else {
       $('#b-foot').css("display", "none")
       $('#f-foot').css("display", "block")
-      console.log("im not showing hoe");
+      console.log("im not showing");
     }
   }
   render() {
-    const barFoot = document.getElementById("b-foot");
+    console.log('fsfsdf', this.props)
     console.log("@@@@@", this.state.selectedPlace);
     return (
       <Map
@@ -157,25 +137,12 @@ export class MapContainer extends React.Component {
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
-          // onOpen={() => {
-          //   console.log(barFoot);
-          //   $(barFoot).slideToggle();
-          //   $("#f-foot").slideToggle();
-          // }}
-          // onClose={() => {
-          //   $(barFoot).slideToggle();
-          //   $("#f-foot").slideToggle();
-          // }}
-          // onChange={() => {
-          //   $(barFoot).slideToggle();
-          //   $("#f-foot").slideToggle();
-          // }}
         >
           <div>
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
-        <BarFooter></BarFooter>
+        <BarFooter barId={this.props.barId}></BarFooter>
         {this.displayBarFooter()}
       </Map>
     );

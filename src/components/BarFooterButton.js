@@ -1,15 +1,18 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 export default function BarFooterButton(props) {
+  console.log(props);
+  console.log(props.path);
   return (
     <div>
-      <button
-        onClick={() => {
-          console.log("REDIRECT TO HERE", props.path);
-        }}
-      >
-        {props.name}
-      </button>
+      <Link to={`${props.path}`}>{props.name}</Link>
     </div>
   );
-};
+}

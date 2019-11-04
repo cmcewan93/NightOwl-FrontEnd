@@ -9,7 +9,8 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
+  Redirect,
+  withRouter
 } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
 import Cookies from "js-cookie";
@@ -29,7 +30,7 @@ export default function App() {
       auth: isAuthenticated
     });
   };
-
+  let barId =1;
   /**
    * TODO: pass down redirect component as nested so you can redirect from burger and infobox in mapview
    */
@@ -44,12 +45,12 @@ export default function App() {
           )}
         </Route>
         <Route exact path="/map">
-          {!auth ? <Redirect to="/" /> : <MapView setAuth={setAuth} />}
+          {!auth ? <Redirect to="/" /> : <MapView setAuth={setAuth} barId={barId} />}
         </Route>
-        <Route exact path="/bar">
+        <Route  exact path={`/bar/:id`}>
           {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
         </Route>
-        <Route exact path="/user-form">
+        <Route exact path={`/bar/checkin/:id`}>
           <UserForm />
         </Route>
       </Switch>

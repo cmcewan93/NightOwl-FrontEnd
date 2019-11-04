@@ -6,6 +6,17 @@ import HeaderContainer from "./HeaderContainer";
 import FilterContainer from "./FilterContainer";
 import BarFooter from "./BarFooter";
 
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  withRouter,
+  useRouteMatch
+} from "react-router-dom";
+//let { path, url } = useRouteMatch();
+
 const mainContainer = {
   height: "100vh",
   width: "100vh",
@@ -61,6 +72,7 @@ class MapView extends Component {
   };
 
   render() {
+    console.log('Mapview', this.props.barId)
     return (
       <div style={mainContainer}>
         <HeaderContainer
@@ -69,7 +81,7 @@ class MapView extends Component {
           style={headerContainer}
           setAuth={this.state.setAuth}
         />
-        <Map markers={this.state.filteredMarkers} style={mapStyle} />
+        <Map markers={this.state.filteredMarkers} style={mapStyle} barId={this.props.barId}/>
         <FilterContainer
           updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}
