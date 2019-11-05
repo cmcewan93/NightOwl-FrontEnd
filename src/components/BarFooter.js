@@ -70,7 +70,7 @@ export default function BarFooter(props) {
         <li>
           <Link to={`/bar/:${barId}`}>
             <Pint style={iconStyle} />
-            <span span style={fontColor}>
+            <span style={fontColor}>
               View Bar
             </span>
           </Link>
@@ -78,7 +78,7 @@ export default function BarFooter(props) {
         <li>
           <Link to={`/bar/checkin/:${barId}`}>
             <Check style={iconStyle} />
-            <span span style={fontColor}>
+            <span style={fontColor}>
               Check In
             </span>
           </Link>
@@ -86,7 +86,7 @@ export default function BarFooter(props) {
         <li>
           <a href={`https://maps.google.com/maps?q=${completeAddress}`}>
             <Google style={iconStyle} />
-            <span span style={fontColor}>
+            <span style={fontColor}>
               Directions
             </span>
           </a>
