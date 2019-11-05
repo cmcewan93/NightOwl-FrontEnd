@@ -78,7 +78,7 @@ export default function BarFooter(props) {
           </Link>
         </li>
         <li>
-          <a href={`https://maps.google.com/maps?q=${barName}`}>
+          <a href={`https://maps.google.com/maps?q=${completeAddress}`}>
             <Google style={iconStyle} />
           </a>
         </li>
