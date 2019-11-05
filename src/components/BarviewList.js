@@ -15,13 +15,16 @@ class BarviewList extends React.Component {
 
   componentDidMount() {
     Axios.get(`/api/visits/${this.props.bar.id}`).then(response => {
-     console.log('We have a response', response)
-      this.setState({ currentVisits: response.data, currentBar: this.props.bar });
+      console.log("We have a response", response);
+      this.setState({
+        currentVisits: response.data,
+        currentBar: this.props.bar
+      });
     });
     Axios.get(`/api/reviews/${this.props.bar.id}`).then(response => {
-      console.log('We have Reviews', response)
-       this.setState({currentReviews: response.data });
-     });
+      console.log("We have Reviews", response);
+      this.setState({ currentReviews: response.data });
+    });
   }
 
   render() {
@@ -33,7 +36,9 @@ class BarviewList extends React.Component {
         <BarviewHeader />
         <Arrow />
         <BarviewListItem />
-        <BarviewFooter />
+        <BarviewFooter
+          
+        />
       </div>
     );
   }

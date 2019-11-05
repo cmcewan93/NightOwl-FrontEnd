@@ -7,12 +7,18 @@ import {
   Redirect
 } from "react-router-dom";
 
+
+const fontColor = {
+  color: "#b8b7ad"
+};
+
 export default function BarFooterButton(props) {
-  //console.log(props);
-  //console.log('This is the path', props.path);
   return (
     <div>
-      <Link to={`${props.path}`}>{props.name}</Link>
+      <Link style={fontColor} to={`${props.path}`}>
+        {props.icon}
+        {props.name}
+      </Link>
     </div>
   );
 }
