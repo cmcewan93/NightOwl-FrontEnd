@@ -28,7 +28,6 @@ export default function App() {
       auth: isAuthenticated
     });
   };
-  // let barId = 1;
 
   const setBarId = id => {
     // Set state barId to id

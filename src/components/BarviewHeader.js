@@ -12,7 +12,7 @@ class BarviewHeader extends React.Component {
   render() {
     return (
       <div style={headerStyle}>
-        <Barname />
+        <Barname currentBar={this.props.currentBar} />
         <Burger />
       </div>
     );

@@ -10,7 +10,29 @@ const pieStyle = {
 };
 
 class Chart extends React.Component {
+  getGenderCount = array => {
+    let females = [];
+    let males = [];
+    if (array !== undefined) {
+      males = array.filter(elem => {
+        if (elem.gender === "Male") {
+          return elem;
+        }
+      });
+      females = array.filter(elem => {
+        if (elem.gender === "Female") {
+          return elem;
+        }
+      });
+    }
+    console.log("FEMALEs", females);
+    console.log("Males", males);
+    return [males.length, females.length];
+  };
   render() {
+    console.log(this.props, "dsdaas");
+    //console.log("here", this.getGenderCount(this.props.currentVisits));
+    let genders = this.getGenderCount(this.props.currentVisits);
     return (
       <div className="chart">
         <PieChart
@@ -29,8 +51,8 @@ class Chart extends React.Component {
           }}
           ratio={1.2}
           data={[
-            { title: "Females", value: 10, color: "#F17CB0" },
-            { title: "Males", value: 15, color: "#5DA5DA" }
+            { title: "Females", value: genders[0], color: "#F17CB0" },
+            { title: "Males", value: genders[1], color: "#5DA5DA" }
           ]}
         />
       </div>
