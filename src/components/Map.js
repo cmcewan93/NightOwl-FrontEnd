@@ -12,6 +12,7 @@ import BarFooter from "./BarFooter";
 import ReactDOM from "react-dom";
 import BarviewList from "./BarviewList";
 import $ from "jquery";
+
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
 
 const mapStyle = {
@@ -82,8 +83,17 @@ export class MapContainer extends React.Component {
     }
   }
   render() {
-    console.log("Map props", this.props);
-    //console.log("@@@@@", this.state.selectedPlace);
+    console.log("Map props", this.props.bar);
+    let barName = "";
+    if (this.props.bar !== undefined) {
+      barName = this.props.bar.name;
+    }
+
+    const request = {
+      query: `${barName}`,
+      fields: ["photos", "formatted_address", "rating"]
+    };
+
     return (
       <Map
         google={this.props.google}
@@ -92,7 +102,7 @@ export class MapContainer extends React.Component {
           lat: this.state.defaultLat,
           lng: this.state.defaultLng
         }}
-        zoom={14}
+        zoom={15}
         disableDefaultUI={true}
         style={mapStyle}
         gestureHandling={"greedy"}
