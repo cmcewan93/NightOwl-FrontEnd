@@ -17,6 +17,7 @@ import Cookies from "js-cookie";
 import "./App.css";
 import { SET_USER_AUTH, SET_BAR_ID } from "../reducers/application";
 import { isModuleSpecifier } from "@babel/types";
+import FourthView from "./FourthView";
 
 export default function App() {
   const { state, dispatch } = useApplicationData();
@@ -36,7 +37,7 @@ export default function App() {
     dispatch({
       type: SET_BAR_ID,
       auth: id
-    })
+    });
   };
   /**
    * TODO: pass down redirect component as nested so you can redirect from burger and infobox in mapview
@@ -55,14 +56,18 @@ export default function App() {
           {!auth ? (
             <Redirect to="/" />
           ) : (
-            <MapView setAuth={setAuth} barId={state.barId} setBarId={setBarId} />
+            <MapView
+              setAuth={setAuth}
+              barId={state.barId}
+              setBarId={setBarId}
+            />
           )}
         </Route>
         <Route exact path={`/bar/:${state.barId}`}>
           {!auth ? <Redirect to="/" /> : <BarviewList setAuth={setAuth} />}
         </Route>
         <Route exact path={`/bar/checkin/:${state.barId}`}>
-          <UserForm />
+          <FourthView />
         </Route>
       </Switch>
     </Router>

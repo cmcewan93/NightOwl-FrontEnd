@@ -14,48 +14,52 @@ export class FormUserDetails extends Component {
     const { values, handleChange } = this.props;
 
     return (
-      <MuiThemeProvider>
-        <React.Fragment>
-          <AppBar title="Your Choices" />
-          <TextField
-            hintText="Music Type"
-            floatingLabelText="Choose the Music Type of the bar"
-            onChange={handleChange("musicType")}
-            defaultValue={values.musicType}
-          />
-          <br />
-          <TextField
-            hintText="Price"
-            floatingLabelText="Choose the Price Range of the bar"
-            onChange={handleChange("price")}
-            defaultValue={values.price}
-          />
-          <br />
+      <div style={{ backgroundColor: "#373a47", padding: "0 0 400px 0" }}>
+        <MuiThemeProvider>
+          <React.Fragment>
+            <AppBar title="Your Choices" primary={false} />
+            <div style={{ marginLeft: "60px" }}>
+              <TextField
+                placeholder="Music Type"
+                inputStyle={{ color: "#b8b7ad" }}
+                onChange={handleChange("musicType")}
+                defaultValue={values.musicType}
+              />
 
-          <TextField
-            hintText="Dress Code"
-            floatingLabelText="Choose the Dress Code of the bar"
-            onChange={handleChange("dressCode")}
-            defaultValue={values.dressCode}
-          />
-          <br />
+              <br />
+              <TextField
+                placeholder="Price"
+                inputStyle={{ color: "#b8b7ad" }}
+                onChange={handleChange("price")}
+                defaultValue={values.price}
+              />
+              <br />
+              <TextField
+                placeholder="Dress Code"
+                inputStyle={{ color: "#b8b7ad" }}
+                onChange={handleChange("dressCode")}
+                defaultValue={values.dressCode}
+              />
+              <br />
+              <TextField
+                placeholder="Line Size"
+                inputStyle={{ color: "#b8b7ad" }}
+                onChange={handleChange("lineSize")}
+                defaultValue={values.lineSize}
+              />
+              <br />
 
-          <TextField
-            hintText="Dress Code"
-            floatingLabelText="Choose the Dress Code of the bar"
-            onChange={handleChange("dressCode")}
-            defaultValue={values.dressCode}
-          />
-          <br />
-
-          <RaisedButton
-            label="Continue"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
-        </React.Fragment>
-      </MuiThemeProvider>
+              <br />
+              <RaisedButton
+                label="Continue"
+                primary={true}
+                style={styles.button}
+                onClick={this.continue}
+              />
+            </div>
+          </React.Fragment>
+        </MuiThemeProvider>
+      </div>
     );
   }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { List, ListItem } from "material-ui/List";
+import { List, ListItem, ListItemText } from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
 
 export class Confirm extends Component {
@@ -27,8 +27,18 @@ export class Confirm extends Component {
           <AppBar title="Confirm your choices" />
 
           <List>
+            <ListItemText
+              disableTypography
+              primary={
+                <Typography type="body2" style={{ color: "#FFFFFF" }}>
+                  MyTitle
+                </Typography>
+              }
+            />
+
             <ListItem
-              primaryText="Music Type"
+              placeholder="Music Type"
+              inputStyle={{ color: "#b8b7ad" }}
               secondaryText={musicType}
             ></ListItem>
             <ListItem
@@ -40,16 +50,8 @@ export class Confirm extends Component {
               secondaryText={dressCode}
             ></ListItem>
             <ListItem
-              primaryText="Age Range"
-              secondaryText={ageRange}
-            ></ListItem>
-            <ListItem
               primaryText="Line Size"
               secondaryText={lineSize}
-            ></ListItem>
-            <ListItem
-              primaryText="Women/Men Ratio"
-              secondaryText={womenMenRatio}
             ></ListItem>
           </List>
 
