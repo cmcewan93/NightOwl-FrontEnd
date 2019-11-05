@@ -1,8 +1,15 @@
 import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import { TextField, RadioGroup, FormControlLabel } from "material-ui/core";
+import {
+  Radio,
+  TextField,
+  RadioGroup,
+  FormControlLabel,
+  FormLabel
+} from "@material-ui/core";
 import RaisedButton from "material-ui/RaisedButton";
+import StyledRadio from "./StyledRadio";
 
 export class FormUserDetails extends Component {
   continue = e => {
@@ -23,43 +30,33 @@ export class FormUserDetails extends Component {
               onChange={handleChange("musicType")}
               defaultValue={values.musicType}
             /> */}
+            <FormLabel component="legend">
+              Please select the music Type!{" "}
+            </FormLabel>
             <RadioGroup
-              defaultValue="female"
-              aria-label="gender"
+              defaultValue="none"
+              aria-label="Music Type"
               name="customized-radios"
             >
+              <FormControlLabel value="Rock" control={<Radio />} label="Rock" />
+              <FormControlLabel value="Rap" control={<Radio />} label="Rap" />
               <FormControlLabel
-                value="female"
-                control={<StyledRadio />}
-                label="Female"
+                value="Top40"
+                control={<Radio />}
+                label="Top 40"
               />
               <FormControlLabel
-                value="male"
-                control={<StyledRadio />}
-                label="Male"
+                value="HipHop"
+                control={<Radio />}
+                label="Hip Hop/Rnb"
               />
               <FormControlLabel
-                value="other"
-                control={<StyledRadio />}
-                label="Other"
+                value="Country"
+                control={<Radio />}
+                label="Country"
               />
+              <FormControlLabel value="Edm" control={<Radio />} label="Edm" />
             </RadioGroup>
-            <br />
-            <TextField
-              hintText="Price"
-              floatingLabelText="Choose the Price Range of the bar"
-              onChange={handleChange("price")}
-              defaultValue={values.price}
-            />
-            <br />
-
-            <TextField
-              hintText="Dress Code"
-              floatingLabelText="Choose the Dress Code of the bar"
-              onChange={handleChange("dressCode")}
-              defaultValue={values.dressCode}
-            />
-            <br />
 
             <div style={{ marginTop: "50px" }}>
               <RaisedButton
