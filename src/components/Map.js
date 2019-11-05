@@ -50,11 +50,11 @@ export class MapContainer extends React.Component {
 
   // Renders all of the markers
   renderMarkers() {
-    return this.props.markers.map(marker => {
+    return this.props.markers.map((marker, index) => {
       // console.log('ID', marker.id);
       return (
         <Marker
-          key={marker.id}
+          key={index}
           id={marker.id}
           onClick={this.onMarkerClick}
           position={{

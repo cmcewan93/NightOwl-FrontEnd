@@ -1,4 +1,5 @@
 import React from "react";
+import { thisExpression } from "@babel/types";
 
 const formStyle = {
   top: 0,
@@ -21,6 +22,7 @@ class SearchBar extends React.Component {
           onSubmit={event => {
             event.preventDefault();
             this.props.search(this.state.term);
+            this.setState({ term: "" });
           }}
           method="POST"
         >
