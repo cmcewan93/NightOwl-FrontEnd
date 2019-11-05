@@ -37,7 +37,7 @@ export class MapContainer extends React.Component {
       showingInfoWindow: true
     });
 
-    this.props.setBarId(props.id)
+    this.props.setBarId(props.id);
   };
   onMapClicked = props => {
     if (this.state.showingInfoWindow) {
@@ -50,11 +50,11 @@ export class MapContainer extends React.Component {
 
   // Renders all of the markers
   renderMarkers() {
-    return this.props.markers.map((marker) => {
+    return this.props.markers.map((marker, index) => {
       // console.log('ID', marker.id);
       return (
         <Marker
-          key={marker.id}
+          key={index}
           id={marker.id}
           onClick={this.onMarkerClick}
           position={{
@@ -120,7 +120,7 @@ export class MapContainer extends React.Component {
             <h3>{this.state.selectedPlace.name}</h3>
           </div>
         </InfoWindow>
-        <BarFooter barId={this.props.barId}></BarFooter>
+        <BarFooter barId={this.props.barId} bar={this.props.bar}></BarFooter>
         {this.displayBarFooter()}
       </Map>
     );
