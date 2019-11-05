@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import TextField from "material-ui/TextField";
+import { TextField, RadioGroup, FormControlLabel } from "material-ui/core";
 import RaisedButton from "material-ui/RaisedButton";
 
 export class FormUserDetails extends Component {
@@ -17,12 +17,33 @@ export class FormUserDetails extends Component {
       <MuiThemeProvider>
         <React.Fragment>
           <div style={{ marginLeft: "60px" }}>
-            <TextField
+            {/* <TextField
               hintText="Music Type"
-              floatingLabelText="Choose the Music Type of the bar"
+              floatingLabelText=""
               onChange={handleChange("musicType")}
               defaultValue={values.musicType}
-            />
+            /> */}
+            <RadioGroup
+              defaultValue="female"
+              aria-label="gender"
+              name="customized-radios"
+            >
+              <FormControlLabel
+                value="female"
+                control={<StyledRadio />}
+                label="Female"
+              />
+              <FormControlLabel
+                value="male"
+                control={<StyledRadio />}
+                label="Male"
+              />
+              <FormControlLabel
+                value="other"
+                control={<StyledRadio />}
+                label="Other"
+              />
+            </RadioGroup>
             <br />
             <TextField
               hintText="Price"

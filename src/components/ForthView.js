@@ -1,6 +1,6 @@
 import React from "react";
 import Camera from "./Camera";
-import UserForm from "./UserForm";
+import UserForm from "./Form/UserForm";
 
 export default function FourthView() {
   return (

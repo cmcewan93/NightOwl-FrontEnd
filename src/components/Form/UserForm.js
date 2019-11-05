@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
 import Confirm from "./Confirm";
-import Success from "./Success";
+import Success from "../Success";
 
 export class UserForm extends Component {
   state = {
@@ -10,9 +10,7 @@ export class UserForm extends Component {
     musicType: "",
     price: "",
     dressCode: "",
-    ageRange: "",
-    lineSize: "",
-    womenMenRatio: ""
+    lineSize: ""
   };
 
   // proceed to next step
@@ -42,17 +40,13 @@ export class UserForm extends Component {
       musicType,
       price,
       dressCode,
-      ageRange,
-      lineSize,
-      womenMenRatio
+      lineSize
     } = this.state;
     const values = {
       musicType,
       price,
       dressCode,
-      ageRange,
-      lineSize,
-      womenMenRatio
+      lineSize
     };
 
     switch (step) {
