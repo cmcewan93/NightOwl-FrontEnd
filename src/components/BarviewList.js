@@ -29,11 +29,11 @@ class BarviewList extends React.Component {
 
   render() {
     // console.log("bar id", this.props.bar.id);
-    // console.log("bar name", this.props.bar);
-    // console.log("current visits", this.state.currentVisits);
+    console.log("state", this.props);
+    console.log("current bar", this.props.bar);
     return (
       <div>
-        <BarviewHeader currentBar={this.state.currentBar} />
+        <BarviewHeader bar={this.props.bar} />
         <Arrow />
         <BarviewListItem />
         <BarviewFooter

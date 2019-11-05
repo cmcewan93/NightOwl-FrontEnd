@@ -30,7 +30,7 @@ class Chart extends React.Component {
     return [males.length, females.length];
   };
   render() {
-    console.log(this.props, "dsdaas");
+    //console.log(this.props, "dsdaas");
     //console.log("here", this.getGenderCount(this.props.currentVisits));
     let genders = this.getGenderCount(this.props.currentVisits);
     return (

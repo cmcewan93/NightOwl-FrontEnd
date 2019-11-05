@@ -6,17 +6,6 @@ import HeaderContainer from "./HeaderContainer";
 import FilterContainer from "./FilterContainer";
 import BarFooter from "./BarFooter";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect,
-  withRouter,
-  useRouteMatch
-} from "react-router-dom";
-//let { path, url } = useRouteMatch();
-
 const mainContainer = {
   position: "fixed",
   overflow: "hidden",
@@ -75,7 +64,7 @@ class MapView extends Component {
   };
 
   render() {
-    console.log("ASUAIU", this.props);
+    //console.log("ASUAIU", this.props);
     return (
       <div style={mainContainer}>
         <HeaderContainer

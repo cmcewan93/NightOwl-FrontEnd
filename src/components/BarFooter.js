@@ -41,7 +41,7 @@ const fontAlignment = {
 };
 
 export default function BarFooter(props) {
-  console.log("COMPLETE OBJ", props.bar);
+  //console.log("COMPLETE OBJ", props.bar);
   let completeAddress = "";
   if (props.bar !== undefined) {
     completeAddress = encodeURIComponent(
@@ -50,17 +50,17 @@ export default function BarFooter(props) {
   }
 
   let barLatitude = "";
-  if (props.bar != undefined) {
+  if (props.bar !== undefined) {
     barLatitude = props.bar.latitude;
   }
 
   let barLongitude = "";
-  if (props.bar != undefined) {
+  if (props.bar !== undefined) {
     barLongitude = props.bar.longitude;
   }
 
   let barId = "";
-  if (props.bar != undefined) {
+  if (props.bar !== undefined) {
     barId = props.bar.id;
   }
 
@@ -70,25 +70,19 @@ export default function BarFooter(props) {
         <li>
           <Link to={`/bar/:${barId}`}>
             <Pint style={iconStyle} />
-            <span style={fontColor}>
-              View Bar
-            </span>
+            <span style={fontColor}>View Bar</span>
           </Link>
         </li>
         <li>
           <Link to={`/bar/checkin/:${barId}`}>
             <Check style={iconStyle} />
-            <span style={fontColor}>
-              Check In
-            </span>
+            <span style={fontColor}>Check In</span>
           </Link>
         </li>
         <li>
           <a href={`https://maps.google.com/maps?q=${completeAddress}`}>
             <Google style={iconStyle} />
-            <span style={fontColor}>
-              Directions
-            </span>
+            <span style={fontColor}>Directions</span>
           </a>
         </li>
         <li>

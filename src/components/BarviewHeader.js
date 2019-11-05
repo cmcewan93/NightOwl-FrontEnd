@@ -10,9 +10,10 @@ const headerStyle = {
 
 class BarviewHeader extends React.Component {
   render() {
+    console.log('here', this.props);
     return (
       <div style={headerStyle}>
-        <Barname currentBar={this.props.currentBar} />
+        <Barname currentBar={this.props.bar} />
         <Burger />
       </div>
     );

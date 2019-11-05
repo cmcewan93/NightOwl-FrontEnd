@@ -3,7 +3,7 @@ const SET_USER_AUTH = "SET_USER_AUTH";
 const SET_BAR_ID = "SET_BAR_ID"
 
 function reducer(state, action) {
-  console.log("This is the action", action);
+  //("This is the action", action);
   switch (action.type) {
     case SET_APPLICATION_DATA:
       return {

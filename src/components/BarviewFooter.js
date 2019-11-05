@@ -12,7 +12,7 @@ const totalSize = {
 
 class BarviewFooter extends React.Component {
   render() {
-    console.log('BarFooter props', this.props)
+    //console.log('BarFooter props', this.props)
     return (
       <div style={totalSize}>
         <BarviewIcons currentBar={this.props.currentBar} currentVisits={this.props.currentVisits} currentReviews={this.props.currentReviews}/>

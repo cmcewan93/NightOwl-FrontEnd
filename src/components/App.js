@@ -4,6 +4,7 @@ import MapView from "./MapView";
 import UserForm from "./Form/UserForm";
 import BarviewList from "./BarviewList";
 import Camera from "./Camera";
+import Fourthview from "./ForthView";
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
@@ -32,13 +33,13 @@ export default function App() {
 
   const setBarId = id => {
     // Set state barId to id
-    console.log("set barId is working!");
+    //console.log("set barId is working!");
     dispatch({
       type: SET_BAR_ID,
       auth: id
     });
   };
-  console.log("venues", state.venues);
+  //console.log("venues", state.venues);
   const currentBar = (id, venues) => {
     return venues.find(venue => venue.id === id);
   };
@@ -80,9 +81,9 @@ export default function App() {
           )}
         </Route>
         <Route exact path={`/bar/checkin/:${state.barId}`}>
-          <UserForm barId={state.barId} />
+          <Fourthview barId={state.barId} bar={currentBarObj} />
         </Route>
-        <Route exact path="/camera"> 
+        <Route exact path="/camera">
           <Camera> </Camera>
         </Route>
       </Switch>

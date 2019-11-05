@@ -24,7 +24,7 @@ const textDesign = {
 };
 
 export default function BarviewIcons(props) {
-  console.log("Barview props", props);
+  //console.log("Barview props", props);
 
   //TODO: REFACTOR FUNCTIONS, same function for finding averages
   const getAverageAge = visits => {
