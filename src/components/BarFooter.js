@@ -1,9 +1,16 @@
 import React from "react";
-import BarFooterButton from "./BarFooterButton";
 import { ReactComponent as Google } from "../images/googlefooter.svg";
 import { ReactComponent as Pint } from "../images/pint.svg";
 import { ReactComponent as Check } from "../images/point.svg";
 import { ReactComponent as Uber } from "../images/uber.svg";
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
 
 const footerStyle = {
   display: "none",
@@ -24,8 +31,34 @@ const iconStyle = {
   width: "60px"
 };
 
+const fontColor = {
+  color: "#b8b7ad"
+};
+
 export default function BarFooter(props) {
-  // console.log(props.bar);
+  console.log("COMPLETE OBJ", props.bar);
+  let completeAddress = "";
+  if (props.bar != undefined) {
+    completeAddress = encodeURIComponent(
+      `${props.bar.name}, ${props.bar.address}, ${props.bar.city}, ${props.bar.province}, ${props.bar.country}`
+    );
+  }
+
+  let barLatitude = "";
+  if (props.bar != undefined) {
+    barLatitude = props.bar.latitude;
+  }
+
+  let barLongitude = "";
+  if (props.bar != undefined) {
+    barLongitude = props.bar.longitude;
+  }
+
+  let barId = "";
+  if (props.bar != undefined) {
+    barId = props.bar.id;
+  }
+
   let barName = "";
   if (props.bar != undefined) {
     barName = encodeURIComponent(props.bar.name);
@@ -35,18 +68,14 @@ export default function BarFooter(props) {
     <div id="b-foot" style={footerStyle}>
       <ul style={listStyle}>
         <li>
-          <BarFooterButton
-            name={"View Bar"}
-            path={`/bar/:${props.barId}`}
-            icon={<Pint style={iconStyle} />}
-          ></BarFooterButton>
+          <Link to={`/bar/:${barId}`}>
+            <Pint style={iconStyle} />
+          </Link>
         </li>
         <li>
-          <BarFooterButton
-            name={"Check in"}
-            path={`/bar/checkin/:${props.barId}`}
-            icon={<Check style={iconStyle} />}
-          ></BarFooterButton>
+          <Link to={`/bar/checkin/:${barId}`}>
+            <Check style={iconStyle} />
+          </Link>
         </li>
         <li>
           <a href={`https://maps.google.com/maps?q=${barName}`}>
@@ -54,11 +83,11 @@ export default function BarFooter(props) {
           </a>
         </li>
         <li>
-          <BarFooterButton
-            name={"Uber"}
-            path={`/bar/checkin/:${props.barId}`}
-            icon={<Uber style={iconStyle} />}
-          ></BarFooterButton>
+          <a
+            href={`https://m.uber.com/ul/?action=setPickup&client_id=YuXED_2gMxypW4z2Gl1x_q92auVkf9cv&pickup=my_location&dropoff[formatted_address]=${completeAddress}&dropoff[latitude]=${barLatitude}&dropoff[longitude]=${barLongitude}`}
+          >
+            <Uber style={iconStyle} />
+          </a>
         </li>
       </ul>
     </div>
