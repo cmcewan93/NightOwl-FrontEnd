@@ -9,7 +9,7 @@ import {
   FormLabel
 } from "@material-ui/core";
 import RaisedButton from "material-ui/RaisedButton";
-import StyledRadio from "./StyledRadio";
+// import StyledRadio from "./StyledRadio";
 
 export class FormUserDetails extends Component {
   continue = e => {
@@ -31,7 +31,7 @@ export class FormUserDetails extends Component {
               defaultValue={values.musicType}
             /> */}
             <FormLabel component="legend">
-              Please select the music Type!{" "}
+              Please select the Music Type!{" "}
             </FormLabel>
             <RadioGroup
               defaultValue="none"

@@ -4,6 +4,7 @@ import MapView from "./MapView";
 import UserForm from "./Form/UserForm";
 import BarviewList from "./BarviewList";
 import Camera from "./Camera";
+import Fourthview from "./ForthView";
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
@@ -80,9 +81,9 @@ export default function App() {
           )}
         </Route>
         <Route exact path={`/bar/checkin/:${state.barId}`}>
-          <UserForm barId={state.barId} />
+          <Fourthview barId={state.barId} bar={currentBarObj} />
         </Route>
-        <Route exact path="/camera"> 
+        <Route exact path="/camera">
           <Camera> </Camera>
         </Route>
       </Switch>

@@ -50,17 +50,17 @@ export default function BarFooter(props) {
   }
 
   let barLatitude = "";
-  if (props.bar != undefined) {
+  if (props.bar !== undefined) {
     barLatitude = props.bar.latitude;
   }
 
   let barLongitude = "";
-  if (props.bar != undefined) {
+  if (props.bar !== undefined) {
     barLongitude = props.bar.longitude;
   }
 
   let barId = "";
-  if (props.bar != undefined) {
+  if (props.bar !== undefined) {
     barId = props.bar.id;
   }
 
