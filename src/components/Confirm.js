@@ -24,47 +24,47 @@ export class Confirm extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <AppBar title="Confirm your choices" />
+          <div style={{ marginLeft: "60px" }}>
+            <List>
+              <ListItem
+                primaryText="Music Type"
+                secondaryText={musicType}
+              ></ListItem>
+              <ListItem
+                primaryText="Price Range"
+                secondaryText={price}
+              ></ListItem>
+              <ListItem
+                primaryText="Dress Code"
+                secondaryText={dressCode}
+              ></ListItem>
+              <ListItem
+                primaryText="Age Range"
+                secondaryText={ageRange}
+              ></ListItem>
+              <ListItem
+                primaryText="Line Size"
+                secondaryText={lineSize}
+              ></ListItem>
+              <ListItem
+                primaryText="Women/Men Ratio"
+                secondaryText={womenMenRatio}
+              ></ListItem>
+            </List>
 
-          <List>
-            <ListItem
-              primaryText="Music Type"
-              secondaryText={musicType}
-            ></ListItem>
-            <ListItem
-              primaryText="Price Range"
-              secondaryText={price}
-            ></ListItem>
-            <ListItem
-              primaryText="Dress Code"
-              secondaryText={dressCode}
-            ></ListItem>
-            <ListItem
-              primaryText="Age Range"
-              secondaryText={ageRange}
-            ></ListItem>
-            <ListItem
-              primaryText="Line Size"
-              secondaryText={lineSize}
-            ></ListItem>
-            <ListItem
-              primaryText="Women/Men Ratio"
-              secondaryText={womenMenRatio}
-            ></ListItem>
-          </List>
-
-          <RaisedButton
-            label="Confirm & Continue"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
-          <RaisedButton
-            label="Back"
-            primary={false}
-            style={styles.button}
-            onClick={this.back}
-          />
+            <RaisedButton
+              label="Confirm"
+              primary={true}
+              style={(styles.button, styles.rightarea)}
+              onClick={this.continue}
+            />
+            <RaisedButton
+              label="Back"
+              primary={false}
+              style={styles.button}
+              onClick={this.back}
+            />
+          </div>
         </>
       </MuiThemeProvider>
     );
@@ -73,7 +73,11 @@ export class Confirm extends Component {
 
 const styles = {
   button: {
-    margin: "15"
+    padding: "15",
+    marginTop: "20px"
+  },
+  rightarea: {
+    marginRight: "50px"
   }
 };
 

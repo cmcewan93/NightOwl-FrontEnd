@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
+import RaisedButton from "material-ui/RaisedButton";
 
 export class Success extends Component {
   continue = e => {
@@ -18,9 +19,10 @@ export class Success extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <AppBar title="Success" />
-          <h3>Thank you for your patience!</h3>
-          <p>You will have a 10% discount in this bar.</p>
+          <div style={{ textAlign: "center", marginTop: "50px" }}>
+            <h3>Thank you for your patience!</h3>
+            <p>You will have a 10% discount in this bar.</p>
+          </div>
         </>
       </MuiThemeProvider>
     );

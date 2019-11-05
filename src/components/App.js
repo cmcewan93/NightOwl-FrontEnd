@@ -3,6 +3,7 @@ import Login from "./Login";
 import MapView from "./MapView";
 import UserForm from "./UserForm";
 import BarviewList from "./BarviewList";
+import Camera from "./Camera";
 // import Burger from "./Burger";
 import {
   BrowserRouter as Router,
@@ -79,6 +80,9 @@ export default function App() {
         </Route>
         <Route exact path={`/bar/checkin/:${state.barId}`}>
           <UserForm barId={state.barId} />
+        </Route>
+        <Route exact path="/camera"> 
+          <Camera> </Camera>
         </Route>
       </Switch>
     </Router>

@@ -16,44 +16,39 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <AppBar title="Your Choices" />
-          <TextField
-            hintText="Music Type"
-            floatingLabelText="Choose the Music Type of the bar"
-            onChange={handleChange("musicType")}
-            defaultValue={values.musicType}
-          />
-          <br />
-          <TextField
-            hintText="Price"
-            floatingLabelText="Choose the Price Range of the bar"
-            onChange={handleChange("price")}
-            defaultValue={values.price}
-          />
-          <br />
+          <div style={{ marginLeft: "60px" }}>
+            <TextField
+              hintText="Music Type"
+              floatingLabelText="Choose the Music Type of the bar"
+              onChange={handleChange("musicType")}
+              defaultValue={values.musicType}
+            />
+            <br />
+            <TextField
+              hintText="Price"
+              floatingLabelText="Choose the Price Range of the bar"
+              onChange={handleChange("price")}
+              defaultValue={values.price}
+            />
+            <br />
 
-          <TextField
-            hintText="Dress Code"
-            floatingLabelText="Choose the Dress Code of the bar"
-            onChange={handleChange("dressCode")}
-            defaultValue={values.dressCode}
-          />
-          <br />
+            <TextField
+              hintText="Dress Code"
+              floatingLabelText="Choose the Dress Code of the bar"
+              onChange={handleChange("dressCode")}
+              defaultValue={values.dressCode}
+            />
+            <br />
 
-          <TextField
-            hintText="Dress Code"
-            floatingLabelText="Choose the Dress Code of the bar"
-            onChange={handleChange("dressCode")}
-            defaultValue={values.dressCode}
-          />
-          <br />
-
-          <RaisedButton
-            label="Continue"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
+            <div style={{ marginTop: "50px" }}>
+              <RaisedButton
+                label="Continue"
+                primary={true}
+                style={(styles.button, styles.area)}
+                onClick={this.continue}
+              />
+            </div>
+          </div>
         </React.Fragment>
       </MuiThemeProvider>
     );
@@ -62,7 +57,10 @@ export class FormUserDetails extends Component {
 
 const styles = {
   button: {
-    margin: "15"
+    padding: "15"
+  },
+  area: {
+    marginLeft: "70px"
   }
 };
 

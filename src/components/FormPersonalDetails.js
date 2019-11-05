@@ -21,43 +21,44 @@ export class FormPersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <AppBar title="Continue Your Choices" />
-          <TextField
-            hintText="Age Range"
-            floatingLabelText="Choose the Age Range of the bar"
-            onChange={handleChange("ageRange")}
-            defaultValue={values.ageRange}
-          />
-          <br />
-          <TextField
-            hintText="Line Size"
-            floatingLabelText="Choose the waiting time of the bar"
-            onChange={handleChange("lineSize")}
-            defaultValue={values.lineSize}
-          />
-          <br />
+          <div style={{ marginLeft: "60px" }}>
+            <TextField
+              hintText="Age Range"
+              floatingLabelText="Choose the Age Range of the bar"
+              onChange={handleChange("ageRange")}
+              defaultValue={values.ageRange}
+            />
+            <br />
+            <TextField
+              hintText="Line Size"
+              floatingLabelText="Choose the waiting time of the bar"
+              onChange={handleChange("lineSize")}
+              defaultValue={values.lineSize}
+            />
+            <br />
 
-          <TextField
-            hintText="Women/Men Ratio"
-            floatingLabelText="Guess the Women/Men Ratio "
-            onChange={handleChange("womenMenRatio")}
-            defaultValue={values.womenMenRatio}
-          />
-          <br />
+            <TextField
+              hintText="Women/Men Ratio"
+              floatingLabelText="Guess the Women/Men Ratio "
+              onChange={handleChange("womenMenRatio")}
+              defaultValue={values.womenMenRatio}
+            />
+            <br />
 
-          <RaisedButton
-            label="Continue"
-            primary={true}
-            style={styles.button}
-            onClick={this.continue}
-          />
+            <RaisedButton
+              label="Continue"
+              primary={true}
+              style={(styles.button, styles.rightarea)}
+              onClick={this.continue}
+            />
 
-          <RaisedButton
-            label="Back"
-            primary={false}
-            style={styles.button}
-            onClick={this.back}
-          />
+            <RaisedButton
+              label="Back"
+              primary={false}
+              style={styles.button}
+              onClick={this.back}
+            />
+          </div>
         </>
       </MuiThemeProvider>
     );
@@ -66,7 +67,11 @@ export class FormPersonalDetails extends Component {
 
 const styles = {
   button: {
-    margin: "15"
+    padding: "15",
+    marginTop: "50px"
+  },
+  rightarea: {
+    marginRight: "50px"
   }
 };
 
