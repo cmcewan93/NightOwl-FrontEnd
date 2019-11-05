@@ -75,6 +75,7 @@ class MapView extends Component {
   };
 
   render() {
+    console.log("ASUAIU", this.props);
     return (
       <div style={mainContainer}>
         <HeaderContainer
@@ -83,7 +84,13 @@ class MapView extends Component {
           style={headerContainer}
           setAuth={this.state.setAuth}
         />
-        <Map markers={this.state.filteredMarkers} style={mapStyle} barId={this.props.barId} setBarId={this.props.setBarId}/>
+        <Map
+          markers={this.state.filteredMarkers}
+          style={mapStyle}
+          barId={this.props.barId}
+          setBarId={this.props.setBarId}
+          bar={this.props.bar}
+        />
         <FilterContainer
           updateMarkers={this.updateMarkers}
           allMarkers={this._allMarkers}

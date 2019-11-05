@@ -68,6 +68,7 @@ export default function App() {
               setAuth={setAuth}
               barId={state.barId}
               setBarId={setBarId}
+              bar={currentBarObj}
             />
           )}
         </Route>
