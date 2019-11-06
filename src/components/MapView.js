@@ -4,7 +4,7 @@ import Axios from "axios";
 import Map from "./Map";
 import HeaderContainer from "./HeaderContainer";
 import FilterContainer from "./FilterContainer";
-import BarFooter from "./BarFooter";
+// import BarFooter from "./BarFooter";
 
 const mainContainer = {
   position: "fixed",

@@ -27,7 +27,7 @@ export default function BarviewListItem() {
   return (
     <Gallery
       style={{
-        background: "black",
+        background: "#040e0f",
 
         width: "100vw",
         position: "fixed",

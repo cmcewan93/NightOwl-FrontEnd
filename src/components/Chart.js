@@ -25,8 +25,8 @@ class Chart extends React.Component {
         }
       });
     }
-    console.log("FEMALEs", females);
-    console.log("Males", males);
+    // console.log("FEMALEs", females);
+    // console.log("Males", males);
     return [males.length, females.length];
   };
   render() {
@@ -36,6 +36,11 @@ class Chart extends React.Component {
     return (
       <div className="chart">
         <PieChart
+          animate
+          animationDuration={500}
+          animationEasing="ease-out"
+          cx={50}
+          cy={50}
           style={pieStyle}
           radius={15}
           label={({ data, dataIndex }) =>
@@ -44,6 +49,8 @@ class Chart extends React.Component {
             data[dataIndex].title
           }
           labelPosition={55}
+          lengthAngle={360}
+          lineWidth={100}
           labelStyle={{
             fill: "#f3f3f3",
             fontFamily: "sans-serif",
