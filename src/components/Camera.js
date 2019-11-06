@@ -31,11 +31,18 @@ class CameraComponent extends Component {
 
   render() {
     return (
-      <div style={{}}>
+      <div>
         {this.state.dataUri ? (
           <div>
             <img alt="" src={this.state.dataUri} />
-            <button onClick={() => this.submitPhoto()}>submit</button>
+            <div className="ui inverted segment">
+              <button
+                className="ui inverted olive button"
+                onClick={() => this.submitPhoto()}
+              >
+                submit
+              </button>
+            </div>
           </div>
         ) : (
           <Camera
@@ -48,7 +55,7 @@ class CameraComponent extends Component {
             isSilentMode={true}
             isDisplayStartCameraError={true}
             isFullscreen={false}
-            sizeFactor={0.5}
+            sizeFactor={0}
           />
         )}
       </div>
