@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Gallery, GalleryImage } from "react-gesture-gallery";
 
-const images = [
+let defaultImages = [
   "https://images.unsplash.com/photo-1508695666381-69deeaa78ccb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
   "https://images.unsplash.com/photo-1541500792866-07f25e0c8578?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
   "https://images.unsplash.com/photo-1552132870-b5d2f704e247?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
@@ -11,7 +11,17 @@ const images = [
 
 // axios for bar images
 
-export default function BarviewListItem() {
+export default function BarviewListItem(props) {
+  console.log("props", props);
+  //const images = props
+  let images = props.currentReviews.map(review => {
+    return review.img;
+  });
+
+  if (images.length === 0) {
+    images = defaultImages;
+  }
+
   const [index, setIndex] = React.useState(0);
   React.useEffect(() => {
     const timer = setInterval(() => {
@@ -23,6 +33,8 @@ export default function BarviewListItem() {
     }, 10000);
     return () => clearInterval(timer);
   }, [index]);
+
+  console.log("barview list", props);
 
   return (
     <Gallery
