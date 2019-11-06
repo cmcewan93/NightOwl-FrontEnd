@@ -1,16 +1,20 @@
 import React from "react";
 import { ReactComponent as Smartphone } from "../images/smartphone.svg";
 import { ReactComponent as Google } from "../images/google.svg";
-import { ReactComponent as Age } from "../images/-18.svg";
+import { ReactComponent as Hourglass } from "../images/hourglass.svg";
 import { ReactComponent as DressCode } from "../images/dress-code.svg";
+import { ReactComponent as Uber } from "../images/uber2.svg";
+import { ReactComponent as Clock } from "../images/clock.svg";
+import { ReactComponent as Money } from "../images/money.svg";
+import { ReactComponent as Music } from "../images/music.svg";
 
 const containerStyle = {
   position: "fixed",
-  bottom: "155px",
+  bottom: "100px",
   left: "8px",
   display: "grid",
   gridTemplateColumns: "auto",
-  marginBottom: "1px"
+  gridRowGap: "4px"
 };
 
 const IconStyle = {
@@ -87,6 +91,22 @@ export default function BarviewIcons(props) {
   };
   // console.log("average age", getAverageAge(props.currentVisits));
   // console.log("mode", getMostCommon(props.currentReviews, "entry_fee"));
+  let completeAddress = "";
+  if (props.currentBar !== undefined) {
+    completeAddress = encodeURIComponent(
+      `${props.currentBar.name}, ${props.currentBar.address}, ${props.currentBar.city}, ${props.currentBar.province}, ${props.currentBar.country}`
+    );
+  }
+
+  let barLatitude = "";
+  if (props.currentBar !== undefined) {
+    barLatitude = props.currentBar.latitude;
+  }
+
+  let barLongitude = "";
+  if (props.currentBar !== undefined) {
+    barLongitude = props.currentBar.longitude;
+  }
 
   return (
     <div style={containerStyle}>
@@ -94,43 +114,56 @@ export default function BarviewIcons(props) {
         <Smartphone style={IconStyle} />
         <span style={textDesign}>
           <a href={`tel:${props.currentBar.phone_number}`}>
-            Contact: {props.currentBar.phone_number}
+            <span style={textDesign}>
+              Contact: {props.currentBar.phone_number}
+            </span>
           </a>
         </span>
       </i>
 
-      <i className="address">
-        <Google style={IconStyle} />
-        <span style={textDesign}>Directions</span>
-      </i>
+      <a href={`https://maps.google.com/maps?q=${completeAddress}`}>
+        <i>
+          <Google style={IconStyle} />
+          <span style={textDesign}>Directions</span>
+        </i>
+      </a>
 
-      <i className="age">
-        <Age style={IconStyle} />
+      <a
+        href={`https://m.uber.com/ul/?action=setPickup&client_id=YuXED_2gMxypW4z2Gl1x_q92auVkf9cv&pickup=my_location&dropoff[formatted_address]=${completeAddress}&dropoff[latitude]=${barLatitude}&dropoff[longitude]=${barLongitude}`}
+      >
+        <i>
+          <Uber style={IconStyle} />
+          <span style={textDesign}>Uber</span>
+        </i>
+      </a>
+
+      <i>
+        <Hourglass style={IconStyle} />
         <span style={textDesign}>
           Average Age: {getAverageAge(props.currentVisits)}
         </span>
       </i>
 
-      <i className="linesize">
-        <Smartphone style={IconStyle} />
+      <i>
+        <Clock style={IconStyle} />
         <span style={textDesign}>
-          Line size: {getAverageLineSize(props.currentReviews)} min
+          Average Wait Time: {getAverageLineSize(props.currentReviews)} min
         </span>
       </i>
 
-      <i className="price">
-        <Smartphone style={IconStyle} />
+      <i>
+        <Money style={IconStyle} />
         <span style={textDesign}>
           Approximate Cost: ${getMostCommon(props.currentReviews, "entry_fee")}
         </span>
       </i>
 
-      <i className="music">
-        <Smartphone style={IconStyle} />
+      <i>
+        <Music style={IconStyle} />
         <span style={textDesign}>Music Type: ADD TO DB</span>
         {/* {getMostCommon(props.currentReviews, "music_type")} */}
       </i>
-      <i className="dresscode">
+      <i>
         <DressCode style={IconStyle} />
         <span style={textDesign}>
           Dress Code: {getMostCommon(props.currentReviews, "dress_code")}

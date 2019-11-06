@@ -9,12 +9,12 @@ export default function FourthView(props) {
     currentVists: [],
     currentBar: {}
   });
-  console.log('fourth vieww', props)
-  
+  console.log("fourth vieww", props);
+
   useEffect(() => {
     setState({ currentBar: props.bar });
   }, []);
-//console.log('4th view state', state.currentBar)
+  //console.log('4th view state', state.currentBar)
   return (
     <>
       <div>

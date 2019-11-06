@@ -1,16 +1,7 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
 import BarFooter from "./BarFooter";
-import ReactDOM from "react-dom";
-import BarviewList from "./BarviewList";
 import $ from "jquery";
 
 Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
@@ -84,15 +75,15 @@ export class MapContainer extends React.Component {
   }
   render() {
     console.log("Map props", this.props.bar);
-    let barName = "";
-    if (this.props.bar !== undefined) {
-      barName = this.props.bar.name;
-    }
+    // let barName = "";
+    // if (this.props.bar !== undefined) {
+    //   barName = this.props.bar.name;
+    // }
 
-    const request = {
-      query: `${barName}`,
-      fields: ["photos", "formatted_address", "rating"]
-    };
+    // const request = {
+    //   query: `${barName}`,
+    //   fields: ["photos", "formatted_address", "rating"]
+    // };
 
     return (
       <Map

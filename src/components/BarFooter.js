@@ -4,13 +4,7 @@ import { ReactComponent as Pint } from "../images/pint.svg";
 import { ReactComponent as Check } from "../images/point.svg";
 import { ReactComponent as Uber } from "../images/uber.svg";
 
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  Redirect
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const footerStyle = {
   display: "none",

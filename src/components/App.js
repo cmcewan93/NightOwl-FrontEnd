@@ -1,7 +1,6 @@
 import React from "react";
 import Login from "./Login";
 import MapView from "./MapView";
-import UserForm from "./Form/UserForm";
 import BarviewList from "./BarviewList";
 import Camera from "./Camera";
 import Fourthview from "./ForthView";
@@ -10,15 +9,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  Redirect,
-  withRouter
+  Redirect
 } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
-import Cookies from "js-cookie";
 import "./App.css";
 import { SET_USER_AUTH, SET_BAR_ID } from "../reducers/application";
-import { isModuleSpecifier } from "@babel/types";
 
 export default function App() {
   const { state, dispatch } = useApplicationData();

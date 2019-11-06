@@ -15,8 +15,16 @@ class BarviewFooter extends React.Component {
     //console.log('BarFooter props', this.props)
     return (
       <div style={totalSize}>
-        <BarviewIcons currentBar={this.props.currentBar} currentVisits={this.props.currentVisits} currentReviews={this.props.currentReviews}/>
-        <Chart currentBar={this.props.currentBar} currentVisits={this.props.currentVisits} currentReviews={this.props.currentReviews}/>
+        <BarviewIcons
+          currentBar={this.props.currentBar}
+          currentVisits={this.props.currentVisits}
+          currentReviews={this.props.currentReviews}
+        />
+        <Chart
+          currentBar={this.props.currentBar}
+          currentVisits={this.props.currentVisits}
+          currentReviews={this.props.currentReviews}
+        />
       </div>
     );
   }
