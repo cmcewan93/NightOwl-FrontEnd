@@ -12,7 +12,14 @@ import {
   Typography
 } from "@material-ui/core";
 import RaisedButton from "material-ui/RaisedButton";
+import { ReactComponent as Owl } from "../../images/owl.svg";
 // import StyledRadio from "./StyledRadio";
+
+const buttonPosition = {
+  position: "fixed",
+  bottom: "155px",
+  left: "153px"
+};
 
 export class FormUserDetails extends Component {
   continue = e => {
@@ -78,9 +85,9 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <React.Fragment>
-          <div style={{ marginLeft: "60px" }}>
+          <div style={{ marginLeft: "50px" }}>
             <div style={{ marginTop: "50px" }}>
-              <FormLabel component="legend">
+              <FormLabel component="legend" style={{ fontWeight: "bold" }}>
                 Please select the Music Type!{" "}
               </FormLabel>
             </div>
@@ -100,14 +107,14 @@ export class FormUserDetails extends Component {
               <FormControlLabel
                 value="HipHop"
                 control={<Radio />}
-                label="Hip Hop/Rnb"
+                label="Hip Hop/RnB"
               />
               <FormControlLabel
                 value="Country"
                 control={<Radio />}
                 label="Country"
               />
-              <FormControlLabel value="Edm" control={<Radio />} label="Edm" />
+              <FormControlLabel value="EDM" control={<Radio />} label="EDM" />
             </RadioGroup>
             <div style={{ marginTop: "30px" }}>
               <Typography gutterBottom>
@@ -130,11 +137,12 @@ export class FormUserDetails extends Component {
               <RaisedButton
                 label="Continue"
                 primary={true}
-                style={(styles.button, styles.area)}
+                style={(styles.button, styles.area, buttonPosition)}
                 onClick={this.continue}
               />
             </div>
           </div>
+          <Owl />
         </React.Fragment>
       </MuiThemeProvider>
     );

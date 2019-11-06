@@ -6,7 +6,8 @@ const resize = {
   position: "fixed",
   top: "1px",
   height: "40px",
-  width: "25px"
+  width: "25px",
+  left: "3px"
 };
 
 export default function BackButton() {
