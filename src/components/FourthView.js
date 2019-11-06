@@ -8,7 +8,14 @@ export default function FourthView() {
   return (
     <>
       <div>
-        <button onClick={() => updateShowCamera(!showCamera)}>
+        <button
+          className="ui primary button"
+          style={{
+            display: "block",
+            margin: "auto"
+          }}
+          onClick={() => updateShowCamera(!showCamera)}
+        >
           {showCamera ? "Shut down camera" : "Take a photo"}
         </button>
         {showCamera && <Camera />}

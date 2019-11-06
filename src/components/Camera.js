@@ -13,7 +13,7 @@ class CameraComponent extends Component {
   }
 
   onTakePhoto(dataUri) {
-    // Do stuff with the dataUri photo...
+    // Do stuff with the dataUri photo...
     console.log(dataUri);
     this.setState({
       dataUri
@@ -32,17 +32,20 @@ class CameraComponent extends Component {
   render() {
     return (
       <div>
+                
         {this.state.dataUri ? (
           <div>
+                        
             <img alt="" src={this.state.dataUri} />
-            <div className="ui inverted segment">
-              <button
-                className="ui inverted olive button"
-                onClick={() => this.submitPhoto()}
-              >
-                submit
-              </button>
-            </div>
+                        
+            <button
+              className="ui primary button"
+              style={{ display: "block", margin: "auto" }}
+              onClick={() => this.submitPhoto()}
+            >
+              Submit
+            </button>
+                      
           </div>
         ) : (
           <Camera
@@ -55,9 +58,10 @@ class CameraComponent extends Component {
             isSilentMode={true}
             isDisplayStartCameraError={true}
             isFullscreen={false}
-            sizeFactor={0}
+            sizeFactor={0.7}
           />
         )}
+              
       </div>
     );
   }
