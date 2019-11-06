@@ -27,15 +27,6 @@ export class Confirm extends Component {
           <AppBar title="Confirm your choices" />
 
           <List>
-            <ListItemText
-              disableTypography
-              primary={
-                <Typography type="body2" style={{ color: "#FFFFFF" }}>
-                  MyTitle
-                </Typography>
-              }
-            />
-
             <ListItem
               placeholder="Music Type"
               inputStyle={{ color: "#b8b7ad" }}
