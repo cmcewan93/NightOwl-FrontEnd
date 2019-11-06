@@ -3,6 +3,7 @@ import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { List, ListItem } from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
+import { Typography } from "@material-ui/core";
 
 export class Confirm extends Component {
   continue = e => {
@@ -18,37 +19,34 @@ export class Confirm extends Component {
 
   render() {
     const {
-      values: { musicType, price, dressCode, ageRange, lineSize, womenMenRatio }
+      values: { musicType, price, dressCode, lineSize }
     } = this.props;
 
     return (
       <MuiThemeProvider>
         <>
           <div style={{ marginLeft: "60px" }}>
+            <div style={{ marginTop: "30px" }}>
+              <Typography gutterBottom>
+                Please confirm your selections!
+              </Typography>
+            </div>
             <List>
               <ListItem
                 primaryText="Music Type"
                 secondaryText={musicType}
               ></ListItem>
               <ListItem
-                primaryText="Price Range"
-                secondaryText={price}
+                primaryText="Cover Price"
+                secondaryText={`$ ${price}`}
               ></ListItem>
               <ListItem
                 primaryText="Dress Code"
                 secondaryText={dressCode}
               ></ListItem>
               <ListItem
-                primaryText="Age Range"
-                secondaryText={ageRange}
-              ></ListItem>
-              <ListItem
                 primaryText="Line Size"
-                secondaryText={lineSize}
-              ></ListItem>
-              <ListItem
-                primaryText="Women/Men Ratio"
-                secondaryText={womenMenRatio}
+                secondaryText={`${lineSize} minutes`}
               ></ListItem>
             </List>
 

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import FormUserDetails from "./FormUserDetails";
 import FormPersonalDetails from "./FormPersonalDetails";
 import Confirm from "./Confirm";
-import Success from "../Success";
+import Success from "./Success";
 
 export class UserForm extends Component {
   state = {
@@ -30,18 +30,16 @@ export class UserForm extends Component {
   };
 
   // Handle fields change
-  handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
+  handleChange = (input, e) => {
+    console.log(input);
+    console.log(e);
+    console.log("handle change being called", e);
+    // debugger;
+    this.setState({ [input]: e });
   };
 
   render() {
-    const { step } = this.state;
-    const {
-      musicType,
-      price,
-      dressCode,
-      lineSize
-    } = this.state;
+    const { step, musicType, price, dressCode, lineSize } = this.state;
     const values = {
       musicType,
       price,

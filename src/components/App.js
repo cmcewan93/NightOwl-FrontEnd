@@ -83,9 +83,6 @@ export default function App() {
         <Route exact path={`/bar/checkin/:${state.barId}`}>
           <Fourthview barId={state.barId} bar={currentBarObj} />
         </Route>
-        <Route exact path="/camera">
-          <Camera> </Camera>
-        </Route>
       </Switch>
     </Router>
   );

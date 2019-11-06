@@ -20,8 +20,8 @@ export class Success extends Component {
       <MuiThemeProvider>
         <>
           <div style={{ textAlign: "center", marginTop: "50px" }}>
-            <h3>Thank you for your patience!</h3>
-            <p>You will have a 10% discount in this bar.</p>
+            <h3>Thank you for your input!</h3>
+            <p>All feedback is highly appreciated.</p>
           </div>
         </>
       </MuiThemeProvider>

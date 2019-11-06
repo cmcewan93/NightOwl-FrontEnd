@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
+import {
+  Radio,
+  TextField,
+  RadioGroup,
+  FormControlLabel,
+  FormLabel,
+  Slider,
+  Typography
+} from "@material-ui/core";
 
 export class FormPersonalDetails extends Component {
   continue = e => {
@@ -15,43 +23,102 @@ export class FormPersonalDetails extends Component {
     this.props.prevStep();
   };
 
+  marks = [
+    {
+      value: 0,
+      label: "0m"
+    },
+
+    {
+      value: 10,
+      label: "10m"
+    },
+    {
+      value: 20,
+      label: "20m"
+    },
+    {
+      value: 30,
+      label: "30m"
+    },
+    {
+      value: 40,
+      label: "40m"
+    },
+    {
+      value: 50,
+      label: "50m"
+    },
+    {
+      value: 60,
+      label: "60m"
+    }
+  ];
+
   render() {
     const { values, handleChange } = this.props;
 
     return (
       <MuiThemeProvider>
-        <>
+        <React.Fragment>
           <div style={{ marginLeft: "60px" }}>
-            <TextField
-              hintText="Age Range"
-              floatingLabelText="Choose the Age Range of the bar"
-              onChange={handleChange("ageRange")}
-              defaultValue={values.ageRange}
-            />
-            <br />
-            <TextField
-              hintText="Line Size"
-              floatingLabelText="Choose the waiting time of the bar"
-              onChange={handleChange("lineSize")}
-              defaultValue={values.lineSize}
-            />
-            <br />
+            <div style={{ marginTop: "50px" }}>
+              <FormLabel component="legend">
+                How would you best describe the dress code?
+              </FormLabel>
+            </div>
+            <RadioGroup
+              defaultValue="none"
+              aria-label="musicType"
+              name="customized-radios"
+              onChange={(a, b) => handleChange("dressCode", b)}
+            >
+              <FormControlLabel
+                value="blackTie"
+                control={<Radio />}
+                label="Black Tie"
+              />
 
-            <TextField
-              hintText="Women/Men Ratio"
-              floatingLabelText="Guess the Women/Men Ratio "
-              onChange={handleChange("womenMenRatio")}
-              defaultValue={values.womenMenRatio}
-            />
-            <br />
+              <FormControlLabel
+                value="casual"
+                control={<Radio />}
+                label="Casual"
+              />
+              <FormControlLabel
+                value="formal"
+                control={<Radio />}
+                label="Formal"
+              />
+              <FormControlLabel
+                value="semiFormal"
+                control={<Radio />}
+                label="Semi Formal"
+              />
+              <FormControlLabel value="none" control={<Radio />} label="None" />
+            </RadioGroup>
+            <div style={{ marginTop: "30px" }}>
+              <Typography gutterBottom>
+                How many minutes did you wait in line?
+              </Typography>
+            </div>
 
+            <div style={{ marginRight: "50px" }}>
+              <Slider
+                defaultValue={20}
+                step={1}
+                max={60}
+                valueLabelDisplay="auto"
+                marks={this.marks}
+                aria-labelledby="lineSize"
+                onChange={(a, b) => handleChange("lineSize", b)}
+              />
+            </div>
             <RaisedButton
               label="Continue"
               primary={true}
               style={(styles.button, styles.rightarea)}
               onClick={this.continue}
             />
-
             <RaisedButton
               label="Back"
               primary={false}
@@ -59,7 +126,7 @@ export class FormPersonalDetails extends Component {
               onClick={this.back}
             />
           </div>
-        </>
+        </React.Fragment>
       </MuiThemeProvider>
     );
   }
