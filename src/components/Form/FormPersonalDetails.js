@@ -12,6 +12,20 @@ import {
   Typography
 } from "@material-ui/core";
 
+import { ReactComponent as Owl } from "../../images/owl.svg";
+
+const buttonPosition = {
+  position: "fixed",
+  bottom: "180px",
+  left: "75px"
+};
+
+const backButtonPosition = {
+  position: "fixed",
+  bottom: "180px",
+  right: "75px"
+};
+
 export class FormPersonalDetails extends Component {
   continue = e => {
     e.preventDefault();
@@ -63,9 +77,7 @@ export class FormPersonalDetails extends Component {
         <React.Fragment>
           <div style={{ marginLeft: "60px" }}>
             <div style={{ marginTop: "50px" }}>
-              <FormLabel component="legend">
-                How would you best describe the dress code?
-              </FormLabel>
+              <FormLabel component="legend">What is the dress code?</FormLabel>
             </div>
             <RadioGroup
               defaultValue="none"
@@ -116,16 +128,17 @@ export class FormPersonalDetails extends Component {
             <RaisedButton
               label="Continue"
               primary={true}
-              style={(styles.button, styles.rightarea)}
+              style={(styles.button, styles.rightarea, buttonPosition)}
               onClick={this.continue}
             />
             <RaisedButton
               label="Back"
               primary={false}
-              style={styles.button}
+              style={(styles.button, backButtonPosition)}
               onClick={this.back}
             />
           </div>
+          <Owl />
         </React.Fragment>
       </MuiThemeProvider>
     );

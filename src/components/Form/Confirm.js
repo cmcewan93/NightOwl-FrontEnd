@@ -4,6 +4,19 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import { List, ListItem } from "material-ui/List";
 import RaisedButton from "material-ui/RaisedButton";
 import { Typography } from "@material-ui/core";
+import { ReactComponent as Owl } from "../../images/owl.svg";
+
+const buttonPosition = {
+  position: "fixed",
+  bottom: "300px",
+  left: "75px"
+};
+
+const backButtonPosition = {
+  position: "fixed",
+  bottom: "300px",
+  right: "75px"
+};
 
 export class Confirm extends Component {
   continue = e => {
@@ -53,16 +66,17 @@ export class Confirm extends Component {
             <RaisedButton
               label="Confirm"
               primary={true}
-              style={(styles.button, styles.rightarea)}
+              style={(styles.button, styles.rightarea, buttonPosition)}
               onClick={this.continue}
             />
             <RaisedButton
               label="Back"
               primary={false}
-              style={styles.button}
+              style={(styles.button, backButtonPosition)}
               onClick={this.back}
             />
           </div>
+          <Owl style={{ position: "fixed", top: "440px" }} />
         </>
       </MuiThemeProvider>
     );

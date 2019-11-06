@@ -3,6 +3,8 @@ import AppBar from "material-ui/AppBar";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import RaisedButton from "material-ui/RaisedButton";
 
+import { ReactComponent as Owl } from "../../images/owl.svg";
+
 export class Success extends Component {
   continue = e => {
     e.preventDefault();
@@ -23,6 +25,7 @@ export class Success extends Component {
             <h3>Thank you for your input!</h3>
             <p>All feedback is highly appreciated.</p>
           </div>
+          <Owl />
         </>
       </MuiThemeProvider>
     );

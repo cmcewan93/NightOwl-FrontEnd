@@ -1,7 +1,8 @@
 import React from "react";
 
 const fontStyle = {
-  color: "grey"
+  color: "black",
+  fontWeight: "bold"
 };
 
 export default function Barname(props) {
