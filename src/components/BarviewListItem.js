@@ -17,7 +17,6 @@ export default function BarviewListItem(props) {
   let images = props.currentReviews.map(review => {
     return review.img;
   });
-
   if (images.length === 0) {
     images = defaultImages;
   }

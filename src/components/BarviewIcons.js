@@ -7,6 +7,7 @@ import { ReactComponent as Uber } from "../images/uber2.svg";
 import { ReactComponent as Clock } from "../images/clock.svg";
 import { ReactComponent as Money } from "../images/money.svg";
 import { ReactComponent as Music } from "../images/music.svg";
+import { Link } from "react-router-dom";
 
 const containerStyle = {
   position: "fixed",
@@ -170,6 +171,9 @@ export default function BarviewIcons(props) {
           Dress Code: {getMostCommon(props.currentReviews, "dress_code")}
         </span>
       </i>
+      <Link to={`/bar/checkin/:${props.currentBar.id}`} bar={props.currentBar}>
+        Check in
+      </Link>
     </div>
   );
 }
