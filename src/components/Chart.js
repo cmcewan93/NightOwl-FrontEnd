@@ -37,7 +37,7 @@ class Chart extends React.Component {
       <div className="chart">
         <PieChart
           style={pieStyle}
-          radius={15}
+          radius={25}
           label={({ data, dataIndex }) =>
             Math.round(data[dataIndex].percentage) +
             "%   " +
@@ -49,7 +49,7 @@ class Chart extends React.Component {
           labelStyle={{
             fill: "#f3f3f3",
             fontFamily: "sans-serif",
-            fontSize: "2.5px"
+            fontSize: "4px"
           }}
           ratio={1.2}
           data={[

@@ -15,22 +15,22 @@ class BarviewList extends React.Component {
 
   componentDidMount() {
     Axios.get(`/api/visits/${this.props.bar.id}`).then(response => {
-      console.log("We have visits", response);
+      // console.log("We have visits", response);
       this.setState({
         currentVisits: response.data,
         currentBar: this.props.bar
       });
     });
     Axios.get(`/api/reviews/${this.props.bar.id}`).then(response => {
-      console.log("We have Reviews", response);
+      // console.log("We have Reviews", response);
       this.setState({ currentReviews: response.data });
     });
   }
 
   render() {
     // console.log("bar id", this.props.bar.id);
-    console.log("state", this.state);
-    console.log("current bar", this.props.bar);
+    // console.log("state", this.state);
+    // console.log("current bar", this.props.bar);
     return (
       <div>
         <BarviewHeader bar={this.props.bar} />

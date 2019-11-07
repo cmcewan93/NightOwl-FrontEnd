@@ -1,5 +1,5 @@
 import React from "react";
-import Camera from "./Camera";
+// import Camera from "./Camera";
 import UserForm from "./Form/UserForm";
 import BarviewHeader from "./BarviewHeader";
 import Arrow from "./BackButton";
@@ -10,7 +10,7 @@ export default function FourthView(props) {
     currentVists: [],
     currentBar: {}
   });
-  console.log("fourth vieww", props);
+  // console.log("fourth vieww", props);
 
   useEffect(() => {
     setState({ currentBar: props.bar });

@@ -20,7 +20,7 @@ class App extends Component {
     let fileParts = this.uploadInput.files[0].name.split('.');
     let fileName = fileParts[0];
     let fileType = fileParts[1];
-    console.log("Preparing the upload");
+    // console.log("Preparing the upload");
     axios.post("http://localhost:3001/sign_s3",{
       fileName : fileName,
       fileType : fileType
@@ -30,7 +30,7 @@ class App extends Component {
       var signedRequest = returnData.signedRequest;
       var url = returnData.url;
       this.setState({url: url})
-      console.log("Recieved a signed request " + signedRequest);
+      // console.log("Recieved a signed request " + signedRequest);
       
      // Put the fileType in the headers for the upload
       var options = {
@@ -40,7 +40,7 @@ class App extends Component {
       };
       axios.put(signedRequest,file,options)
       .then(result => {
-        console.log("Response from s3")
+        // console.log("Response from s3")
         this.setState({success: true});
       })
       .catch(error => {

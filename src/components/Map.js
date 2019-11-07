@@ -74,7 +74,7 @@ export class MapContainer extends React.Component {
     }
   }
   render() {
-    console.log("Map props", this.props.bar);
+    // console.log("Map props", this.props.bar);
     // let barName = "";
     // if (this.props.bar !== undefined) {
     //   barName = this.props.bar.name;
