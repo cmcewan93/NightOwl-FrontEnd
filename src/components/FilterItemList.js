@@ -55,7 +55,7 @@ class FilterItemList extends React.Component {
         <div>
           <Clock
             style={imageSize}
-            onClick={() => this.props.updateMarkers("trending")}
+            onClick={() => this.props.updateMarkers("shortest")}
           />
           <span style={colorGrey}>Shortest Wait</span>
         </div>
@@ -82,11 +82,17 @@ class FilterItemList extends React.Component {
           <span style={textAlign2}>Music</span>
         </div>
         <div>
-          <Coin style={imageSize} />
+          <Coin
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("cheapest")}
+          />
           <span style={alignment}>Cheapest</span>
         </div>
         <div>
-          <Coins style={imageSize} />
+          <Coins
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("priciest")}
+          />
           <span style={textAlign}>Priciest</span>
         </div>
       </div>

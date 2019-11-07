@@ -160,8 +160,9 @@ export default function BarviewIcons(props) {
 
       <i>
         <Music style={IconStyle} />
-        <span style={textDesign}>Music Type: ADD TO DB</span>
-        {/* {getMostCommon(props.currentReviews, "music_type")} */}
+        <span style={textDesign}>
+          Music Type: {getMostCommon(props.currentReviews, "music_type")}{" "}
+        </span>
       </i>
       <i>
         <DressCode style={IconStyle} />
