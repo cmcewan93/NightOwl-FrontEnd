@@ -71,7 +71,7 @@ class FilterItemList extends React.Component {
         <div>
           <Graph
             style={imageSize}
-            onClick={() => this.props.updateMarkers("morefemales")}
+            onClick={() => this.props.updateMarkers("twentyfive")}
           />
           <span style={textAlign2}>25+</span>
         </div>
