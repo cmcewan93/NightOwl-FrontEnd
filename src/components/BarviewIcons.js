@@ -171,9 +171,14 @@ export default function BarviewIcons(props) {
           Dress Code: {getMostCommon(props.currentReviews, "dress_code")}
         </span>
       </i>
-      <Link to={`/bar/checkin/:${props.currentBar.id}`} bar={props.currentBar}>
-        Check in
-      </Link>
+      <div style={{ marginTop: "10px" }}>
+        <Link
+          to={`/bar/checkin/:${props.currentBar.id}`}
+          bar={props.currentBar}
+        >
+          Check in
+        </Link>
+      </div>
     </div>
   );
 }
