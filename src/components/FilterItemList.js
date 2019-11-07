@@ -4,7 +4,7 @@ import { ReactComponent as Boy } from "../images/boy.svg";
 import { ReactComponent as Girl } from "../images/girl.svg";
 import { ReactComponent as Clock } from "../images/clock.svg";
 import { ReactComponent as Bar } from "../images/bar.svg";
-import { ReactComponent as Music } from "../images/music.svg";
+import { ReactComponent as Graph } from "../images/graph.svg";
 import { ReactComponent as Coin } from "../images/coin.svg";
 import { ReactComponent as Coins } from "../images/coins.svg";
 
@@ -53,12 +53,13 @@ class FilterItemList extends React.Component {
           <span style={alignment}>Trending</span>
         </div>
         <div>
-          <Clock
+          <Boy
             style={imageSize}
-            onClick={() => this.props.updateMarkers("shortest")}
+            onClick={() => this.props.updateMarkers("moremales")}
           />
-          <span style={colorGrey}>Shortest Wait</span>
+          <span style={alignment}>More Men</span>
         </div>
+
         <div>
           <Girl
             style={imageSize}
@@ -66,20 +67,25 @@ class FilterItemList extends React.Component {
           />
           <span style={colorGrey}>More Women</span>
         </div>
+
         <div>
-          <Boy
+          <Graph
             style={imageSize}
-            onClick={() => this.props.updateMarkers("moremales")}
+            onClick={() => this.props.updateMarkers("morefemales")}
           />
-          <span style={alignment}>More Men</span>
+          <span style={textAlign2}>25+</span>
         </div>
+
         <div>
           <Bar style={imageSize} onClick={this.props.allMarkers} />
           <span style={textAlign}>All Bars</span>
         </div>
         <div>
-          <Music style={imageSize} />
-          <span style={textAlign2}>Music</span>
+          <Clock
+            style={imageSize}
+            onClick={() => this.props.updateMarkers("shortest")}
+          />
+          <span style={colorGrey}>Shortest Wait</span>
         </div>
         <div>
           <Coin
