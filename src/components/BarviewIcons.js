@@ -11,11 +11,11 @@ import { Link } from "react-router-dom";
 
 const containerStyle = {
   position: "fixed",
-  bottom: "100px",
+  bottom: "55px",
   left: "8px",
   display: "grid",
   gridTemplateColumns: "auto",
-  gridRowGap: "4px"
+  gridRowGap: "6px"
 };
 
 const IconStyle = {
@@ -111,7 +111,10 @@ export default function BarviewIcons(props) {
 
   return (
     <div style={containerStyle}>
-      <i className="phone">
+      <span style={{ fontSize: "18px", color: "white" }}>
+        General Information
+      </span>
+      <i>
         <Smartphone style={IconStyle} />
         <span style={textDesign}>
           <a href={`tel:${props.currentBar.phone_number}`}>

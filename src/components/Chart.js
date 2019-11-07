@@ -36,11 +36,6 @@ class Chart extends React.Component {
     return (
       <div className="chart">
         <PieChart
-          animate
-          animationDuration={500}
-          animationEasing="ease-out"
-          cx={50}
-          cy={50}
           style={pieStyle}
           radius={15}
           label={({ data, dataIndex }) =>
