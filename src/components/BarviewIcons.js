@@ -7,15 +7,16 @@ import { ReactComponent as Uber } from "../images/uber2.svg";
 import { ReactComponent as Clock } from "../images/clock.svg";
 import { ReactComponent as Money } from "../images/money.svg";
 import { ReactComponent as Music } from "../images/music.svg";
+import { ReactComponent as Check } from "../images/point.svg";
 import { Link } from "react-router-dom";
 
 const containerStyle = {
   position: "fixed",
-  bottom: "100px",
+  bottom: "20px",
   left: "8px",
   display: "grid",
   gridTemplateColumns: "auto",
-  gridRowGap: "4px"
+  gridRowGap: "6px"
 };
 
 const IconStyle = {
@@ -111,7 +112,10 @@ export default function BarviewIcons(props) {
 
   return (
     <div style={containerStyle}>
-      <i className="phone">
+      <span style={{ fontSize: "18px", color: "white" }}>
+        General Information
+      </span>
+      <i>
         <Smartphone style={IconStyle} />
         <span style={textDesign}>
           <a href={`tel:${props.currentBar.phone_number}`}>
@@ -171,14 +175,16 @@ export default function BarviewIcons(props) {
           Dress Code: {getMostCommon(props.currentReviews, "dress_code")}
         </span>
       </i>
-      <div style={{ marginTop: "10px" }}>
+      <i>
         <Link
           to={`/bar/checkin/:${props.currentBar.id}`}
           bar={props.currentBar}
+          style={textDesign}
         >
+          <Check style={IconStyle} />
           Check in
         </Link>
-      </div>
+      </i>
     </div>
   );
 }

@@ -26,7 +26,7 @@ const LoginPage = props => {
         }
       })
       .catch(error => {
-        console.log(error);
+        // console.log(error);
         // show erorr on page saying login failed
       });
   };

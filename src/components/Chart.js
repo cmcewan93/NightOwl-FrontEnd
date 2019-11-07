@@ -36,13 +36,8 @@ class Chart extends React.Component {
     return (
       <div className="chart">
         <PieChart
-          animate
-          animationDuration={500}
-          animationEasing="ease-out"
-          cx={50}
-          cy={50}
           style={pieStyle}
-          radius={15}
+          radius={25}
           label={({ data, dataIndex }) =>
             Math.round(data[dataIndex].percentage) +
             "%   " +
@@ -54,7 +49,7 @@ class Chart extends React.Component {
           labelStyle={{
             fill: "#f3f3f3",
             fontFamily: "sans-serif",
-            fontSize: "2.5px"
+            fontSize: "4px"
           }}
           ratio={1.2}
           data={[
