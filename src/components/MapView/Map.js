@@ -1,10 +1,12 @@
 import React from "react";
 import Geocode from "react-geocode";
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import BarFooter from "./BarFooter";
+import BarFooter from "./MapFooterSelected";
 import $ from "jquery";
 
-Geocode.setApiKey("AIzaSyDy3ctMoaRPaVPl936ZBk_1eC0TNiAwzX4");
+require("dotenv").config();
+
+Geocode.setApiKey(process.env.GOOGLE_MAP_API_KEY);
 
 const mapStyle = {
   height: "75%"
@@ -21,7 +23,6 @@ export class MapContainer extends React.Component {
   };
 
   onMarkerClick = (props, marker, e) => {
-    //TODO Set state of current bar
     this.setState({
       selectedPlace: props,
       selectedId: props,
@@ -43,7 +44,6 @@ export class MapContainer extends React.Component {
   // Renders all of the markers
   renderMarkers() {
     return this.props.markers.map((marker, index) => {
-      // console.log('ID', marker.id);
       return (
         <Marker
           key={index}
@@ -64,26 +64,14 @@ export class MapContainer extends React.Component {
   }
   displayBarFooter() {
     if (this.state.showingInfoWindow) {
-      //console.log("ya im showing");
       $("#f-foot").css("display", "none");
       $("#b-foot").css("display", "block");
     } else {
       $("#b-foot").css("display", "none");
       $("#f-foot").css("display", "block");
-      //console.log("im not showing");
     }
   }
   render() {
-    // console.log("Map props", this.props.bar);
-    // let barName = "";
-    // if (this.props.bar !== undefined) {
-    //   barName = this.props.bar.name;
-    // }
-
-    // const request = {
-    //   query: `${barName}`,
-    //   fields: ["photos", "formatted_address", "rating"]
-    // };
 
     return (
       <Map

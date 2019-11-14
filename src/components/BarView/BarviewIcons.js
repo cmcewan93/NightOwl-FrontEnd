@@ -1,13 +1,13 @@
 import React from "react";
-import { ReactComponent as Smartphone } from "../images/smartphone.svg";
-import { ReactComponent as Google } from "../images/google.svg";
-import { ReactComponent as Hourglass } from "../images/hourglass.svg";
-import { ReactComponent as DressCode } from "../images/dress-code.svg";
-import { ReactComponent as Uber } from "../images/uber2.svg";
-import { ReactComponent as Clock } from "../images/clock.svg";
-import { ReactComponent as Money } from "../images/money.svg";
-import { ReactComponent as Music } from "../images/music.svg";
-import { ReactComponent as Check } from "../images/point.svg";
+import { ReactComponent as Smartphone } from "../../images/smartphone.svg";
+import { ReactComponent as Google } from "../../images/google.svg";
+import { ReactComponent as Hourglass } from "../../images/hourglass.svg";
+import { ReactComponent as DressCode } from "../../images/dress-code.svg";
+import { ReactComponent as Uber } from "../../images/uber2.svg";
+import { ReactComponent as Clock } from "../../images/clock.svg";
+import { ReactComponent as Money } from "../../images/money.svg";
+import { ReactComponent as Music } from "../../images/music.svg";
+import { ReactComponent as Check } from "../../images/point.svg";
 import { Link } from "react-router-dom";
 
 const containerStyle = {
@@ -30,9 +30,7 @@ const textDesign = {
 };
 
 export default function BarviewIcons(props) {
-  //console.log("Barview props", props);
-
-  //TODO: REFACTOR FUNCTIONS, same function for finding averages
+ 
   const getAverageAge = visits => {
     let ageArray = [];
     let avg;
@@ -66,8 +64,6 @@ export default function BarviewIcons(props) {
       let sum = lineSizeArray.reduce(function(a, b) {
         return a + b;
       });
-      //console.log("line size array", lineSizeArray);
-      //console.log("sum", sum);
       return Math.round((avg = sum / lineSizeArray.length));
     }
     return avg;
@@ -91,8 +87,7 @@ export default function BarviewIcons(props) {
       .pop();
     return mode;
   };
-  // console.log("average age", getAverageAge(props.currentVisits));
-  // console.log("mode", getMostCommon(props.currentReviews, "entry_fee"));
+
   let completeAddress = "";
   if (props.currentBar !== undefined) {
     completeAddress = encodeURIComponent(

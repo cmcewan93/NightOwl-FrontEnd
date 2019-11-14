@@ -1,8 +1,8 @@
 import React from "react";
-import { ReactComponent as Google } from "../images/googlefooter.svg";
-import { ReactComponent as Pint } from "../images/pint.svg";
-import { ReactComponent as Check } from "../images/point.svg";
-import { ReactComponent as Uber } from "../images/uber.svg";
+import { ReactComponent as Google } from "../../images/googlefooter.svg";
+import { ReactComponent as Pint } from "../../images/pint.svg";
+import { ReactComponent as Check } from "../../images/point.svg";
+import { ReactComponent as Uber } from "../../images/uber.svg";
 
 import { Link } from "react-router-dom";
 
@@ -35,7 +35,6 @@ const fontAlignment = {
 };
 
 export default function BarFooter(props) {
-  //console.log("COMPLETE OBJ", props.bar);
   let completeAddress = "";
   if (props.bar !== undefined) {
     completeAddress = encodeURIComponent(

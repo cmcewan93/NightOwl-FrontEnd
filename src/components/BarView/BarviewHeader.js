@@ -1,6 +1,6 @@
 import React from "react";
-import Barname from "./Barname";
-import Burger from "./Burger";
+import Barname from "../NavBar/Barname";
+import Burger from "../NavBar/Burger";
 
 const headerStyle = {
   display: "flex",
@@ -10,7 +10,7 @@ const headerStyle = {
 
 class BarviewHeader extends React.Component {
   render() {
-    // console.log('here', this.props);
+  
     return (
       <div style={headerStyle}>
         <Barname currentBar={this.props.bar} />

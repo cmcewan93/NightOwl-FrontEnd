@@ -31,10 +31,6 @@ export class UserForm extends Component {
 
   // Handle fields change
   handleChange = (input, e) => {
-    // console.log(input);
-    // console.log(e);
-    // console.log("handle change being called", e);
-    // debugger;
     this.setState({ [input]: e });
   };
 

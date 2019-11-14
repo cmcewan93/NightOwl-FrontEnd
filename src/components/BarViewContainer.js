@@ -1,12 +1,12 @@
 import React from "react";
 import Axios from "axios";
 
-import BarviewListItem from "./BarviewListItem";
-import BarviewHeader from "./BarviewHeader";
-import Arrow from "./BackButton";
-import BarviewFooter from "./BarviewFooter";
+import BarViewImageGallery from "./BarView/BarViewImageGallery";
+import BarviewHeader from "./BarView/BarviewHeader";
+import Arrow from "./NavBar/BackButton";
+import BarviewInfoList from "./BarView/BarviewInfoList";
 
-class BarviewList extends React.Component {
+class BarViewContainer extends React.Component {
   state = {
     currentVists: [],
     currentBar: {},
@@ -15,28 +15,23 @@ class BarviewList extends React.Component {
 
   componentDidMount() {
     Axios.get(`/api/visits/${this.props.bar.id}`).then(response => {
-      // console.log("We have visits", response);
       this.setState({
         currentVisits: response.data,
         currentBar: this.props.bar
       });
     });
     Axios.get(`/api/reviews/${this.props.bar.id}`).then(response => {
-      // console.log("We have Reviews", response);
       this.setState({ currentReviews: response.data });
     });
   }
 
   render() {
-    // console.log("bar id", this.props.bar.id);
-    // console.log("state", this.state);
-    // console.log("current bar", this.props.bar);
     return (
       <div>
         <BarviewHeader bar={this.props.bar} />
         <Arrow />
-        <BarviewListItem currentReviews={this.state.currentReviews} />
-        <BarviewFooter
+        <BarViewImageGallery currentReviews={this.state.currentReviews} />
+        <BarviewInfoList
           currentBar={this.state.currentBar}
           currentVisits={this.state.currentVisits}
           currentReviews={this.state.currentReviews}
@@ -46,4 +41,4 @@ class BarviewList extends React.Component {
   }
 }
 
-export default BarviewList;
+export default BarViewContainer;

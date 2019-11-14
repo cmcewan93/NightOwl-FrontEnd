@@ -1,9 +1,9 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import "./burger.css";
-import Burger from "./Burger";
+import SearchBar from "../NavBar/SearchBar";
+import "../../styles/burger.css";
+import Burger from "../NavBar/Burger";
 
-class HeaderContainer extends React.Component {
+class MapHeader extends React.Component {
   render() {
     return (
       <>
@@ -19,4 +19,4 @@ class HeaderContainer extends React.Component {
     );
   }
 }
-export default HeaderContainer;
+export default MapHeader;

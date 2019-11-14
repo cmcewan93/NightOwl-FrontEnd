@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as Arrow } from "../images/arrow.svg";
+import { ReactComponent as Arrow } from "../../images/arrow.svg";
 import { Link } from "react-router-dom";
 
 const resize = {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
-import Map from "./Map";
-import HeaderContainer from "./HeaderContainer";
-import FilterContainer from "./FilterContainer";
+import Map from "./MapView/Map";
+import MapHeader from "./MapView/MapHeader";
+import FilterContainer from "./MapView/FilterContainer";
 // import BarFooter from "./BarFooter";
 
 const mainContainer = {
@@ -64,10 +64,9 @@ class MapView extends Component {
   };
 
   render() {
-    //console.log("ASUAIU", this.props);
     return (
       <div style={mainContainer}>
-        <HeaderContainer
+        <MapHeader
           name={this.state.markers}
           search={this.setSearch}
           style={headerContainer}

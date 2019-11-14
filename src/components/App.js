@@ -1,10 +1,8 @@
 import React from "react";
-import Login from "./Login";
-import MapView from "./MapView";
-import BarviewList from "./BarviewList";
-import Camera from "./Camera";
-import Fourthview from "./ForthView";
-// import Burger from "./Burger";
+import Login from "./LoginPage/Login";
+import MapView from "./MapViewContainer";
+import BarViewContainer from "./BarViewContainer";
+import CheckInView from "./CheckInViewContainer";
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,7 +10,7 @@ import {
   Redirect
 } from "react-router-dom";
 import useApplicationData from "../hooks/useApplicationData";
-import "./App.css";
+import "../styles/App.css";
 import { SET_USER_AUTH, SET_BAR_ID } from "../reducers/application";
 
 export default function App() {
@@ -28,13 +26,12 @@ export default function App() {
 
   const setBarId = id => {
     // Set state barId to id
-    //console.log("set barId is working!");
     dispatch({
       type: SET_BAR_ID,
       auth: id
     });
   };
-  //console.log("venues", state.venues);
+
   const currentBar = (id, venues) => {
     return venues.find(venue => venue.id === id);
   };
@@ -72,11 +69,11 @@ export default function App() {
           {!auth ? (
             <Redirect to="/" />
           ) : (
-            <BarviewList setAuth={setAuth} bar={currentBarObj} />
+            <BarViewContainer setAuth={setAuth} bar={currentBarObj} />
           )}
         </Route>
         <Route exact path={`/bar/checkin/:${state.barId}`}>
-          <Fourthview barId={state.barId} bar={currentBarObj} />
+          <CheckInView barId={state.barId} bar={currentBarObj} />
         </Route>
       </Switch>
     </Router>

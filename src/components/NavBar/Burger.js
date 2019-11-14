@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
-import { ReactComponent as Owl } from "../images/owl.svg";
-import { ReactComponent as Home } from "../images/house.svg";
-import { ReactComponent as Logout } from "../images/logout.svg";
+import { ReactComponent as Owl } from "../../images/owl.svg";
+import { ReactComponent as Home } from "../../images/house.svg";
+import { ReactComponent as Logout } from "../../images/logout.svg";
 
 const owlAlignment = {
   position: "fixed",

@@ -10,9 +10,8 @@ const totalSize = {
   backgroundColor: "#373a47"
 };
 
-class BarviewFooter extends React.Component {
+class BarviewInfoList extends React.Component {
   render() {
-    //console.log('BarFooter props', this.props)
     return (
       <div style={totalSize}>
         <BarviewIcons
@@ -29,4 +28,4 @@ class BarviewFooter extends React.Component {
     );
   }
 }
-export default BarviewFooter;
+export default BarviewInfoList;

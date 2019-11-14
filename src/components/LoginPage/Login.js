@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../styles/login.css";
-import "./App.css";
+import "../../styles/login.css";
+import "../../styles/App.css";
 import axios from "axios";
 
 const LoginPage = props => {
@@ -10,7 +10,6 @@ const LoginPage = props => {
   });
 
   const handleLogin = (email, password) => {
-    //console.log("checking login", email, password);
     axios
       .post("/login", {
         email: email,
@@ -26,7 +25,7 @@ const LoginPage = props => {
         }
       })
       .catch(error => {
-        // console.log(error);
+        console.log(error);
         // show erorr on page saying login failed
       });
   };
@@ -45,7 +44,7 @@ const LoginPage = props => {
           }}
         >
           <img
-            src={require("../images/login-logo.png")}
+            src={require("../../images/login-logo.png")}
             className="login-logo"
             alt=""
           />

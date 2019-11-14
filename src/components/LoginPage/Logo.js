@@ -4,8 +4,6 @@ import logo from "../public/NightOwlLogo.png";
 const style = {
   width: '50%',
   display: 'flex',
-  
-
 }
 
 export default function Logo() {

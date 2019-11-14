@@ -1,12 +1,12 @@
 import React from "react";
-import { ReactComponent as Fire } from "../images/fire.svg";
-import { ReactComponent as Boy } from "../images/boy.svg";
-import { ReactComponent as Girl } from "../images/girl.svg";
-import { ReactComponent as Clock } from "../images/clock.svg";
-import { ReactComponent as Bar } from "../images/bar.svg";
-import { ReactComponent as Graph } from "../images/graph.svg";
-import { ReactComponent as Coin } from "../images/coin.svg";
-import { ReactComponent as Coins } from "../images/coins.svg";
+import { ReactComponent as Fire } from "../../images/fire.svg";
+import { ReactComponent as Boy } from "../../images/boy.svg";
+import { ReactComponent as Girl } from "../../images/girl.svg";
+import { ReactComponent as Clock } from "../../images/clock.svg";
+import { ReactComponent as Bar } from "../../images/bar.svg";
+import { ReactComponent as Graph } from "../../images/graph.svg";
+import { ReactComponent as Coin } from "../../images/coin.svg";
+import { ReactComponent as Coins } from "../../images/coins.svg";
 
 const componentStyle = {
   position: "absolute",

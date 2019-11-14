@@ -12,8 +12,7 @@ let defaultImages = [
 // axios for bar images
 
 export default function BarviewListItem(props) {
-  // console.log("props", props);
-  //const images = props
+ 
   let images = props.currentReviews.map(review => {
     return review.img;
   });
@@ -32,8 +31,6 @@ export default function BarviewListItem(props) {
     }, 10000);
     return () => clearInterval(timer);
   }, [index]);
-
-  // console.log("barview list", props);
 
   return (
     <Gallery
